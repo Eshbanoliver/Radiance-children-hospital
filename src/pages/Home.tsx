@@ -1435,40 +1435,122 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 9. MISSION & VISION */}
+      {/* 9. DISTINCT & VIBRANT "OUR MISSION" & "OUR VISION" SECTION */}
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            {/* 1. OUR MISSION (Royal Teal & Cyan Compassion Theme) */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/80 shadow-xl relative overflow-hidden"
+              whileHover={{ y: -6, scale: 1.01 }}
+              className="rounded-[2.5rem] bg-gradient-to-br from-slate-950 via-teal-950 to-cyan-950 text-white p-8 sm:p-12 shadow-2xl border border-teal-500/30 relative overflow-hidden flex flex-col justify-between space-y-8 group transition-all duration-300 hover:border-teal-400/60 hover:shadow-teal-500/20"
             >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary to-accent text-white flex items-center justify-center text-2xl mb-6 shadow-md">
-                <FaHeart />
+              {/* Background Glow Effect */}
+              <div className="absolute -top-20 -left-20 w-80 h-80 bg-teal-500/20 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="space-y-6 relative z-10">
+                <div className="flex items-center justify-between">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-500 text-white flex items-center justify-center text-3xl font-black shadow-xl shadow-rose-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-white/20">
+                    <FaHeart />
+                  </div>
+                  <span className="px-3 py-1 rounded-full bg-teal-400/20 text-teal-300 font-extrabold text-xs uppercase tracking-wider border border-teal-400/30">
+                    Our Clinical Mission
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                    Caring for Every Child <span className="bg-gradient-to-r from-teal-300 via-cyan-200 to-emerald-300 bg-clip-text text-transparent">With Love & Precision</span>
+                  </h3>
+                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-medium mt-3">
+                    Deliver compassionate, affordable, and advanced pediatric healthcare while ensuring every child receives gentle hands and world-class clinical treatment in a safe, sterile environment.
+                  </p>
+                </div>
+
+                {/* Mission Pillars List */}
+                <div className="space-y-2.5 pt-2">
+                  {[
+                    { text: "Treating Every Child with Family-Level Love", iconColor: "text-rose-400" },
+                    { text: "Zero-Compromise Medical Hygiene & Sterilization", iconColor: "text-teal-400" },
+                    { text: "Affordable & Ethical Healthcare Without Extra Costs", iconColor: "text-cyan-400" }
+                  ].map((pillar, i) => (
+                    <div key={i} className="flex items-center gap-3 p-3 rounded-2xl bg-slate-900/60 border border-teal-500/20 text-xs font-bold text-slate-200 backdrop-blur-md">
+                      <FaCheckCircle className={`${pillar.iconColor} text-base shrink-0`} />
+                      <span>{pillar.text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-2xl font-black text-slate-900 mb-3">Our Mission</h3>
-              <p className="text-slate-600 text-base leading-relaxed">
-                Deliver compassionate, affordable and advanced pediatric healthcare while ensuring every child receives the best possible treatment in a safe, healing environment.
-              </p>
+
+              {/* Mission Bottom Seal */}
+              <div className="relative z-10 pt-4 border-t border-teal-500/20 flex items-center justify-between text-xs font-bold text-teal-300">
+                <span>Heart-Led Child Healthcare</span>
+                <span className="px-2.5 py-1 rounded-full bg-teal-400/10 border border-teal-400/30 text-[10px] uppercase font-black text-emerald-300">
+                  Patient First
+                </span>
+              </div>
             </motion.div>
 
+            {/* 2. OUR VISION (Midnight Violet & Gold Leadership Theme) */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/80 shadow-xl relative overflow-hidden"
+              whileHover={{ y: -6, scale: 1.01 }}
+              className="rounded-[2.5rem] bg-gradient-to-br from-purple-950 via-slate-950 to-indigo-950 text-white p-8 sm:p-12 shadow-2xl border border-purple-500/30 relative overflow-hidden flex flex-col justify-between space-y-8 group transition-all duration-300 hover:border-purple-400/60 hover:shadow-purple-500/20"
             >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-400 to-teal-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md">
-                <FaAward />
+              {/* Background Glow Effect */}
+              <div className="absolute -top-20 -right-20 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="space-y-6 relative z-10">
+                <div className="flex items-center justify-between">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-400 via-orange-500 to-amber-600 text-slate-950 flex items-center justify-center text-3xl font-black shadow-xl shadow-amber-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-white/20">
+                    <FaAward />
+                  </div>
+                  <span className="px-3 py-1 rounded-full bg-purple-400/20 text-purple-300 font-extrabold text-xs uppercase tracking-wider border border-purple-400/30">
+                    Our Future Vision
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                    Setting the Benchmark for <span className="bg-gradient-to-r from-amber-300 via-pink-300 to-purple-300 bg-clip-text text-transparent">Neonatal Excellence</span>
+                  </h3>
+                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-medium mt-3">
+                    To become Rajasthan’s most trusted children’s hospital by pioneering state-of-the-art Level III NICU technology, PICU critical care, intact survival protocols, and continuous pediatric innovation.
+                  </p>
+                </div>
+
+                {/* Vision Benchmarks List */}
+                <div className="space-y-2.5 pt-2">
+                  {[
+                    { text: "Premier Pediatric & Neonatal Center in Rajasthan", iconColor: "text-amber-400" },
+                    { text: "Pioneering Level III HFOV & Mira Cradle Tech", iconColor: "text-purple-400" },
+                    { text: "100% Intact Survival & Milestone Development", iconColor: "text-pink-400" }
+                  ].map((benchmark, i) => (
+                    <div key={i} className="flex items-center gap-3 p-3 rounded-2xl bg-slate-900/60 border border-purple-500/20 text-xs font-bold text-slate-200 backdrop-blur-md">
+                      <FaCheckCircle className={`${benchmark.iconColor} text-base shrink-0`} />
+                      <span>{benchmark.text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-2xl font-black text-slate-900 mb-3">Our Vision</h3>
-              <p className="text-slate-600 text-base leading-relaxed">
-                To become the most trusted children’s hospital in Rajasthan by delivering world-class pediatric healthcare, neonatal excellence, and child safety.
-              </p>
+
+              {/* Vision Bottom Seal */}
+              <div className="relative z-10 pt-4 border-t border-purple-500/20 flex items-center justify-between text-xs font-bold text-purple-300">
+                <span>Rajasthan Child Healthcare Leadership</span>
+                <span className="px-2.5 py-1 rounded-full bg-purple-400/10 border border-purple-400/30 text-[10px] uppercase font-black text-amber-300">
+                  Excellence Standard
+                </span>
+              </div>
             </motion.div>
+
           </div>
+
         </div>
       </section>
 
