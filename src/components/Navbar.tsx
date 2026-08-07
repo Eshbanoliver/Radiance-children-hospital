@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   return (
     <>
       {/* Top Notification Bar */}
-      <div className="bg-gradient-to-r from-primary via-accent to-secondary text-white text-xs font-semibold py-2 px-4 shadow-sm hidden md:block">
+      <div className="bg-gradient-to-r from-primary via-accent to-secondary text-white text-xs font-bold py-2 px-4 shadow-sm hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           <div className="flex items-center gap-4">
             <a
               href={`tel:${HOSPITAL_INFO.phone}`}
-              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-all text-white font-bold"
+              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-all text-white font-extrabold"
             >
               <FaPhoneAlt className="animate-pulse" /> Emergency Desk: {HOSPITAL_INFO.phone}
             </a>
@@ -66,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       {/* Main Glass Navbar */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
-          isScrolled ? 'glass-nav py-3' : 'bg-white/70 backdrop-blur-md py-4 border-b border-white/40'
+          isScrolled ? 'glass-nav py-3' : 'bg-white/80 backdrop-blur-md py-4 border-b border-white/50 shadow-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -78,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               </div>
             </div>
             <div>
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-800 block leading-none">
+              <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 block leading-none">
                 Radiant<span className="gradient-text font-black"> Hospital</span>
               </span>
               <span className="text-[10px] font-bold tracking-wider uppercase text-primary block mt-1">
@@ -88,16 +88,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-white/60 p-1.5 rounded-full border border-slate-200/60 shadow-sm backdrop-blur-md">
+          <nav className="hidden md:flex items-center gap-1.5 bg-slate-100/90 p-1.5 rounded-full border border-slate-200/80 shadow-inner backdrop-blur-md">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `px-5 py-2 rounded-full text-sm font-bold transition-all ${
+                  `px-5 py-2.5 rounded-full text-sm font-extrabold transition-all duration-300 ${
                     isActive
-                      ? 'bg-primary text-white shadow-md shadow-primary/20 scale-105'
-                      : 'text-slate-700 hover:text-primary hover:bg-slate-100/80'
+                      ? 'gradient-btn text-white shadow-lg shadow-blue-500/30 scale-105'
+                      : 'text-slate-700 hover:text-primary hover:bg-white/80'
                   }`
                 }
               >
@@ -118,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden w-11 h-11 rounded-2xl bg-white/80 border border-slate-200 flex items-center justify-center text-slate-800 text-xl shadow-sm hover:bg-white"
+              className="md:hidden w-11 h-11 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-800 text-xl shadow-sm hover:bg-slate-50"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <FaTimes /> : <FaBars />}
@@ -143,10 +143,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                     key={link.path}
                     to={link.path}
                     className={({ isActive }) =>
-                      `px-4 py-3 rounded-2xl text-base font-bold transition-all ${
+                      `px-5 py-3 rounded-2xl text-base font-extrabold transition-all ${
                         isActive
-                          ? 'bg-primary text-white shadow-md'
-                          : 'text-slate-700 hover:bg-slate-100'
+                          ? 'gradient-btn text-white shadow-md'
+                          : 'text-slate-800 hover:bg-slate-100'
                       }`
                     }
                   >

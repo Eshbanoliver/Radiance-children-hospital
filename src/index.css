@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #0D6EFD;
+  --color-primary-hover: #0B5ED7;
+  --color-primary-light: #E7F1FF;
+  --color-primary-dark: #0A58CA;
+
+  --color-secondary: #20C997;
+  --color-secondary-hover: #1BA87E;
+  --color-secondary-light: #E6FAF5;
+
+  --color-accent: #00B4D8;
+  --color-accent-hover: #0096B4;
+  --color-accent-light: #E0F7FA;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
