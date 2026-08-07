@@ -10,7 +10,7 @@ import {
 } from 'react-icons/fa';
 import { 
   HOSPITAL_INFO, KEY_METRICS, SERVICES_DATA, WHY_CHOOSE_US, 
-  TESTIMONIALS, FAQS, CHILDREN_FACILITIES_LIST, TRANSPORT_SYSTEM_DETAILS 
+  TESTIMONIALS, FAQS, TRANSPORT_SYSTEM_DETAILS 
 } from '../data/hospitalData';
 import { SEO } from '../components/SEO';
 
@@ -759,35 +759,221 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
 
       {/* 7. HOSPITAL FACILITIES & ROOM TYPES (40 BEDDED CENTER) */}
       <section className="relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-blue-800 font-extrabold text-xs shadow-sm">
+              <FaHospital className="text-blue-600" /> Complete Inpatient & Diagnostic Amenities
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
               40 Bedded Hospital <span className="gradient-text">Facilities & Amenities</span>
             </h2>
-            <p className="text-slate-600 text-sm">
-              General, Semi-Deluxe & Deluxe rooms equipped with Central Oxygen, Compressed Air, Suction & 100% DG Auto Backup.
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
+              Equipped with General Wards, Semi-Deluxe & Deluxe private suites, central medical oxygen lines, in-house ABG analyzer, and 100% uninterrupted power backup.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-            {CHILDREN_FACILITIES_LIST.map((fac, idx) => (
-              <div key={idx} className="glass-card p-5 rounded-2xl text-center border border-white/80 space-y-2 hover:border-primary/40 transition-colors">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary mx-auto flex items-center justify-center text-xl shadow-md">
-                  {fac.icon === 'FaBed' && <FaBed />}
-                  {fac.icon === 'FaWind' && <FaWind />}
-                  {fac.icon === 'FaPills' && <FaPills />}
-                  {fac.icon === 'FaXRay' && <FaXRay />}
-                  {fac.icon === 'FaFlask' && <FaFlask />}
-                  {fac.icon === 'FaAmbulance' && <FaAmbulance />}
-                  {fac.icon === 'FaBolt' && <FaBolt />}
-                  {fac.icon === 'FaVideo' && <FaVideo />}
-                  {fac.icon === 'FaHeart' && <FaHeart />}
-                  {fac.icon === 'FaSyringe' && <FaSyringe />}
+          {/* Top Showcase: 2 Major Feature Layout Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            {/* Card 1: 40 Bedded Patient Wards & Rooms (Wide Showcase) */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-7 rounded-3xl bg-gradient-to-br from-white via-cyan-50/50 to-white border border-cyan-200/80 shadow-xl shadow-cyan-500/10 p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 group"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white flex items-center justify-center text-2xl font-black shadow-lg shadow-cyan-500/30 group-hover:scale-110 transition-transform">
+                      <FaBed />
+                    </div>
+                    <div>
+                      <span className="px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-800 font-extrabold text-[10px] uppercase tracking-wider border border-cyan-200">
+                        Inpatient Center
+                      </span>
+                      <h3 className="text-2xl font-black text-slate-900 mt-1">40 Bedded Patient Wards & Suites</h3>
+                    </div>
+                  </div>
+
+                  <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-emerald-500 text-white font-extrabold text-xs shadow-md">
+                    24 Hours Nursing
+                  </span>
                 </div>
-                <p className="text-xs font-extrabold text-slate-800 leading-snug">{fac.name}</p>
+
+                <p className="text-slate-600 text-xs sm:text-sm font-semibold leading-relaxed">
+                  Tailored room categories designed for infant comfort, hygiene, and parent convenience during hospital recovery.
+                </p>
+
+                {/* Inside Card Graphic Layout: 3 Room Category Sub-Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                  <div className="p-3.5 rounded-2xl bg-white border border-cyan-200 shadow-sm text-center space-y-1 hover:border-cyan-400 transition-colors">
+                    <span className="text-xs font-black text-cyan-700 block">General Wards</span>
+                    <span className="text-[10px] text-slate-500 font-bold block">Sterile & Monitored</span>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-white border border-blue-200 shadow-sm text-center space-y-1 hover:border-blue-400 transition-colors">
+                    <span className="text-xs font-black text-blue-700 block">Semi-Deluxe Rooms</span>
+                    <span className="text-[10px] text-slate-500 font-bold block">AC & Private Space</span>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-white border border-indigo-200 shadow-sm text-center space-y-1 hover:border-indigo-400 transition-colors">
+                    <span className="text-xs font-black text-indigo-700 block">Deluxe Suites</span>
+                    <span className="text-[10px] text-slate-500 font-bold block">Luxury Parent Stay</span>
+                  </div>
+                </div>
+
+                {/* Central Utility Line Bar */}
+                <div className="p-3.5 rounded-2xl bg-cyan-950 text-white flex flex-wrap items-center justify-between gap-2 text-xs font-bold">
+                  <span className="flex items-center gap-1.5"><FaWind className="text-cyan-400" /> Central Oxygen</span>
+                  <span className="flex items-center gap-1.5"><FaWind className="text-teal-400" /> Compressed Air</span>
+                  <span className="flex items-center gap-1.5"><FaWind className="text-emerald-400" /> Vacuum Suction</span>
+                </div>
               </div>
-            ))}
+            </motion.div>
+
+            {/* Card 2: In-House Diagnostics & ABG Analyzer */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-5 rounded-3xl bg-gradient-to-br from-white via-emerald-50/50 to-white border border-emerald-200/80 shadow-xl shadow-emerald-500/10 p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-300 group"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white flex items-center justify-center text-2xl font-black shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform">
+                    <FaFlask />
+                  </div>
+                  <div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-[10px] uppercase tracking-wider border border-emerald-200">
+                      24×7 Diagnostic Desk
+                    </span>
+                    <h3 className="text-2xl font-black text-slate-900 mt-1">In-House Diagnostics Unit</h3>
+                  </div>
+                </div>
+
+                <p className="text-slate-600 text-xs sm:text-sm font-semibold leading-relaxed">
+                  Immediate bedside lab diagnostic evaluation without delay for critical pediatric & neonatal patients.
+                </p>
+
+                {/* Inside Card Graphic Sub-Pills */}
+                <div className="space-y-2.5 pt-1">
+                  <div className="p-3 rounded-2xl bg-white border border-emerald-200 flex items-center justify-between text-xs font-bold shadow-sm">
+                    <span className="flex items-center gap-2 text-emerald-900"><FaFlask className="text-emerald-500" /> In-House ABG Analyzer</span>
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px]">Blood Gas</span>
+                  </div>
+
+                  <div className="p-3 rounded-2xl bg-white border border-teal-200 flex items-center justify-between text-xs font-bold shadow-sm">
+                    <span className="flex items-center gap-2 text-teal-900"><FaXRay className="text-teal-500" /> Digital X-Ray & Ultrasound</span>
+                    <span className="px-2 py-0.5 rounded-full bg-teal-100 text-teal-700 text-[10px]">Bedside Imaging</span>
+                  </div>
+
+                  <div className="p-3 rounded-2xl bg-white border border-cyan-200 flex items-center justify-between text-xs font-bold shadow-sm">
+                    <span className="flex items-center gap-2 text-cyan-900"><FaHeartbeat className="text-cyan-500" /> Bedside 2D Echo Setup</span>
+                    <span className="px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-700 text-[10px]">Cardiology</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
+
+          {/* Bottom Grid: 6 Infrastructure Cards with Multi-Colored Background Glow Shadows */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "In-House Pharmacy & Medical Store",
+                desc: "100% genuine pediatric medications, cold-chain vaccines, and medical supplies available round-the-clock.",
+                tag: "24x7 Pharmacy",
+                badgeBg: "bg-amber-500/10 border-amber-300 text-amber-900",
+                shadow: "shadow-amber-500/15 hover:shadow-amber-500/30 border-amber-200/80 bg-gradient-to-br from-white via-amber-50/30 to-white",
+                iconBg: "from-amber-400 to-orange-500",
+                icon: FaPills
+              },
+              {
+                title: "24x7 Transport Ambulance",
+                desc: "Neonatal ambulance equipped with Neopuff, Embrace Nest, oximeter & accompanied by Intensivist.",
+                tag: "Emergency Dispatch",
+                badgeBg: "bg-rose-500/10 border-rose-300 text-rose-900",
+                shadow: "shadow-rose-500/15 hover:shadow-rose-500/30 border-rose-200/80 bg-gradient-to-br from-white via-rose-50/30 to-white",
+                iconBg: "from-rose-500 to-pink-500",
+                icon: FaAmbulance
+              },
+              {
+                title: "100% DG Auto Power Backup",
+                desc: "Uninterrupted power supply generators ensuring ventilators, incubators, & ICU monitors never shut down.",
+                tag: "Zero Downtime",
+                badgeBg: "bg-purple-500/10 border-purple-300 text-purple-900",
+                shadow: "shadow-purple-500/15 hover:shadow-purple-500/30 border-purple-200/80 bg-gradient-to-br from-white via-purple-50/30 to-white",
+                iconBg: "from-purple-500 to-indigo-600",
+                icon: FaBolt
+              },
+              {
+                title: "HD CCTV Surveillance & Security",
+                desc: "24x7 camera surveillance and smart access security for total infant safety and parent peace of mind.",
+                tag: "Child Security",
+                badgeBg: "bg-sky-500/10 border-sky-300 text-sky-900",
+                shadow: "shadow-sky-500/15 hover:shadow-sky-500/30 border-sky-200/80 bg-gradient-to-br from-white via-sky-50/30 to-white",
+                iconBg: "from-sky-400 to-blue-600",
+                icon: FaVideo
+              },
+              {
+                title: "Lactation Management Support",
+                desc: "Private breastfeeding spaces, infant weaning diet support, and Kangaroo Mother Care (KMC) guidance.",
+                tag: "Mother Wellness",
+                badgeBg: "bg-pink-500/10 border-pink-300 text-pink-900",
+                shadow: "shadow-pink-500/15 hover:shadow-pink-500/30 border-pink-200/80 bg-gradient-to-br from-white via-pink-50/30 to-white",
+                iconBg: "from-pink-500 to-rose-500",
+                icon: FaHeart
+              },
+              {
+                title: "WHO Newborn Screening & Vaccination",
+                desc: "Full vaccine stock in cold chain storage, ROP retina screening, and OAE objective hearing checks.",
+                tag: "WHO Standard",
+                badgeBg: "bg-teal-500/10 border-teal-300 text-teal-900",
+                shadow: "shadow-teal-500/15 hover:shadow-teal-500/30 border-teal-200/80 bg-gradient-to-br from-white via-teal-50/30 to-white",
+                iconBg: "from-teal-400 to-emerald-600",
+                icon: FaSyringe
+              }
+            ].map((fac, idx) => {
+              const IconComp = fac.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.06 }}
+                  whileHover={{ y: -6, scale: 1.02 }}
+                  className={`rounded-3xl p-6 border shadow-xl flex flex-col justify-between space-y-4 transition-all duration-300 group ${fac.shadow}`}
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className={`w-13 h-13 rounded-2xl bg-gradient-to-tr ${fac.iconBg} text-white flex items-center justify-center text-xl font-black shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                        <IconComp />
+                      </div>
+                      <span className={`px-2.5 py-0.5 rounded-full font-black text-[10px] uppercase tracking-wider border ${fac.badgeBg}`}>
+                        {fac.tag}
+                      </span>
+                    </div>
+
+                    <h3 className="text-lg font-black text-slate-900 group-hover:text-primary transition-colors leading-snug">
+                      {fac.title}
+                    </h3>
+
+                    <p className="text-slate-600 text-xs font-semibold leading-relaxed">
+                      {fac.desc}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-200/60 flex items-center justify-between text-[11px] font-extrabold text-emerald-600">
+                    <span className="flex items-center gap-1"><FaCheckCircle className="text-xs" /> Verified Facility</span>
+                    <span className="text-slate-400 font-bold">24 Hours</span>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
 
         </div>
