@@ -95,13 +95,13 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
           />
         </AnimatePresence>
 
-        {/* Dark Glass & Gradient Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/92 via-slate-900/80 to-slate-900/40 backdrop-blur-[2px] pointer-events-none" />
+        {/* Soft, light gradient overlay for clear image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/65 via-slate-900/35 to-slate-950/20 pointer-events-none" />
 
         {/* Side Arrow Navigation Buttons */}
         <button
           onClick={prevHeroSlide}
-          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/60 hover:bg-slate-900/90 border border-white/30 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-2xl hover:scale-110"
+          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/50 hover:bg-slate-900/90 border border-white/40 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-2xl hover:scale-110"
           aria-label="Previous image"
         >
           <FaChevronLeft className="text-base" />
@@ -109,7 +109,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
 
         <button
           onClick={nextHeroSlide}
-          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/60 hover:bg-slate-900/90 border border-white/30 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-2xl hover:scale-110"
+          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/50 hover:bg-slate-900/90 border border-white/40 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-2xl hover:scale-110"
           aria-label="Next image"
         >
           <FaChevronRight className="text-base" />
@@ -126,16 +126,16 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.8 }}
               className="lg:col-span-8 space-y-6 text-left text-white"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white font-bold text-xs sm:text-sm shadow-md">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/60 backdrop-blur-md border border-white/30 text-white font-bold text-xs sm:text-sm shadow-md">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
                 Premier Pediatric, Neonatal & Emergency Hospital in Udaipur
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] drop-shadow-md">
                 Caring for Every Child, <span className="bg-gradient-to-r from-cyan-300 via-emerald-300 to-teal-200 bg-clip-text text-transparent">Every Step of the Way</span>
               </h1>
 
-              <p className="text-slate-200 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl">
+              <p className="text-slate-100 text-base sm:text-lg lg:text-xl font-semibold leading-relaxed max-w-2xl drop-shadow-sm">
                 {HOSPITAL_INFO.subheading}
               </p>
 
