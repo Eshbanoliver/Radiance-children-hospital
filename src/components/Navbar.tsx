@@ -142,6 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                   <NavLink
                     key={link.path}
                     to={link.path}
+                    onClick={() => setMobileMenuOpen(false)}
                     className={({ isActive }) =>
                       `px-5 py-3 rounded-2xl text-base font-extrabold transition-all ${
                         isActive
