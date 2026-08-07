@@ -77,152 +77,150 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
     <div className="space-y-16 sm:space-y-24 pb-12">
       <SEO title="Radiant Children's Hospital | Trusted Pediatric & Emergency Care in Udaipur" />
 
-      {/* 1. FULL-WIDTH HERO SECTION SLIDER */}
-      <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-2 sm:mt-4">
-        <div className="relative w-full min-h-[580px] lg:min-h-[640px] rounded-3xl overflow-hidden shadow-2xl border border-white/40 flex items-center">
-          
-          {/* Background Sliding Images */}
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={heroSlideIndex}
-              src={heroSlides[heroSlideIndex].image}
-              alt={heroSlides[heroSlideIndex].title}
-              initial={{ opacity: 0, scale: 1.08 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-              loading="eager"
-            />
-          </AnimatePresence>
+      {/* 1. EDGE-TO-EDGE FULL WIDTH HERO SLIDER */}
+      <section className="relative w-full min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] flex items-center overflow-hidden bg-slate-950 text-white">
+        
+        {/* Background Sliding Images (100% Screen Width) */}
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={heroSlideIndex}
+            src={heroSlides[heroSlideIndex].image}
+            alt={heroSlides[heroSlideIndex].title}
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.98 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+            loading="eager"
+          />
+        </AnimatePresence>
 
-          {/* Dark Glass Overlay gradient for 100% legibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-slate-900/40 backdrop-blur-[2px] pointer-events-none" />
+        {/* Dark Glass & Gradient Overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/92 via-slate-900/80 to-slate-900/40 backdrop-blur-[2px] pointer-events-none" />
 
-          {/* Slider Side Arrow Buttons */}
-          <button
-            onClick={prevHeroSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/50 hover:bg-slate-900/90 border border-white/30 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-xl hover:scale-110"
-            aria-label="Previous image"
-          >
-            <FaChevronLeft className="text-base" />
-          </button>
+        {/* Side Arrow Navigation Buttons */}
+        <button
+          onClick={prevHeroSlide}
+          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/60 hover:bg-slate-900/90 border border-white/30 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-2xl hover:scale-110"
+          aria-label="Previous image"
+        >
+          <FaChevronLeft className="text-base" />
+        </button>
 
-          <button
-            onClick={nextHeroSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/50 hover:bg-slate-900/90 border border-white/30 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-xl hover:scale-110"
-            aria-label="Next image"
-          >
-            <FaChevronRight className="text-base" />
-          </button>
+        <button
+          onClick={nextHeroSlide}
+          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/60 hover:bg-slate-900/90 border border-white/30 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-2xl hover:scale-110"
+          aria-label="Next image"
+        >
+          <FaChevronRight className="text-base" />
+        </button>
 
-          {/* Hero Content Overlay */}
-          <div className="relative z-10 w-full p-6 sm:p-12 lg:p-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* Centered Hero Content Container */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12 lg:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Left Column: Headline, Subtitle & Action Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-8 space-y-6 text-left text-white"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white font-bold text-xs sm:text-sm shadow-md">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                Premier Pediatric, Neonatal & Emergency Hospital in Udaipur
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12]">
+                Caring for Every Child, <span className="bg-gradient-to-r from-cyan-300 via-emerald-300 to-teal-200 bg-clip-text text-transparent">Every Step of the Way</span>
+              </h1>
+
+              <p className="text-slate-200 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl">
+                {HOSPITAL_INFO.subheading}
+              </p>
+
+              {/* Buttons */}
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <button
+                  onClick={onOpenBooking}
+                  className="px-8 py-4 rounded-full gradient-btn text-white font-extrabold text-base shadow-2xl hover:scale-105 transition-all flex items-center gap-3"
+                >
+                  <FaCalendarCheck /> Book Appointment
+                </button>
+
+                <Link
+                  to="/contact"
+                  className="px-8 py-4 rounded-full bg-white/20 hover:bg-white/30 border border-white/40 text-white font-extrabold text-base backdrop-blur-md transition-all flex items-center gap-2 shadow-lg"
+                >
+                  <FaPhoneAlt /> Contact Us
+                </Link>
+              </div>
+
+              {/* Trust Badges */}
+              <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 border-t border-white/20">
+                {[
+                  { title: "0-18 Years", sub: "Complete Care" },
+                  { title: "24×7 Emergency", sub: "Always Ready" },
+                  { title: "NICU & PICU", sub: "Level III ICUs" },
+                  { title: "Vaccination", sub: "WHO Approved" }
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-slate-900/50 backdrop-blur-md p-3.5 rounded-2xl border border-white/15 text-center">
+                    <div className="text-sm font-black text-white">{item.title}</div>
+                    <div className="text-[11px] font-bold text-cyan-300">{item.sub}</div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right Column: Active Slide Details Card & Indicators */}
+            <div className="lg:col-span-4 flex flex-col justify-end items-end space-y-4">
               
-              {/* Left Column: Headline, Subtitle & Action Buttons */}
+              {/* Active Slide Info Card */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="lg:col-span-8 space-y-6 text-left text-white"
+                key={heroSlideIndex}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="bg-slate-900/65 backdrop-blur-xl p-5 rounded-3xl border border-white/25 text-white max-w-sm w-full shadow-2xl space-y-2"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white font-bold text-xs sm:text-sm shadow-md">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-                  Premier Pediatric, Neonatal & Emergency Hospital in Udaipur
+                <div className="flex items-center justify-between text-xs">
+                  <span className="px-3 py-1 rounded-full bg-emerald-500 text-white font-black uppercase tracking-wider text-[10px]">
+                    {heroSlides[heroSlideIndex].highlight}
+                  </span>
+                  <span className="font-bold text-cyan-300">
+                    0{heroSlideIndex + 1} / 0{heroSlides.length}
+                  </span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12]">
-                  Caring for Every Child, <span className="bg-gradient-to-r from-cyan-300 via-emerald-300 to-teal-200 bg-clip-text text-transparent">Every Step of the Way</span>
-                </h1>
+                <h3 className="text-base font-extrabold leading-snug">
+                  {heroSlides[heroSlideIndex].title}
+                </h3>
 
-                <p className="text-slate-200 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl">
-                  {HOSPITAL_INFO.subheading}
+                <p className="text-slate-300 text-xs flex items-center gap-1.5 font-semibold">
+                  <FaHospital className="text-emerald-400 shrink-0" />
+                  {heroSlides[heroSlideIndex].badge}
                 </p>
-
-                {/* Buttons */}
-                <div className="flex flex-wrap items-center gap-4 pt-2">
-                  <button
-                    onClick={onOpenBooking}
-                    className="px-8 py-4 rounded-full gradient-btn text-white font-extrabold text-base shadow-2xl hover:scale-105 transition-all flex items-center gap-3"
-                  >
-                    <FaCalendarCheck /> Book Appointment
-                  </button>
-
-                  <Link
-                    to="/contact"
-                    className="px-8 py-4 rounded-full bg-white/20 hover:bg-white/30 border border-white/40 text-white font-extrabold text-base backdrop-blur-md transition-all flex items-center gap-2 shadow-lg"
-                  >
-                    <FaPhoneAlt /> Contact Us
-                  </Link>
-                </div>
-
-                {/* Trust Badges */}
-                <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 border-t border-white/20">
-                  {[
-                    { title: "0-18 Years", sub: "Complete Care" },
-                    { title: "24×7 Emergency", sub: "Always Ready" },
-                    { title: "NICU & PICU", sub: "Level III ICUs" },
-                    { title: "Vaccination", sub: "WHO Approved" }
-                  ].map((item, idx) => (
-                    <div key={idx} className="bg-slate-900/40 backdrop-blur-md p-3 rounded-2xl border border-white/15 text-center">
-                      <div className="text-sm font-black text-white">{item.title}</div>
-                      <div className="text-[11px] font-bold text-cyan-300">{item.sub}</div>
-                    </div>
-                  ))}
-                </div>
               </motion.div>
 
-              {/* Right Column: Slide Info Card & Indicators */}
-              <div className="lg:col-span-4 flex flex-col justify-end items-end space-y-4">
-                
-                {/* Active Slide Info Card */}
-                <motion.div
-                  key={heroSlideIndex}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-slate-900/60 backdrop-blur-xl p-5 rounded-2xl border border-white/25 text-white max-w-sm w-full shadow-2xl space-y-2"
-                >
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="px-2.5 py-1 rounded-full bg-emerald-500 text-white font-black uppercase tracking-wider text-[10px]">
-                      {heroSlides[heroSlideIndex].highlight}
-                    </span>
-                    <span className="font-bold text-cyan-300">
-                      0{heroSlideIndex + 1} / 0{heroSlides.length}
-                    </span>
-                  </div>
-
-                  <h3 className="text-base font-extrabold leading-snug">
-                    {heroSlides[heroSlideIndex].title}
-                  </h3>
-
-                  <p className="text-slate-300 text-xs flex items-center gap-1.5 font-semibold">
-                    <FaHospital className="text-emerald-400 shrink-0" />
-                    {heroSlides[heroSlideIndex].badge}
-                  </p>
-                </motion.div>
-
-                {/* Slide Indicators Dots */}
-                <div className="flex items-center gap-2 bg-slate-900/50 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
-                  {heroSlides.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setHeroSlideIndex(idx)}
-                      className={`h-2.5 rounded-full transition-all duration-300 ${
-                        idx === heroSlideIndex ? 'bg-emerald-400 w-8' : 'bg-white/40 w-2.5 hover:bg-white'
-                      }`}
-                      aria-label={`Slide ${idx + 1}`}
-                    />
-                  ))}
-                </div>
-
+              {/* Slide Pagination Dots */}
+              <div className="flex items-center gap-2 bg-slate-900/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+                {heroSlides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setHeroSlideIndex(idx)}
+                    className={`h-2.5 rounded-full transition-all duration-300 ${
+                      idx === heroSlideIndex ? 'bg-emerald-400 w-8' : 'bg-white/40 w-2.5 hover:bg-white'
+                    }`}
+                    aria-label={`Slide ${idx + 1}`}
+                  />
+                ))}
               </div>
 
             </div>
-          </div>
 
+          </div>
         </div>
+
       </section>
 
       {/* 2. KEY METRICS COUNTER */}
