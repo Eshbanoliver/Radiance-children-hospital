@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FaCalendarCheck, FaPhoneAlt, FaHeartbeat, FaStethoscope, FaBaby, 
   FaUserMd, FaSyringe, FaMicroscope, FaProcedures, FaChevronDown, 
   FaStar, FaQuoteLeft, FaAmbulance, FaAward, FaShieldAlt, FaCheckCircle,
-  FaHeart, FaLightbulb, FaHandsWash, FaBalanceScale, FaSyncAlt, FaUserCheck
+  FaHeart, FaLightbulb, FaHandsWash, FaBalanceScale, FaSyncAlt, FaUserCheck,
+  FaChevronLeft, FaChevronRight
 } from 'react-icons/fa';
 import { HOSPITAL_INFO, KEY_METRICS, SERVICES_DATA, CORE_VALUES, WHY_CHOOSE_US, TESTIMONIALS, FAQS } from '../data/hospitalData';
 import { SEO } from '../components/SEO';
+
+import hospitalExterior from '../assets/hospital-exterior.png';
+import hospitalNicu from '../assets/hospital-nicu.png';
+import hospitalNight from '../assets/hospital-night.png';
 
 interface HomeProps {
   onOpenBooking: () => void;
@@ -17,6 +22,44 @@ interface HomeProps {
 export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
   const [activeFaq, setActiveFaq] = useState<string | null>('1');
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [heroSlideIndex, setHeroSlideIndex] = useState(0);
+
+  const heroSlides = [
+    {
+      image: hospitalExterior,
+      title: "Radiant Children's Hospital Building",
+      badge: "9 Kamla Nagar, 100 Feet Road, Udaipur",
+      highlight: "Advanced Child Healthcare Infrastructure"
+    },
+    {
+      image: hospitalNicu,
+      title: "Level III NICU & PICU Unit",
+      badge: "State-of-the-Art Incubators & Ventilators",
+      highlight: "Specialized Newborn & Infant Care"
+    },
+    {
+      image: hospitalNight,
+      title: "24×7 Emergency Desk & Reception",
+      badge: "24 Hours Response • Udaipur",
+      highlight: "Emergency Pediatricians Always On-Call"
+    }
+  ];
+
+  // Auto slide hero every 4.5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroSlideIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
+
+  const nextHeroSlide = () => {
+    setHeroSlideIndex((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevHeroSlide = () => {
+    setHeroSlideIndex((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
 
   const toggleFaq = (id: string) => {
     setActiveFaq(activeFaq === id ? null : id);
@@ -99,7 +142,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
               </div>
             </motion.div>
 
-            {/* Right Interactive Hero Card with Floating Icons */}
+            {/* Right Hero Image Slider */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -108,32 +151,79 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
             >
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 
-                {/* Main Hero Card */}
-                <div className="relative rounded-3xl overflow-hidden glass-panel p-4 border border-white/80 shadow-2xl">
+                {/* Main Hero Card Container */}
+                <div className="relative rounded-3xl overflow-hidden glass-panel p-3.5 border border-white/80 shadow-2xl">
+                  
                   <div className="relative h-96 sm:h-[420px] rounded-2xl overflow-hidden group">
-                    <img
-                      src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800"
-                      alt="Caring Doctors and Children at Radiant Children's Hospital"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
-                    
-                    <div className="absolute bottom-6 left-6 right-6 text-white">
-                      <div className="inline-block px-3 py-1 bg-emerald-500 text-white font-bold text-xs rounded-full mb-2 shadow-md">
-                        24×7 Pediatric Emergency Desk
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={heroSlideIndex}
+                        src={heroSlides[heroSlideIndex].image}
+                        alt={heroSlides[heroSlideIndex].title}
+                        initial={{ opacity: 0, scale: 1.08 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.96 }}
+                        transition={{ duration: 0.6 }}
+                        className="w-full h-full object-cover"
+                        loading="eager"
+                      />
+                    </AnimatePresence>
+
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-transparent pointer-events-none" />
+
+                    {/* Arrow Navigation Controls */}
+                    <button
+                      onClick={prevHeroSlide}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/40 hover:bg-slate-900/80 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-md hover:scale-110"
+                      aria-label="Previous slide"
+                    >
+                      <FaChevronLeft className="text-sm" />
+                    </button>
+
+                    <button
+                      onClick={nextHeroSlide}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/40 hover:bg-slate-900/80 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-md hover:scale-110"
+                      aria-label="Next slide"
+                    >
+                      <FaChevronRight className="text-sm" />
+                    </button>
+
+                    {/* Slide Caption Box */}
+                    <div className="absolute bottom-5 left-5 right-5 text-white z-10">
+                      <div className="inline-block px-3 py-1 bg-emerald-500 text-white font-extrabold text-[11px] rounded-full mb-1.5 shadow-md uppercase tracking-wider">
+                        {heroSlides[heroSlideIndex].highlight}
                       </div>
-                      <h3 className="text-xl font-black">Expert Neonatologists & Pediatricians</h3>
-                      <p className="text-slate-200 text-xs mt-1">9 Kamla Nagar, 100 Feet Road, Udaipur</p>
+                      <h3 className="text-lg sm:text-xl font-black leading-snug">
+                        {heroSlides[heroSlideIndex].title}
+                      </h3>
+                      <p className="text-slate-200 text-xs mt-0.5">
+                        {heroSlides[heroSlideIndex].badge}
+                      </p>
+
+                      {/* Dots Indicators */}
+                      <div className="flex items-center gap-1.5 mt-3">
+                        {heroSlides.map((_, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => setHeroSlideIndex(idx)}
+                            className={`h-2 rounded-full transition-all duration-300 ${
+                              idx === heroSlideIndex ? 'bg-emerald-400 w-7' : 'bg-white/40 w-2 hover:bg-white'
+                            }`}
+                            aria-label={`Go to slide ${idx + 1}`}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
+
                 </div>
 
                 {/* Animated Floating Badges */}
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute -top-6 -left-6 glass-panel p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-white"
+                  className="absolute -top-6 -left-6 glass-panel p-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-white z-20"
                 >
                   <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-xl shadow-md">
                     <FaBaby />
@@ -147,7 +237,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                  className="absolute -bottom-6 -right-4 glass-panel p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-white"
+                  className="absolute -bottom-6 -right-4 glass-panel p-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-white z-20"
                 >
                   <div className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center text-xl shadow-md">
                     <FaAmbulance />
@@ -236,13 +326,13 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
 
               <div className="lg:col-span-6 grid grid-cols-2 gap-4">
                 <img
-                  src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=500"
-                  alt="Neonatal Care Nursery"
+                  src={hospitalNicu}
+                  alt="Radiant Children's Hospital Level III NICU"
                   className="rounded-2xl shadow-md h-52 sm:h-64 w-full object-cover hover:scale-105 transition-transform"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=500"
-                  alt="Pediatrician Examining Child"
+                  src={hospitalExterior}
+                  alt="Radiant Children's Hospital Exterior"
                   className="rounded-2xl shadow-md h-52 sm:h-64 w-full object-cover mt-6 hover:scale-105 transition-transform"
                 />
               </div>
