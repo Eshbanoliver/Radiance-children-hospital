@@ -6,7 +6,8 @@ import {
   FaUserMd, FaSyringe, FaMicroscope, FaProcedures, FaChevronDown, 
   FaStar, FaQuoteLeft, FaAmbulance, FaAward, FaShieldAlt, FaCheckCircle,
   FaHeart, FaChevronLeft, FaChevronRight, FaHospital, FaChild, FaWind,
-  FaPills, FaXRay, FaFlask, FaBolt, FaVideo, FaBed, FaHandsWash as FaHands
+  FaPills, FaXRay, FaFlask, FaBolt, FaVideo, FaBed, FaHandsWash as FaHands,
+  FaAppleAlt, FaThermometerHalf, FaLungs
 } from 'react-icons/fa';
 import { 
   HOSPITAL_INFO, KEY_METRICS, SERVICES_DATA, WHY_CHOOSE_US, 
@@ -1019,77 +1020,416 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 8. SERVICES GRID */}
+      {/* 8. SYMMETRICAL MASONRY GRID: COMPREHENSIVE PEDIATRIC SPECIALTIES */}
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs">
-              <FaStethoscope /> Comprehensive Pediatric Specialties
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-xs shadow-sm">
+              <FaStethoscope className="text-emerald-600" /> Comprehensive Pediatric Specialties
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
               World-Class Facilities & <span className="gradient-text">Child Specialities</span>
             </h2>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
+              A balanced clinical spectrum of pediatric, neonatal, critical intensive care, and diagnostic specialties.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {SERVICES_DATA.map((service, idx) => (
+          {/* Symmetrical 3-Column Masonry Waterfall Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            
+            {/* COLUMN 1 (LEFT COLUMN - Symmetrical Left Wing) */}
+            <div className="space-y-8">
+              {/* Card 1 (TALL FEATURE MASONRY CARD - Level III NICU) */}
               <motion.div
-                key={service.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="glass-card p-6 rounded-3xl relative flex flex-col justify-between group border border-white/80"
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="rounded-3xl bg-white border border-cyan-200/90 shadow-xl shadow-cyan-500/10 overflow-hidden flex flex-col justify-between transition-all duration-300 group hover:shadow-cyan-500/25"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary/10 to-accent/20 text-primary flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                      {service.id === 'general-pediatrics' && <FaStethoscope />}
-                      {service.id === 'newborn-care' && <FaBaby />}
-                      {service.id === 'neonatology' && <FaUserMd />}
-                      {service.id === 'nicu' && <FaMicroscope />}
-                      {service.id === 'picu' && <FaProcedures />}
-                      {service.id === 'vaccination-centre' && <FaSyringe />}
-                      {service.id === 'child-emergency-care' && <FaAmbulance />}
-                      {service.id !== 'general-pediatrics' && service.id !== 'newborn-care' && service.id !== 'neonatology' && service.id !== 'nicu' && service.id !== 'picu' && service.id !== 'vaccination-centre' && service.id !== 'child-emergency-care' && <FaHeartbeat />}
+                <div className="bg-gradient-to-r from-cyan-900 via-teal-900 to-slate-900 text-white p-6 relative overflow-hidden">
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 rounded-full bg-cyan-400/20 text-cyan-300 font-black text-[10px] uppercase border border-cyan-400/30">
+                      {SERVICES_DATA[0].badge || 'Critical Care'}
+                    </span>
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-400 to-teal-400 text-slate-950 flex items-center justify-center text-xl font-black shadow-lg">
+                      <FaMicroscope />
                     </div>
-
-                    {service.badge && (
-                      <span className="px-3 py-1 rounded-full bg-emerald-500 text-white font-extrabold text-[10px] uppercase shadow-sm">
-                        {service.badge}
-                      </span>
-                    )}
                   </div>
-
-                  <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-
-                  <p className="text-slate-600 text-sm mt-2 leading-relaxed">
-                    {service.shortDesc}
-                  </p>
-
-                  <ul className="mt-4 space-y-1.5">
-                    {service.highlights.slice(0, 3).map((h, i) => (
-                      <li key={i} className="text-xs text-slate-600 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="text-2xl font-black text-white mt-4">{SERVICES_DATA[0].title}</h3>
                 </div>
 
-                <div className="pt-6 mt-4 border-t border-slate-200/60">
+                <div className="p-6 space-y-4">
+                  <p className="text-slate-600 text-xs font-semibold leading-relaxed">
+                    {SERVICES_DATA[0].fullDesc}
+                  </p>
+
+                  <div className="space-y-1.5 pt-2">
+                    {SERVICES_DATA[0].highlights.map((h, i) => (
+                      <div key={i} className="flex items-center gap-2 p-2 rounded-xl bg-cyan-50/70 border border-cyan-100 text-xs font-bold text-cyan-950">
+                        <FaCheckCircle className="text-cyan-600 text-xs shrink-0" />
+                        <span>{h}</span>
+                      </div>
+                    ))}
+                  </div>
+
                   <button
                     onClick={onOpenBooking}
-                    className="w-full py-2.5 rounded-xl bg-slate-100 group-hover:bg-primary group-hover:text-white text-slate-800 font-bold text-xs transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-2xl gradient-btn text-white font-extrabold text-xs shadow-md flex items-center justify-center gap-2"
                   >
-                    <FaCalendarCheck /> Book Consult for {service.title}
+                    <FaCalendarCheck /> Book Consult for {SERVICES_DATA[0].title}
                   </button>
                 </div>
               </motion.div>
-            ))}
+
+              {/* Card 2 (SHORT MASONRY PILL CARD - OPD Services) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="rounded-3xl bg-gradient-to-br from-white via-blue-50/40 to-white border border-blue-200/80 p-5 shadow-lg flex items-center justify-between gap-4 transition-all group hover:shadow-blue-500/20"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-xl shrink-0 font-black shadow-md">
+                    <FaStethoscope />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-black text-slate-900 group-hover:text-blue-600 transition-colors">{SERVICES_DATA[3].title}</h4>
+                    <p className="text-[11px] text-slate-500 font-semibold">{SERVICES_DATA[3].shortDesc}</p>
+                  </div>
+                </div>
+                <button onClick={onOpenBooking} className="px-3 py-2 rounded-xl bg-blue-100 text-blue-800 font-black text-[11px] shrink-0 hover:bg-blue-600 hover:text-white transition-colors">
+                  Book
+                </button>
+              </motion.div>
+
+              {/* Card 3 (MEDIUM MASONRY CARD - General Pediatrics) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="rounded-3xl bg-white border border-slate-200 p-6 shadow-xl space-y-4 hover:border-primary/40 transition-all"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl font-black">
+                    <FaChild />
+                  </div>
+                  <span className="px-2.5 py-0.5 rounded-full bg-slate-100 font-extrabold text-[10px] text-slate-600">0 to 18 Years</span>
+                </div>
+                <h3 className="text-xl font-black text-slate-900">{SERVICES_DATA[6].title}</h3>
+                <p className="text-slate-600 text-xs font-semibold leading-relaxed">{SERVICES_DATA[6].shortDesc}</p>
+                <div className="pt-2">
+                  <button onClick={onOpenBooking} className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-slate-800 font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
+                    <FaCalendarCheck /> Schedule Consultation
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Card 4 (TALL FEATURE MASONRY CARD - Growth & Nutrition) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="rounded-3xl bg-white border border-amber-200/90 shadow-xl shadow-amber-500/10 overflow-hidden flex flex-col justify-between transition-all duration-300 group hover:shadow-amber-500/25"
+              >
+                <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 text-white p-6 relative overflow-hidden">
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 rounded-full bg-white/20 text-white font-black text-[10px] uppercase border border-white/30">
+                      Child Growth
+                    </span>
+                    <div className="w-12 h-12 rounded-2xl bg-white text-amber-600 flex items-center justify-center text-xl font-black shadow-lg">
+                      <FaAppleAlt />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-black text-white mt-4">{SERVICES_DATA[9].title}</h3>
+                </div>
+
+                <div className="p-6 space-y-4">
+                  <p className="text-slate-600 text-xs font-semibold leading-relaxed">
+                    {SERVICES_DATA[9].fullDesc}
+                  </p>
+
+                  <div className="space-y-1.5 pt-2">
+                    {SERVICES_DATA[9].highlights.map((h, i) => (
+                      <div key={i} className="flex items-center gap-2 p-2 rounded-xl bg-amber-50 border border-amber-200 text-xs font-bold text-amber-950">
+                        <FaCheckCircle className="text-amber-600 text-xs shrink-0" />
+                        <span>{h}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={onOpenBooking}
+                    className="w-full py-3 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-extrabold text-xs shadow-md flex items-center justify-center gap-2"
+                  >
+                    <FaCalendarCheck /> Book Consult for {SERVICES_DATA[9].title}
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* COLUMN 2 (CENTER COLUMN - Symmetrical Center Axis) */}
+            <div className="space-y-8">
+              {/* Card 5 (HERO CENTER MASONRY CARD - Highly Equipped PICU) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="rounded-3xl bg-white border border-purple-200/90 shadow-xl shadow-purple-500/10 overflow-hidden flex flex-col justify-between transition-all duration-300 group hover:shadow-purple-500/25"
+              >
+                <div className="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white p-6 relative overflow-hidden">
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 rounded-full bg-purple-400/20 text-purple-300 font-black text-[10px] uppercase border border-purple-400/30">
+                      {SERVICES_DATA[1].badge || 'Pediatric ICU'}
+                    </span>
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-400 to-pink-400 text-slate-950 flex items-center justify-center text-xl font-black shadow-lg">
+                      <FaProcedures />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-black text-white mt-4">{SERVICES_DATA[1].title}</h3>
+                </div>
+
+                <div className="p-6 space-y-4">
+                  <p className="text-slate-600 text-xs font-semibold leading-relaxed">
+                    {SERVICES_DATA[1].fullDesc}
+                  </p>
+
+                  <div className="space-y-1.5 pt-2">
+                    {SERVICES_DATA[1].highlights.map((h, i) => (
+                      <div key={i} className="flex items-center gap-2 p-2 rounded-xl bg-purple-50 border border-purple-200 text-xs font-bold text-purple-950">
+                        <FaCheckCircle className="text-purple-600 text-xs shrink-0" />
+                        <span>{h}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={onOpenBooking}
+                    className="w-full py-3 rounded-2xl bg-purple-700 hover:bg-purple-800 text-white font-extrabold text-xs shadow-md flex items-center justify-center gap-2"
+                  >
+                    <FaCalendarCheck /> Book Consult for {SERVICES_DATA[1].title}
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Card 6 (MEDIUM MASONRY CARD - Intact Survival & Newborn Screening) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="rounded-3xl bg-white border border-emerald-200 p-6 shadow-xl space-y-4 hover:border-emerald-400 transition-all"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-xl font-black">
+                    <FaHeartbeat />
+                  </div>
+                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-[10px] uppercase">ROP & OAE Checks</span>
+                </div>
+                <h3 className="text-xl font-black text-slate-900">{SERVICES_DATA[4].title}</h3>
+                <p className="text-slate-600 text-xs font-semibold leading-relaxed">{SERVICES_DATA[4].shortDesc}</p>
+                <div className="pt-2">
+                  <button onClick={onOpenBooking} className="w-full py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-600 hover:text-white text-emerald-900 font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
+                    <FaCalendarCheck /> Schedule Screening
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Card 7 (SHORT MASONRY PILL CARD - Newborn Care) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="rounded-3xl bg-gradient-to-br from-white via-teal-50/40 to-white border border-teal-200/80 p-5 shadow-lg flex items-center justify-between gap-4 transition-all group hover:shadow-teal-500/20"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center text-xl shrink-0 font-black shadow-md">
+                    <FaBaby />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-black text-slate-900 group-hover:text-teal-600 transition-colors">{SERVICES_DATA[7].title}</h4>
+                    <p className="text-[11px] text-slate-500 font-semibold">{SERVICES_DATA[7].shortDesc}</p>
+                  </div>
+                </div>
+                <button onClick={onOpenBooking} className="px-3 py-2 rounded-xl bg-teal-100 text-teal-800 font-black text-[11px] shrink-0 hover:bg-teal-600 hover:text-white transition-colors">
+                  Book
+                </button>
+              </motion.div>
+
+              {/* Card 8 (MEDIUM MASONRY CARD - Asthma & Allergy Care) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="rounded-3xl bg-white border border-sky-200 p-6 shadow-xl space-y-4 hover:border-sky-400 transition-all"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-600 flex items-center justify-center text-xl font-black">
+                    <FaLungs />
+                  </div>
+                  <span className="px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 font-extrabold text-[10px]">Nebulization Unit</span>
+                </div>
+                <h3 className="text-xl font-black text-slate-900">{SERVICES_DATA[10].title}</h3>
+                <p className="text-slate-600 text-xs font-semibold leading-relaxed">{SERVICES_DATA[10].shortDesc}</p>
+                <div className="pt-2">
+                  <button onClick={onOpenBooking} className="w-full py-2.5 rounded-xl bg-sky-50 hover:bg-sky-600 hover:text-white text-sky-900 font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
+                    <FaCalendarCheck /> Schedule Allergy Consult
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* COLUMN 3 (RIGHT COLUMN - Symmetrical Right Wing) */}
+            <div className="space-y-8">
+              {/* Card 9 (TALL FEATURE MASONRY CARD - Transport Ambulance) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="rounded-3xl bg-white border border-rose-200/90 shadow-xl shadow-rose-500/10 overflow-hidden flex flex-col justify-between transition-all duration-300 group hover:shadow-rose-500/25"
+              >
+                <div className="bg-gradient-to-r from-rose-900 via-pink-900 to-slate-900 text-white p-6 relative overflow-hidden">
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 rounded-full bg-rose-400/20 text-rose-300 font-black text-[10px] uppercase border border-rose-400/30">
+                      {SERVICES_DATA[2].badge || '24x7 Transport'}
+                    </span>
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-rose-400 to-pink-400 text-slate-950 flex items-center justify-center text-xl font-black shadow-lg">
+                      <FaAmbulance />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-black text-white mt-4">{SERVICES_DATA[2].title}</h3>
+                </div>
+
+                <div className="p-6 space-y-4">
+                  <p className="text-slate-600 text-xs font-semibold leading-relaxed">
+                    {SERVICES_DATA[2].fullDesc}
+                  </p>
+
+                  <div className="space-y-1.5 pt-2">
+                    {SERVICES_DATA[2].highlights.map((h, i) => (
+                      <div key={i} className="flex items-center gap-2 p-2 rounded-xl bg-rose-50 border border-rose-200 text-xs font-bold text-rose-950">
+                        <FaCheckCircle className="text-rose-600 text-xs shrink-0" />
+                        <span>{h}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <a
+                    href={`tel:${HOSPITAL_INFO.phone}`}
+                    className="w-full py-3 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs shadow-md flex items-center justify-center gap-2"
+                  >
+                    <FaPhoneAlt /> Call Ambulance: {HOSPITAL_INFO.phone}
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Card 10 (SHORT MASONRY PILL CARD - Vaccination Centre) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="rounded-3xl bg-gradient-to-br from-white via-emerald-50/40 to-white border border-emerald-200/80 p-5 shadow-lg flex items-center justify-between gap-4 transition-all group hover:shadow-emerald-500/20"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-xl shrink-0 font-black shadow-md">
+                    <FaSyringe />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-black text-slate-900 group-hover:text-emerald-600 transition-colors">{SERVICES_DATA[5].title}</h4>
+                    <p className="text-[11px] text-slate-500 font-semibold">{SERVICES_DATA[5].shortDesc}</p>
+                  </div>
+                </div>
+                <button onClick={onOpenBooking} className="px-3 py-2 rounded-xl bg-emerald-100 text-emerald-800 font-black text-[11px] shrink-0 hover:bg-emerald-600 hover:text-white transition-colors">
+                  Book
+                </button>
+              </motion.div>
+
+              {/* Card 11 (MEDIUM MASONRY CARD - In-House ABG & Diagnostics) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="rounded-3xl bg-white border border-indigo-200 p-6 shadow-xl space-y-4 hover:border-indigo-400 transition-all"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center text-xl font-black">
+                    <FaFlask />
+                  </div>
+                  <span className="px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-800 font-extrabold text-[10px]">Bedside Lab</span>
+                </div>
+                <h3 className="text-xl font-black text-slate-900">{SERVICES_DATA[8].title}</h3>
+                <p className="text-slate-600 text-xs font-semibold leading-relaxed">{SERVICES_DATA[8].shortDesc}</p>
+                <div className="pt-2">
+                  <button onClick={onOpenBooking} className="w-full py-2.5 rounded-xl bg-indigo-50 hover:bg-indigo-600 hover:text-white text-indigo-900 font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
+                    <FaCalendarCheck /> Diagnostic Consult
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Card 12 (TALL FEATURE MASONRY CARD - Fever & Infection Management) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="rounded-3xl bg-white border border-teal-200/90 shadow-xl shadow-teal-500/10 overflow-hidden flex flex-col justify-between transition-all duration-300 group hover:shadow-teal-500/25"
+              >
+                <div className="bg-gradient-to-r from-teal-800 via-emerald-800 to-slate-900 text-white p-6 relative overflow-hidden">
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 rounded-full bg-white/20 text-white font-black text-[10px] uppercase border border-white/30">
+                      Infection Care
+                    </span>
+                    <div className="w-12 h-12 rounded-2xl bg-white text-teal-700 flex items-center justify-center text-xl font-black shadow-lg">
+                      <FaThermometerHalf />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-black text-white mt-4">{SERVICES_DATA[11].title}</h3>
+                </div>
+
+                <div className="p-6 space-y-4">
+                  <p className="text-slate-600 text-xs font-semibold leading-relaxed">
+                    {SERVICES_DATA[11].fullDesc}
+                  </p>
+
+                  <div className="space-y-1.5 pt-2">
+                    {SERVICES_DATA[11].highlights.map((h, i) => (
+                      <div key={i} className="flex items-center gap-2 p-2 rounded-xl bg-teal-50 border border-teal-200 text-xs font-bold text-teal-950">
+                        <FaCheckCircle className="text-teal-600 text-xs shrink-0" />
+                        <span>{h}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={onOpenBooking}
+                    className="w-full py-3 rounded-2xl bg-teal-700 hover:bg-teal-800 text-white font-extrabold text-xs shadow-md flex items-center justify-center gap-2"
+                  >
+                    <FaCalendarCheck /> Book Consult for {SERVICES_DATA[11].title}
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+
+          </div>
+
+          <div className="text-center pt-4">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full gradient-btn text-white font-extrabold text-base shadow-xl hover:scale-105 transition-all"
+            >
+              Explore All 12 Specialties & Diagnostic Services
+            </Link>
           </div>
 
         </div>
