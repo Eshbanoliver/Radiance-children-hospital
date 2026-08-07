@@ -6,12 +6,11 @@ import {
   FaUserMd, FaSyringe, FaMicroscope, FaProcedures, FaChevronDown, 
   FaStar, FaQuoteLeft, FaAmbulance, FaAward, FaShieldAlt, FaCheckCircle,
   FaHeart, FaChevronLeft, FaChevronRight, FaHospital, FaChild, FaWind,
-  FaPills, FaXRay, FaFlask, FaBolt, FaVideo, FaBed
+  FaPills, FaXRay, FaFlask, FaBolt, FaVideo, FaBed, FaHandsWash as FaHands
 } from 'react-icons/fa';
 import { 
   HOSPITAL_INFO, KEY_METRICS, SERVICES_DATA, WHY_CHOOSE_US, 
-  TESTIMONIALS, FAQS, INFECTION_CONTROL_PROTOCOLS, 
-  CHILDREN_FACILITIES_LIST, TRANSPORT_SYSTEM_DETAILS 
+  TESTIMONIALS, FAQS, CHILDREN_FACILITIES_LIST, TRANSPORT_SYSTEM_DETAILS 
 } from '../data/hospitalData';
 import { SEO } from '../components/SEO';
 
@@ -561,33 +560,159 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 5. INFECTION CONTROL & SAFETY STANDARDS ("PREVENTION IS BETTER THAN CURE") */}
+      {/* 5. MULTI-COLOR GRAPHIC "PREVENTION IS BETTER THAN CURE — INFECTION CONTROL PROTOCOLS" */}
       <section className="relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100 text-rose-800 font-bold text-xs">
-              <FaShieldAlt /> Safety & Sterilization First
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100 text-rose-800 font-extrabold text-xs shadow-sm">
+              <FaShieldAlt className="text-rose-500" /> Hospital Sterilization & Hygiene Standards
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
               Prevention is Better Than Cure <span className="gradient-text">— Infection Control Protocols</span>
             </h2>
-            <p className="text-slate-600 text-sm">
-              We maintain hospital-wide sterile protocols to protect premature infants and vulnerable children.
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
+              We enforce strict multi-tier sterilization and hygiene protocols across all ICU wards to protect fragile newborns and children from cross-infections.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {INFECTION_CONTROL_PROTOCOLS.map((protocol, idx) => (
-              <div key={idx} className="glass-card p-5 rounded-2xl border border-white/80 space-y-3 hover:shadow-xl transition-all">
-                <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-lg font-black">
-                  <FaShieldAlt />
-                </div>
-                <p className="text-slate-700 text-xs font-bold leading-relaxed">
-                  {protocol}
-                </p>
-              </div>
-            ))}
+            {[
+              {
+                title: "Sterilizer Clean Air System",
+                desc: "Sterilizer systems for clean air filtration in intensive care areas.",
+                tag: "Air Sterilization",
+                gradient: "from-cyan-500 via-teal-500 to-emerald-500",
+                badgeBg: "bg-cyan-50 text-cyan-800 border-cyan-200",
+                shadow: "hover:shadow-cyan-500/20 hover:border-cyan-400",
+                step: "01",
+                icon: FaWind
+              },
+              {
+                title: "Micro Defogger Area Fumigation",
+                desc: "Micro defogger machine for total area & ward fumigation.",
+                tag: "Ward Defogger",
+                gradient: "from-indigo-600 via-purple-600 to-pink-500",
+                badgeBg: "bg-indigo-50 text-indigo-800 border-indigo-200",
+                shadow: "hover:shadow-indigo-500/20 hover:border-indigo-400",
+                step: "02",
+                icon: FaShieldAlt
+              },
+              {
+                title: "Smart Access Controlled NICU",
+                desc: "Smart access system restricting entry into sterile NICU nurseries.",
+                tag: "Access Control",
+                gradient: "from-emerald-500 via-teal-500 to-cyan-500",
+                badgeBg: "bg-emerald-50 text-emerald-800 border-emerald-200",
+                shadow: "hover:shadow-emerald-500/20 hover:border-emerald-400",
+                step: "03",
+                icon: FaHospital
+              },
+              {
+                title: "ETO Sterilization System",
+                desc: "Ethylene Oxide (ETO) Sterilization of critical medical instruments.",
+                tag: "ETO Sterilizer",
+                gradient: "from-rose-500 via-pink-500 to-rose-600",
+                badgeBg: "bg-rose-50 text-rose-800 border-rose-200",
+                shadow: "hover:shadow-rose-500/20 hover:border-rose-400",
+                step: "04",
+                icon: FaMicroscope
+              },
+              {
+                title: "Strict Hand Hygiene Mandate",
+                desc: "Strict emphasis on 6-step hand washing & alcohol rub before every touch.",
+                tag: "Hand Hygiene",
+                gradient: "from-sky-400 via-blue-500 to-indigo-600",
+                badgeBg: "bg-sky-50 text-sky-800 border-sky-200",
+                shadow: "hover:shadow-sky-500/20 hover:border-sky-400",
+                step: "05",
+                icon: FaHands
+              },
+              {
+                title: "Minimal Handling Cluster Care",
+                desc: "Cluster care approach and minimal handling of fragile premature infants.",
+                tag: "Fragile Care",
+                gradient: "from-amber-400 via-orange-500 to-amber-600",
+                badgeBg: "bg-amber-50 text-amber-800 border-amber-200",
+                shadow: "hover:shadow-amber-500/20 hover:border-amber-400",
+                step: "06",
+                icon: FaBaby
+              },
+              {
+                title: "Antibiotic Stewardship Protocol",
+                desc: "Evidence-based protocol system for antibiotic therapy & treatment of neonatal illness.",
+                tag: "Rx Protocol",
+                gradient: "from-violet-600 via-fuchsia-500 to-pink-500",
+                badgeBg: "bg-violet-50 text-violet-800 border-violet-200",
+                shadow: "hover:shadow-violet-500/20 hover:border-violet-400",
+                step: "07",
+                icon: FaPills
+              },
+              {
+                title: "Constant Self-Audit System",
+                desc: "Self-Audit in endeavor constantly to upgrade clinical standards in neonatology.",
+                tag: "Clinical Audit",
+                gradient: "from-teal-500 via-emerald-500 to-emerald-700",
+                badgeBg: "bg-teal-50 text-teal-800 border-teal-200",
+                shadow: "hover:shadow-teal-500/20 hover:border-teal-400",
+                step: "08",
+                icon: FaCheckCircle
+              }
+            ].map((card, idx) => {
+              const IconComp = card.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.06 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className={`rounded-3xl bg-white border border-slate-200 shadow-xl overflow-hidden flex flex-col justify-between transition-all duration-300 group ${card.shadow}`}
+                >
+                  {/* Top Graphic Header with Curved Wave / Diagonal Accent */}
+                  <div className={`h-24 bg-gradient-to-r ${card.gradient} p-4 relative overflow-hidden flex items-start justify-between text-white`}>
+                    <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-white/20 rounded-full blur-xl pointer-events-none" />
+                    
+                    <span className="px-2.5 py-0.5 rounded-full bg-black/20 backdrop-blur-md font-black text-[10px] uppercase tracking-wider text-white border border-white/30">
+                      {card.tag}
+                    </span>
+
+                    <span className="font-black text-2xl text-white/40 tracking-tighter">
+                      #{card.step}
+                    </span>
+                  </div>
+
+                  {/* Floating 3D Graphic Icon Container (No Clipping) */}
+                  <div className="-mt-9 px-6 flex justify-between items-end relative z-10">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${card.gradient} text-white flex items-center justify-center text-2xl shadow-lg border-2 border-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                      <IconComp />
+                    </div>
+                  </div>
+
+                  {/* Content Box */}
+                  <div className="p-6 pt-3 space-y-2 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-base font-black text-slate-900 group-hover:text-primary transition-colors leading-snug">
+                        {card.title}
+                      </h3>
+                      <p className="text-slate-600 text-xs font-semibold leading-relaxed mt-1.5">
+                        {card.desc}
+                      </p>
+                    </div>
+
+                    <div className="pt-4 mt-2 border-t border-slate-100 flex items-center justify-between">
+                      <span className={`px-2.5 py-0.5 rounded-full font-black text-[10px] border ${card.badgeBg}`}>
+                        Strict Safety Protocol
+                      </span>
+                      <span className="text-[11px] font-extrabold text-emerald-600 flex items-center gap-1">
+                        <FaCheckCircle className="text-xs" /> Verified
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
 
         </div>
