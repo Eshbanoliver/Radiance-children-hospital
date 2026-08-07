@@ -270,9 +270,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
       </section>
 
       {/* 2. EYE-CATCHY VIBRANT KEY METRICS SECTION */}
-      <section className="relative z-10 -mt-6 sm:-mt-10">
+      <section className="relative z-10 pt-8 sm:pt-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 pt-4">
             {KEY_METRICS.map((metric, idx) => {
               const theme = metricThemes[idx % metricThemes.length];
               const IconComp = theme.Icon;
@@ -285,22 +285,22 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.08 }}
                   whileHover={{ y: -8, scale: 1.03 }}
-                  className="relative group rounded-3xl bg-white/90 backdrop-blur-xl border border-white/80 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden pt-8 pb-5 px-4 text-center flex flex-col justify-between items-center"
+                  className="relative group rounded-3xl bg-white/95 backdrop-blur-xl border border-slate-100 shadow-xl hover:shadow-2xl transition-all duration-300 pt-9 pb-5 px-4 text-center flex flex-col justify-between items-center"
                 >
                   {/* Top Glowing Bar */}
-                  <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${theme.gradient}`} />
+                  <div className={`absolute top-0 left-6 right-6 h-1 rounded-b-full bg-gradient-to-r ${theme.gradient}`} />
 
-                  {/* Floating 3D Icon Badge */}
-                  <div className={`absolute -top-6 left-1/2 -translate-x-1/2 w-13 h-13 rounded-2xl ${theme.iconBg} text-white flex items-center justify-center text-xl shadow-lg ${theme.shadow} group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-white`}>
+                  {/* Floating 3D Icon Badge (No Clipping) */}
+                  <div className={`absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl ${theme.iconBg} text-white flex items-center justify-center text-xl shadow-lg ${theme.shadow} group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-white z-10`}>
                     <IconComp />
                   </div>
 
                   {/* Number Value */}
-                  <div className="mt-2">
+                  <div className="mt-1">
                     <span className={`text-3xl sm:text-4xl font-black tracking-tight bg-gradient-to-r ${theme.gradient} bg-clip-text text-transparent group-hover:scale-105 transition-transform inline-block`}>
                       {metric.value}
                     </span>
-                    <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider mt-1 leading-tight">
+                    <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider mt-1.5 leading-tight">
                       {metric.label}
                     </h3>
                   </div>
