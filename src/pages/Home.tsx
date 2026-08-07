@@ -6,7 +6,7 @@ import {
   FaUserMd, FaSyringe, FaMicroscope, FaProcedures, FaChevronDown, 
   FaStar, FaQuoteLeft, FaAmbulance, FaAward, FaShieldAlt, FaCheckCircle,
   FaHeart, FaLightbulb, FaHandsWash, FaBalanceScale, FaSyncAlt, FaUserCheck,
-  FaChevronLeft, FaChevronRight, FaHospital
+  FaChevronLeft, FaChevronRight, FaHospital, FaClock, FaChild
 } from 'react-icons/fa';
 import { HOSPITAL_INFO, KEY_METRICS, SERVICES_DATA, CORE_VALUES, WHY_CHOOSE_US, TESTIMONIALS, FAQS } from '../data/hospitalData';
 import { SEO } from '../components/SEO';
@@ -42,6 +42,52 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
       title: "24×7 Emergency Desk & Reception",
       badge: "24 Hours Emergency Response • Udaipur",
       highlight: "Round-the-Clock Pediatricians On-Call"
+    }
+  ];
+
+  // Metric theme configuration for vibrant 3D glass cards
+  const metricThemes = [
+    {
+      gradient: 'from-blue-600 via-cyan-500 to-teal-400',
+      iconBg: 'bg-gradient-to-tr from-blue-600 to-cyan-400',
+      shadow: 'shadow-blue-500/30',
+      badge: 'Verified Care',
+      Icon: FaChild
+    },
+    {
+      gradient: 'from-indigo-600 via-purple-500 to-pink-500',
+      iconBg: 'bg-gradient-to-tr from-indigo-600 to-purple-500',
+      shadow: 'shadow-purple-500/30',
+      badge: '15+ Yrs Expertise',
+      Icon: FaAward
+    },
+    {
+      gradient: 'from-rose-500 via-red-500 to-amber-500',
+      iconBg: 'bg-gradient-to-tr from-rose-500 to-amber-500',
+      shadow: 'shadow-rose-500/30',
+      badge: '24×7 Emergency',
+      Icon: FaClock
+    },
+    {
+      gradient: 'from-emerald-500 via-teal-400 to-cyan-400',
+      iconBg: 'bg-gradient-to-tr from-emerald-500 to-teal-400',
+      shadow: 'shadow-emerald-500/30',
+      badge: 'Child Focused',
+      Icon: FaHeart
+    },
+    {
+      gradient: 'from-cyan-600 via-sky-500 to-blue-500',
+      iconBg: 'bg-gradient-to-tr from-cyan-600 to-blue-500',
+      shadow: 'shadow-cyan-500/30',
+      badge: 'Level III NICU',
+      Icon: FaMicroscope
+    },
+    {
+      gradient: 'from-purple-600 via-violet-500 to-fuchsia-500',
+      iconBg: 'bg-gradient-to-tr from-purple-600 to-fuchsia-500',
+      shadow: 'shadow-fuchsia-500/30',
+      badge: 'Dedicated PICU',
+      Icon: FaProcedures
     }
   ];
 
@@ -223,26 +269,56 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
 
       </section>
 
-      {/* 2. KEY METRICS COUNTER */}
-      <section className="relative z-10">
+      {/* 2. EYE-CATCHY VIBRANT KEY METRICS SECTION */}
+      <section className="relative z-10 -mt-6 sm:-mt-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {KEY_METRICS.map((metric, idx) => (
-              <motion.div
-                key={metric.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="glass-card p-5 rounded-2xl text-center group"
-              >
-                <div className="text-3xl sm:text-4xl font-black text-primary group-hover:scale-110 transition-transform duration-300">
-                  {metric.value}
-                </div>
-                <div className="text-xs font-extrabold text-slate-800 mt-2">{metric.label}</div>
-                <div className="text-[11px] text-slate-500 font-medium mt-1 leading-snug">{metric.description}</div>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+            {KEY_METRICS.map((metric, idx) => {
+              const theme = metricThemes[idx % metricThemes.length];
+              const IconComp = theme.Icon;
+
+              return (
+                <motion.div
+                  key={metric.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  whileHover={{ y: -8, scale: 1.03 }}
+                  className="relative group rounded-3xl bg-white/90 backdrop-blur-xl border border-white/80 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden pt-8 pb-5 px-4 text-center flex flex-col justify-between items-center"
+                >
+                  {/* Top Glowing Bar */}
+                  <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${theme.gradient}`} />
+
+                  {/* Floating 3D Icon Badge */}
+                  <div className={`absolute -top-6 left-1/2 -translate-x-1/2 w-13 h-13 rounded-2xl ${theme.iconBg} text-white flex items-center justify-center text-xl shadow-lg ${theme.shadow} group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-white`}>
+                    <IconComp />
+                  </div>
+
+                  {/* Number Value */}
+                  <div className="mt-2">
+                    <span className={`text-3xl sm:text-4xl font-black tracking-tight bg-gradient-to-r ${theme.gradient} bg-clip-text text-transparent group-hover:scale-105 transition-transform inline-block`}>
+                      {metric.value}
+                    </span>
+                    <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider mt-1 leading-tight">
+                      {metric.label}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed mt-2 line-clamp-2">
+                    {metric.description}
+                  </p>
+
+                  {/* Bottom Highlight Tag */}
+                  <div className="mt-3 pt-2.5 border-t border-slate-100 w-full flex justify-center">
+                    <span className="px-2.5 py-0.5 rounded-full bg-slate-100 font-extrabold text-[10px] text-slate-600 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+                      {theme.badge}
+                    </span>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
