@@ -6,6 +6,8 @@ export const HOSPITAL_INFO = {
   subheading: "Trusted Pediatric Care, Neonatal Care & 24x7 Emergency Services in Udaipur",
   phone: "07424937788",
   whatsappPhone: "917424937788",
+  email: "radiantchildrenhospital@gmail.com",
+  capacity: "40 Bedded Neonatal & Paediatric Care Centre",
   address: "9 Kamla Nagar, 100 Feet Road, Behind Ashoka Palace, New Bhupalpura, Shobhagpura, Udaipur, Rajasthan 313001",
   city: "Udaipur",
   state: "Rajasthan",
@@ -13,18 +15,19 @@ export const HOSPITAL_INFO = {
   facebookUrl: "https://www.facebook.com/RadiantChildrenHospital",
   instagramUrl: "https://www.instagram.com/radiantch/",
   googleMapsIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d922350.4716782165!2d72.6897553765913!3d25.440552555194934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5fb71a80425%3A0x3965db8c2851267f!2sRadiant%20Children%E2%80%99s%20Hospital!5e0!3m2!1sen!2sin!4v1786074857847!5m2!1sen!2sin",
-  description: "Radiant Children's Hospital provides comprehensive healthcare services for children from birth to 18 years of age. We specialize in pediatric care, neonatology, vaccinations, emergency services, NICU, PICU, and advanced child healthcare with compassionate treatment and experienced doctors.",
-  hours: "24 Hours / 7 Days a Week (Emergency & OPD)",
+  description: "Radiant Children's Hospital is a 40-bedded advanced Neonatal & Paediatric Care Centre in Udaipur providing 24x7 emergency & availability of Neonatal & Paediatric Intensivists. Fully equipped with Level III NICU (HFOV, CPAP, Mira Cradle), PICU (Ventilators, Volumetric Pumps), In-house ABG Analyzer, 2D Echo, X-Ray, Pharmacy, and Neonatal Ambulance Transport.",
+  opdHours: "Monday - Saturday: Morning 9:00 AM - 3:00 PM | Evening 5:00 PM - 9:00 PM",
+  emergencyHours: "24×7 Emergency & OPD (365 Days)",
   emergencyHotline: "07424937788",
   specialties: [
-    "All diseases from age 0 to 18 years",
-    "Vaccination Centre",
-    "OPD Services",
-    "24×7 Emergency Services",
-    "NICU (Neonatal Intensive Care)",
-    "PICU (Pediatric Intensive Care)",
-    "Best Neonatologist",
-    "Best Pediatrician"
+    "40 Bedded Neonatal & Paediatric Care Centre",
+    "24x7 Emergency Services",
+    "24x7 Availability of Neonatal & Paediatric Intensivist",
+    "Level III Advanced NICU (HFOV, CPAP, Mira Cradle)",
+    "Highly Equipped PICU Unit",
+    "OPD Services (Mon - Sat: 9 AM-3 PM & 5 PM-9 PM)",
+    "Vaccination & Cold Chain Centre",
+    "Dedicated Neonatal & Paediatric Transport Ambulance"
   ]
 };
 
@@ -33,160 +36,248 @@ export const KEY_METRICS: MetricItem[] = [
     id: '1',
     value: '5000+',
     label: 'Happy Children Treated',
-    icon: 'FaSmile',
+    icon: 'FaChild',
     description: 'Successful outcomes with loving pediatric care'
   },
   {
     id: '2',
-    value: '15+',
-    label: 'Years Experience',
-    icon: 'FaAward',
-    description: 'Senior neonatologists and pediatric specialists'
+    value: '40 Beds',
+    label: 'Neonatal & Pediatric Center',
+    icon: 'FaHospital',
+    description: 'General, Semi-Deluxe & Deluxe patient rooms'
   },
   {
     id: '3',
     value: '24×7',
-    label: 'Emergency Care',
-    icon: 'FaClock',
-    description: 'Round-the-clock pediatric & neonatal emergency'
+    label: 'Intensivists On-Call',
+    icon: 'FaUserMd',
+    description: 'Round-the-clock neonatal & pediatric ICU doctors'
   },
   {
     id: '4',
-    value: '100%',
-    label: 'Child Focused Care',
-    icon: 'FaHeart',
-    description: 'Tailored child-friendly environment and healing'
+    value: 'Level III',
+    label: 'Equipped NICU & PICU',
+    icon: 'FaMicroscope',
+    description: 'HFOV Ventilator, CPAP, Mira Cradle Hypothermia'
   },
   {
     id: '5',
-    value: 'Level III',
-    label: 'NICU Facility',
-    icon: 'FaLungs',
-    description: 'Advanced incubators and ventilator setup'
+    value: 'In-House',
+    label: 'ABG, X-Ray & 2D Echo',
+    icon: 'FaHeartbeat',
+    description: 'Bedside ultrasound, ABG analyzer & pharmacy'
   },
   {
     id: '6',
-    value: 'Dedicated',
-    label: 'PICU Unit',
-    icon: 'FaUserNurse',
-    description: 'Critical intensive care unit for growing children'
+    value: '24×7',
+    label: 'Transport Ambulance',
+    icon: 'FaAmbulance',
+    description: 'Equipped with Neopuff, Embrace Nest & Intensivist'
   }
 ];
 
+export const NICU_EQUIPMENT_SPECS = [
+  "High Frequency Ventilator (HFOV)",
+  "Conventional Ventilator & Non-Invasive Bubble CPAP",
+  "High Flow Nasal Cannula (HFNC)",
+  "Servo Controlled Radiant Warner & LED Phototherapy",
+  "Mira Cradle for Therapeutic Hypothermia",
+  "Multi Para Monitors & Transilluminator",
+  "Surfactant Therapy & Exchange Transfusion",
+  "Parenteral Nutrition (TPN) Setup",
+  "Kangaroo Mother Care (KMC) Units",
+  "Bedside 2D Echo & Bedside Ultrasound"
+];
+
+export const PICU_EQUIPMENT_SPECS = [
+  "Pediatric Advanced Ventilators",
+  "Multipara Patient Monitors",
+  "Syringe Pumps & Volumetric Infusion Pumps",
+  "Central Oxygen, Compressed Air & Suction Lines",
+  "24x7 Pediatric Critical Care Nursing Staff"
+];
+
+export const INTACT_SURVIVAL_COMMITMENT = [
+  {
+    title: "Bedside Neurosonogram & 2D Echo",
+    desc: "Real-time bedside cardiac and neuro imaging for precise neonatal diagnostics."
+  },
+  {
+    title: "Newborn Screening for Congenital Disorders",
+    desc: "Early detection screening for metabolic and genetic congenital conditions."
+  },
+  {
+    title: "ROP (Retinopathy of Prematurity) Screening",
+    desc: "Protocol-based retina specialist screening & ROP management for premature babies."
+  },
+  {
+    title: "OAE (Oto-Acoustic Emission) Hearing Screening",
+    desc: "Advanced objective hearing assessment for every newborn before discharge."
+  },
+  {
+    title: "Pulse Oximetry Screening",
+    desc: "Routine universal pulse oximetry screening for early detection of critical heart defects."
+  },
+  {
+    title: "Neurodevelopmental Assessment",
+    desc: "Follow-up milestones evaluation of high-risk NICU graduates by Consultant & Physiotherapist."
+  },
+  {
+    title: "Lactation Management & KMC",
+    desc: "Dedicated breastfeeding support and Kangaroo Mother Care (KMC) for bonding and growth."
+  }
+];
+
+export const INFECTION_CONTROL_PROTOCOLS = [
+  "Sterilizer clean air filtration systems in intensive care units",
+  "Micro defogger machine for total area fumigation",
+  "Smart access control system for sterile NICU access",
+  "ETO Sterilization of equipment and instruments",
+  "Strict emphasis on hand washing and sterile protocols",
+  "Cluster care approach and minimal handling of fragile babies",
+  "Evidence-based protocol system for antibiotic stewardship",
+  "Self-Audit system in constant endeavor to upgrade clinical standards"
+];
+
+export const CHILDREN_FACILITIES_LIST = [
+  { name: "General, Semi-Deluxe & Deluxe Rooms", icon: "FaBed" },
+  { name: "Central Oxygen, Compressed Air & Suction", icon: "FaWind" },
+  { name: "In-House Pharmacy & Medical Store", icon: "FaPills" },
+  { name: "In-House X-Ray, Ultrasonography & 2D Echo", icon: "FaXRay" },
+  { name: "In-House ABG (Arterial Blood Gas) Analyzer", icon: "FaFlask" },
+  { name: "24x7 Ambulance with Neopuff & Embrace Nest", icon: "FaAmbulance" },
+  { name: "DG Auto Backup (100% Uninterrupted Power)", icon: "FaBolt" },
+  { name: "24x7 CCTV Surveillance & Security", icon: "FaVideo" },
+  { name: "Breastfeeding & Lactation Management Support", icon: "FaHeart" },
+  { name: "Newborn Screening & Vaccination Centre", icon: "FaSyringe" }
+];
+
+export const TRANSPORT_SYSTEM_DETAILS = {
+  title: "Dedicated Neonatal & Paediatric Transport System",
+  tagline: "Ensuring arrival of critically ill patients in the best possible medical state",
+  equipment: [
+    "Neopuff Resuscitator",
+    "Multipara Monitor & Pulse Oximeter",
+    "Embrace Nest Thermal Care",
+    "Accompanied by Neonatal & Paediatric Intensivist",
+    "Trained Emergency Supporting Nursing Staff"
+  ]
+};
+
 export const SERVICES_DATA: ServiceItem[] = [
   {
-    id: 'general-pediatrics',
-    title: 'General Pediatrics',
-    shortDesc: 'Complete diagnostic and therapeutic care for children from birth up to 18 years.',
-    fullDesc: 'Our General Pediatrics department offers routine health checkups, illness treatment, childhood infection management, physical examinations, and long-term wellness plans. We care for infants, kids, and adolescents with gentle hands and high clinical precision.',
-    iconName: 'FaStethoscope',
-    category: 'General Care',
-    highlights: ['Comprehensive physical exams', 'Acute disease management', 'Routine pediatric health checks', 'Adolescent health guidance'],
-    badge: 'Core Specialty'
-  },
-  {
-    id: 'newborn-care',
-    title: 'Newborn Care',
-    shortDesc: 'Gentle, specialized care for newborns during the vital first weeks of life.',
-    fullDesc: 'From jaundice monitoring to infant feeding support, newborn screening, and neonatal milestone tracking, our team ensures your baby gets a healthy, comfortable start in life in a sterile, warm environment.',
-    iconName: 'FaBaby',
-    category: 'Specialized',
-    highlights: ['Neonatal jaundice screening', 'Lactation & nutrition setup', 'Cord care & baby hygiene', 'Infant developmental checks']
-  },
-  {
-    id: 'neonatology',
-    title: 'Neonatology',
-    shortDesc: 'Subspecialty care for premature infants and high-risk newborn conditions.',
-    fullDesc: 'Our expert neonatologists provide high-level clinical management for premature babies, low birth weight infants, congenital disorders, and respiratory distress, using state-of-the-art medical technology.',
-    iconName: 'FaUserMd',
-    category: 'Critical Care',
-    highlights: ['Premature baby care', 'Low birth weight management', 'Neonatal surgery support', 'Congenital anomaly monitoring'],
-    badge: 'Expert Team'
-  },
-  {
     id: 'nicu',
-    title: 'NICU (Neonatal ICU)',
-    shortDesc: 'Level III Neonatal Intensive Care Unit equipped with advanced incubators & monitors.',
-    fullDesc: 'Our NICU is designed to save lives with round-the-clock monitoring, central oxygen systems, advanced incubators, phototherapy units, and specialized neonatology nursing staff working 24x7.',
+    title: 'Level III NICU (Neonatal ICU)',
+    shortDesc: 'Level III NICU with HFOV, Bubble CPAP, Mira Cradle Hypothermia & 24x7 Intensivists.',
+    fullDesc: 'Our Level III Neonatal Intensive Care Unit provides world-class care for premature and critically ill newborns. Equipped with High Frequency Ventilators (HFOV), Bubble CPAP, High Flow Nasal Cannula, Servo Controlled Radiant Warners, LED Phototherapy, Mira Cradle for Therapeutic Hypothermia, Surfactant Therapy, Exchange Transfusion, Bedside 2D Echo, and Parenteral Nutrition (TPN).',
     iconName: 'FaMicroscope',
     category: 'Critical Care',
-    highlights: ['Advanced incubators & ventilators', 'Continuous vital monitoring', '24x7 Neonatologist availability', 'Strict sterile protocols'],
-    badge: '24x7 Facility'
+    highlights: ['HFOV & Bubble CPAP Ventilators', 'Mira Cradle Therapeutic Hypothermia', 'Surfactant & Exchange Transfusion', '24x7 Neonatal Intensivists On-Call'],
+    badge: 'Level III NICU'
   },
   {
     id: 'picu',
-    title: 'PICU (Pediatric ICU)',
-    shortDesc: 'Dedicated Pediatric Intensive Care Unit for critically ill children.',
-    fullDesc: 'Our PICU provides specialized life support and intensive monitoring for children experiencing acute trauma, severe infections, asthma attacks, or surgical recovery with compassionate care.',
+    title: 'Highly Equipped PICU (Pediatric ICU)',
+    shortDesc: 'Intensive care unit with ventilators, multipara monitors, syringe & volumetric pumps.',
+    fullDesc: 'Our PICU provides specialized life support and intensive monitoring for children facing severe respiratory failure, acute trauma, sepsis, or post-surgical recovery. Staffed 24x7 by pediatric intensivists, advanced pediatric ventilators, syringe pumps, volumetric pumps, and central suction lines.',
     iconName: 'FaProcedures',
     category: 'Critical Care',
-    highlights: ['Pediatric ventilator support', 'Multi-parameter patient monitors', 'Dedicated critical care nurses', 'Emergency resuscitation'],
-    badge: '24x7 Facility'
+    highlights: ['Advanced Pediatric Ventilators', 'Multipara Monitors & Volumetric Pumps', 'Central Oxygen & Compressed Air', '24x7 Pediatric Intensivists'],
+    badge: 'Equipped PICU'
+  },
+  {
+    id: 'neonatal-transport',
+    title: 'Neonatal & Paediatric Transport Ambulance',
+    shortDesc: '24x7 transport system with Neopuff, Embrace Nest, Multipara Monitor & Intensivist.',
+    fullDesc: 'Dedicated transport system ensuring critically ill babies and children arrive at our hospital in the best possible medical state. Equipped with Neopuff resuscitator, Embrace Nest thermal protection, multipara pulse oximeter, and accompanied by a Neonatal & Paediatric Intensivist and trained supporting staff.',
+    iconName: 'FaAmbulance',
+    category: 'Critical Care',
+    highlights: ['Neopuff & Embrace Nest', 'Multipara Monitor & Oximeter', 'Accompanied by Intensivist Doctor', '24x7 Rapid Dispatch'],
+    badge: '24x7 Transport'
+  },
+  {
+    id: 'opd-services',
+    title: 'OPD Consultation Services',
+    shortDesc: 'Mon-Sat Morning (9 AM-3 PM) & Evening (5 PM-9 PM) by expert pediatricians.',
+    fullDesc: 'Outpatient consultation for all childhood illnesses from 0 to 18 years. Operating Monday to Saturday with Morning OPD (9:00 AM - 3:00 PM) and Evening OPD (5:00 PM - 9:00 PM) alongside 24x7 Emergency OPD.',
+    iconName: 'FaStethoscope',
+    category: 'General Care',
+    highlights: ['Mon-Sat Morning: 9 AM - 3 PM', 'Mon-Sat Evening: 5 PM - 9 PM', '24x7 Emergency OPD', 'Infant to Adolescent Care'],
+    badge: 'Daily OPD'
+  },
+  {
+    id: 'intact-survival',
+    title: 'Intact Survival & Newborn Screening',
+    shortDesc: 'Bedside 2D Echo, ROP Retina Screening, OAE Hearing & Neurodevelopmental checks.',
+    fullDesc: 'Our commitment to NICU graduates extends beyond survival to intact long-term health. We provide bedside Neurosonogram, 2D Echo, congenital disorder screening, ROP screening by Retina specialists, OAE hearing screening, universal pulse oximetry, and follow-up assessment by consultants & physiotherapists.',
+    iconName: 'FaHeartbeat',
+    category: 'Specialized',
+    highlights: ['ROP Retina & OAE Hearing Checks', 'Bedside Neurosonogram & 2D Echo', 'Universal Pulse Oximetry', 'Physiotherapy & Milestone Tracking'],
+    badge: 'NICU Care'
   },
   {
     id: 'vaccination-centre',
-    title: 'Vaccination Centre',
-    shortDesc: 'Full range of WHO & IAP recommended vaccines for infants, children, & teens.',
-    fullDesc: 'Protect your child against preventable diseases. We maintain a reliable cold chain storage system for all essential vaccines from birth through 18 years, complete with painless administration techniques and digital schedule tracking.',
+    title: 'Vaccination Centre & Cold Chain',
+    shortDesc: 'Full WHO & IAP recommended vaccines with digital reminders & cold-chain storage.',
+    fullDesc: 'Protect your child against preventable diseases. We maintain strict cold chain refrigeration for all vaccines from birth to 18 years with painless administration techniques and digital schedule tracking.',
     iconName: 'FaSyringe',
     category: 'Wellness',
-    highlights: ['Strict cold-chain maintenance', 'WHO & IAP immunization schedules', 'Painless vaccination options', 'Digital reminder setup'],
-    badge: 'Popular'
+    highlights: ['Strict cold-chain refrigeration', 'WHO & IAP immunization schedules', 'Painless vaccination options', 'Digital schedule reminders'],
+    badge: 'WHO Approved'
   },
   {
-    id: 'growth-development',
-    title: 'Growth & Development Monitoring',
-    shortDesc: 'Regular tracking of physical growth, motor skills, speech, and cognitive milestones.',
-    fullDesc: 'Every child develops at their own pace, but early identification of developmental delays makes all the difference. We provide comprehensive percentile growth charting, milestone screening, and early intervention plans.',
-    iconName: 'FaChartLine',
-    category: 'Wellness',
-    highlights: ['Height & weight growth charts', 'Motor skill evaluation', 'Speech & language assessment', 'Behavioral milestone tracking']
+    id: 'general-pediatrics',
+    title: 'General Pediatrics & Adolescent Care',
+    shortDesc: 'Complete diagnostic and therapeutic care for children from birth to 18 years.',
+    fullDesc: 'Comprehensive care covering childhood infections, fever management, growth tracking, seasonal allergies, nutrition, and adolescent health guidance.',
+    iconName: 'FaChild',
+    category: 'General Care',
+    highlights: ['0 to 18 Years Coverage', 'Acute & Chronic Care', 'Routine Wellness Checks', 'Adolescent Guidance']
   },
   {
-    id: 'nutrition-counseling',
-    title: 'Nutrition Counseling',
-    shortDesc: 'Custom diet plans for child growth, immunity, weight management, and feeding issues.',
-    fullDesc: 'Proper nutrition powers healthy brain and body development. Our pediatric nutritionists offer guidance on infant weaning foods, picky eating management, anemia prevention, and childhood obesity treatment.',
+    id: 'newborn-care',
+    title: 'Newborn Care & Lactation Support',
+    shortDesc: 'Infant jaundice screening, cord care, and breastfeeding management support.',
+    fullDesc: 'Specialized care for newborns including jaundice phototherapy screening, infant feeding guidance, Kangaroo Mother Care (KMC), and lactation management support.',
+    iconName: 'FaBaby',
+    category: 'Specialized',
+    highlights: ['Lactation Support & KMC', 'Neonatal Jaundice Screening', 'Infant Feeding Setup', 'Cord & Skin Hygiene']
+  },
+  {
+    id: 'in-house-diagnostics',
+    title: 'In-House ABG, X-Ray & Lab Diagnostics',
+    shortDesc: 'Arterial Blood Gas (ABG) analyzer, digital X-Ray, Ultrasonography & 2D Echo.',
+    fullDesc: 'Rapid bedside diagnostic support including in-house ABG analyzer for critical blood gas evaluation, digital X-Ray, Ultrasonography, 2D Echo, and complete pediatric blood laboratory testing.',
+    iconName: 'FaFlask',
+    category: 'Specialized',
+    highlights: ['In-House ABG Analyzer', 'Digital X-Ray & Ultrasound', 'Bedside 2D Echo', '24x7 Lab Support']
+  },
+  {
+    id: 'nutrition-growth',
+    title: 'Growth & Development & Nutrition',
+    shortDesc: 'Height/weight percentile charting, milestone screening, and dietary counseling.',
+    fullDesc: 'Tracking motor skills, speech development, percentile height/weight growth, weaning diets, picky eater counseling, and deficiency treatment.',
     iconName: 'FaAppleAlt',
     category: 'Wellness',
-    highlights: ['Infant weaning dietary plans', 'Immunity-boosting food charts', 'Picky eater behavior solutions', 'Deficiency management']
-  },
-  {
-    id: 'child-emergency-care',
-    title: 'Child Emergency Care',
-    shortDesc: 'Rapid 24x7 pediatric emergency response unit for trauma, high fever, & respiratory distress.',
-    fullDesc: 'When emergencies strike, speed and expert pediatric skills save lives. Our emergency wing is staffed 24/7 by trained pediatric doctors, emergency nurses, and fully equipped pediatric ambulances.',
-    iconName: 'FaAmbulance',
-    category: 'Critical Care',
-    highlights: ['24x7 Triage & quick response', 'Pediatric trauma resuscitation', 'Oxygen & airway support', 'Rapid blood analysis setup'],
-    badge: '24x7 Emergency'
-  },
-  {
-    id: 'fever-infection',
-    title: 'Fever & Infection Treatment',
-    shortDesc: 'Diagnosis and swift treatment for viral fevers, dengue, typhoid, pneumonia, and flu.',
-    fullDesc: 'Fevers in children can escalate quickly. We provide fast diagnostic blood testing, IV fluids, targeted antimicrobial therapy, and comfortable recovery wards to ensure rapid recovery from infectious conditions.',
-    iconName: 'FaThermometerHalf',
-    category: 'General Care',
-    highlights: ['Rapid viral & bacterial testing', 'Dengue & Malaria management', 'Pneumonia & bronchial care', 'Hydration & fever control']
+    highlights: ['Growth Percentile Charting', 'Motor & Speech Screening', 'Infant Weaning Diet Plans', 'Immunity Boost Charts']
   },
   {
     id: 'asthma-allergy',
     title: 'Asthma & Allergy Care',
-    shortDesc: 'Specialized management of childhood asthma, food allergies, eczema, and allergic rhinitis.',
-    fullDesc: 'Help your child breathe easier and live without allergy flare-ups. We offer spirometry, allergy testing, nebulization services, inhaler training, and long-term asthma action plans.',
+    shortDesc: 'Nebulization unit, allergy testing, and long-term childhood asthma plans.',
+    fullDesc: 'Dedicated care for childhood asthma, food allergies, allergic rhinitis, eczema, and respiratory distress with nebulization and inhaler training.',
     iconName: 'FaLungs',
     category: 'Specialized',
-    highlights: ['Nebulization facility', 'Asthma action plans', 'Allergy allergen identification', 'Long-term pulmonary wellness']
+    highlights: ['Nebulization Facility', 'Asthma Action Plans', 'Allergy Identification', 'Child Pulmonary Care']
   },
   {
-    id: 'health-checkups',
-    title: 'Child Health Checkups',
-    shortDesc: 'Preventative wellness packages designed for school admission, sports, & annual checks.',
-    fullDesc: 'Proactive healthcare ensures your child stays ahead in health and fitness. Our checkup packages cover vision, hearing, dental, blood counts, organ function, and growth assessments.',
-    iconName: 'FaHeartbeat',
-    category: 'Wellness',
-    highlights: ['Comprehensive blood profile', 'Vision & hearing screening', 'School fitness certificates', 'Pediatric consult included']
+    id: 'fever-infection',
+    title: 'Fever & Infection Management',
+    shortDesc: 'Rapid diagnosis and care for viral fevers, dengue, typhoid, flu, and pneumonia.',
+    fullDesc: 'Fast diagnostic blood testing, IV fluids, antipyretic control, targeted antimicrobial treatment, and comfortable pediatric recovery wards.',
+    iconName: 'FaThermometerHalf',
+    category: 'General Care',
+    highlights: ['Dengue & Typhoid Care', 'Pneumonia & Bronchitis', 'Rapid Viral Blood Panel', 'Hydration & Antipyretic']
   }
 ];
 
@@ -251,49 +342,49 @@ export const CORE_VALUES: CoreValueItem[] = [
 
 export const WHY_CHOOSE_US = [
   {
-    title: "Experienced Pediatricians",
-    desc: "Renowned child specialists with decades of combined clinical expertise in treating complex childhood conditions.",
+    title: "40 Bedded Center",
+    desc: "General, Semi-Deluxe, and Deluxe patient rooms with central oxygen, compressed air & suction.",
+    icon: "FaBed"
+  },
+  {
+    title: "24×7 Intensivists",
+    desc: "Round-the-clock availability of Neonatal & Paediatric Intensivists for emergency & critical care.",
     icon: "FaUserMd"
   },
   {
-    title: "Best Neonatologists",
-    desc: "Specialized doctors trained in newborn care, premature baby survival, and critical neonatal emergencies.",
-    icon: "FaBaby"
-  },
-  {
-    title: "24×7 Emergency",
-    desc: "Always open, day or night. Immediate critical response team with oxygen, IVs, and ICU preparedness.",
-    icon: "FaClock"
-  },
-  {
-    title: "NICU & PICU",
-    desc: "Level III Neonatal & Pediatric Intensive Care Units with incubators, monitors, and dedicated critical care staff.",
-    icon: "FaHospital"
-  },
-  {
-    title: "Vaccination Centre",
-    desc: "Full vaccine stock maintained in strict cold-chain refrigeration for painless and accurate immunizations.",
-    icon: "FaSyringe"
-  },
-  {
-    title: "Advanced Medical Equipment",
-    desc: "State-of-the-art diagnostic monitors, infant incubators, nebulizers, and sterile procedure rooms.",
+    title: "Level III Equipped NICU",
+    desc: "HFOV ventilator, Bubble CPAP, Mira Cradle for therapeutic hypothermia, surfactant therapy & KMC.",
     icon: "FaMicroscope"
   },
   {
-    title: "Personalized Child Care",
-    desc: "Warm, child-friendly environment with gentle doctors who alleviate hospital anxiety for kids and parents.",
+    title: "Equipped PICU Unit",
+    desc: "Pediatric ventilators, multipara monitors, syringe pumps & volumetric pumps.",
+    icon: "FaProcedures"
+  },
+  {
+    title: "In-House ABG & Labs",
+    desc: "In-house ABG analyzer, digital X-Ray, Ultrasonography, 2D Echo, and pharmacy.",
+    icon: "FaFlask"
+  },
+  {
+    title: "Emergency Transport",
+    desc: "Dedicated transport ambulance with Neopuff, Embrace Nest, oximeter & Intensivist on-board.",
+    icon: "FaAmbulance"
+  },
+  {
+    title: "Intact Survival Care",
+    desc: "ROP retina screening, OAE hearing screening, bedside neurosonogram, and lactation support.",
     icon: "FaHeart"
   },
   {
-    title: "Friendly Environment",
-    desc: "Bright, colorful play areas, reassuring atmosphere, and cheerful nurses to keep children smiling.",
-    icon: "FaSmile"
+    title: "Strict Infection Control",
+    desc: "Clean air sterilizers, micro defoggers, ETO sterilization, smart access NICU & cluster care.",
+    icon: "FaShieldAlt"
   },
   {
-    title: "Affordable Healthcare",
-    desc: "High quality healthcare accessible to all families in Udaipur and Rajasthan with honest, transparent pricing.",
-    icon: "FaHandHoldingHeart"
+    title: "Flexible OPD Timings",
+    desc: "Mon-Sat Morning (9:00 AM-3:00 PM) & Evening (5:00 PM-9:00 PM) + 24×7 Emergency OPD.",
+    icon: "FaClock"
   }
 ];
 
@@ -303,7 +394,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     parentName: 'Sunita Sharma',
     childInfo: 'Mother of Aarav (Age 3)',
     rating: 5,
-    comment: 'Radiant Children’s Hospital saved our baby when he had high fever and severe pneumonia. The NICU team and doctors were available 24/7. Their calm, expert care gave us immense hope and peace of mind.',
+    comment: 'Radiant Children’s Hospital saved our baby when he had high fever and severe pneumonia. The NICU team and pediatric intensivists were available 24/7. Their calm, expert care gave us immense hope and peace of mind.',
     date: '2 weeks ago',
     location: 'Udaipur',
     avatarBg: 'bg-blue-500',
@@ -314,7 +405,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     parentName: 'Vikram Mehta',
     childInfo: 'Father of Ananya (Newborn)',
     rating: 5,
-    comment: 'Best Neonatologist in Udaipur! My premature daughter needed NICU care for 10 days. The incubators, hygienic setup, and doctor explanations were top-notch. Truly radiant service in Udaipur!',
+    comment: 'Best Neonatologist in Udaipur! My premature daughter needed Level III NICU care and HFOV ventilation for 10 days. The incubators, Mira Cradle hypothermia care, and doctor explanations were top-notch.',
     date: '1 month ago',
     location: 'Shobhagpura, Udaipur',
     avatarBg: 'bg-teal-500',
@@ -325,7 +416,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     parentName: 'Pooja Rajpurohit',
     childInfo: 'Mother of Kavi (Age 6)',
     rating: 5,
-    comment: 'We visit Radiant Children’s Hospital for all vaccinations and growth checkups. The doctors are super friendly and painless with injections! The play area keeps kids distraction-free.',
+    comment: 'We visit Radiant Children’s Hospital for all vaccinations and growth checkups. OPD timings (Morning 9-3 and Evening 5-9) are super convenient. Friendly doctors and sterile rooms!',
     date: '3 weeks ago',
     location: 'New Bhupalpura, Udaipur',
     avatarBg: 'bg-purple-500',
@@ -336,7 +427,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     parentName: 'Dr. Ramesh Choudhary',
     childInfo: 'Father of Yash (Age 8)',
     rating: 5,
-    comment: 'Being a doctor myself, I appreciate the high clinical standards, strict infection control, and evidence-based pediatric practice at Radiant Children’s Hospital. Highly recommended in Rajasthan!',
+    comment: 'Being a doctor myself, I appreciate the in-house ABG analyzer, strict infection control, ROP screening, and protocol-based antibiotic therapy at Radiant Children’s Hospital. Outstanding in Rajasthan!',
     date: '2 months ago',
     location: 'Udaipur',
     avatarBg: 'bg-emerald-500',
@@ -347,7 +438,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     parentName: 'Meenakshi Jain',
     childInfo: 'Mother of Pari (Age 1)',
     rating: 5,
-    comment: 'Late-night asthma emergency was handled within 5 minutes of arrival. Oxygen and nebulization were started immediately. Forever grateful to the 24x7 emergency medical team!',
+    comment: 'Late-night asthma emergency was handled within 5 minutes of arrival. The neonatal ambulance with Neopuff brought us safely. Forever grateful to the 24x7 emergency medical team!',
     date: '1 week ago',
     location: '100 Feet Road, Udaipur',
     avatarBg: 'bg-amber-500',
@@ -358,38 +449,44 @@ export const TESTIMONIALS: TestimonialItem[] = [
 export const FAQS: FAQItem[] = [
   {
     id: '1',
-    question: 'What age group do you treat?',
-    answer: 'We specialize in comprehensive medical care for children from newborn babies (0 days) up to adolescents aged 18 years.',
+    question: 'What are the OPD Timings at Radiant Children’s Hospital?',
+    answer: 'Our OPD Services run Monday to Saturday with Morning OPD from 9:00 a.m. to 3:00 p.m. and Evening OPD from 5:00 p.m. to 9:00 p.m. Additionally, Emergency OPD and Intensivists are available 24 hours a day, 7 days a week.',
     category: 'General'
   },
   {
     id: '2',
-    question: 'Do you provide vaccinations for infants and children?',
-    answer: 'Yes, we run a dedicated Vaccination Centre providing all WHO & Indian Academy of Pediatrics (IAP) recommended vaccines with strict cold-chain refrigeration and digital schedule reminders.',
-    category: 'Vaccination'
+    question: 'What facilities are available in your Level III NICU?',
+    answer: 'Our Level III NICU features High Frequency Ventilators (HFOV), Conventional Ventilator, Non-Invasive Bubble CPAP, High Flow Nasal Cannula (HFNC), Mira Cradle for Therapeutic Hypothermia, Servo Controlled Radiant Warners, LED Phototherapy, Surfactant Therapy, Exchange Transfusion, Parenteral Nutrition, Bedside 2D Echo & Ultrasound, and Kangaroo Mother Care (KMC).',
+    category: 'Facilities'
   },
   {
     id: '3',
-    question: 'Is emergency pediatric care available 24 hours?',
-    answer: 'Absolutely. Our Emergency Services run 24 hours a day, 7 days a week, 365 days a year with resident pediatricians, oxygen support, and critical emergency response.',
+    question: 'Are Neonatal & Paediatric Intensivists available 24x7?',
+    answer: 'Yes, we have round-the-clock 24x7 availability of dedicated Neonatal & Paediatric Intensivists in our 40-bedded hospital to handle acute emergencies and critical ICU patients immediately.',
     category: 'Emergency'
   },
   {
     id: '4',
-    question: 'Do you have dedicated NICU and PICU facilities?',
-    answer: 'Yes, Radiant Children’s Hospital features a Level III Neonatal Intensive Care Unit (NICU) for premature & sick newborns, as well as a specialized Pediatric Intensive Care Unit (PICU) for critical child care.',
-    category: 'Facilities'
+    question: 'Do you have an emergency ambulance transport service?',
+    answer: 'Yes, we operate a dedicated 24x7 Neonatal & Paediatric Transport System equipped with Neopuff resuscitator, Embrace Nest, Multipara Monitor/Pulse Oximeter, and accompanied by a Neonatal & Paediatric Intensivist and trained nursing staff.',
+    category: 'Emergency'
   },
   {
     id: '5',
-    question: 'How can I book an appointment?',
-    answer: 'You can book an appointment by clicking the "Book Appointment" button on our website, calling us directly at 07424937788, or sending a message via WhatsApp.',
-    category: 'General'
+    question: 'What patient room categories do you offer?',
+    answer: 'We offer General Wards, Semi-Deluxe Rooms, and Deluxe Private Rooms. All rooms feature Central Oxygen, Compressed Air, and Suction lines, along with DG Auto Backup for uninterrupted power.',
+    category: 'Facilities'
   },
   {
     id: '6',
-    question: 'Where is Radiant Children’s Hospital located in Udaipur?',
-    answer: 'We are located at 9 Kamla Nagar, 100 Feet Road, Behind Ashoka Palace, New Bhupalpura, Shobhagpura, Udaipur, Rajasthan 313001.',
+    question: 'What in-house diagnostic and hospital facilities do you have?',
+    answer: 'Our in-house facilities include ABG (Arterial Blood Gas) Analyzer, Digital X-Ray, Ultrasonography, Bedside 2D Echo, In-House Pharmacy, Newborn Screening (ROP & OAE hearing), and 24x7 CCTV Surveillance.',
+    category: 'Facilities'
+  },
+  {
+    id: '7',
+    question: 'What is your email address and phone number for inquiries?',
+    answer: 'You can email us at radiantchildrenhospital@gmail.com or call our 24x7 hospital desk at 07424937788.',
     category: 'General'
   }
 ];
@@ -397,22 +494,22 @@ export const FAQS: FAQItem[] = [
 export const DOCTORS: DoctorItem[] = [
   {
     id: '1',
-    name: 'Dr. Expert Pediatric Specialist',
-    role: 'Senior Pediatrician & Clinical Director',
+    name: 'Dr. Senior Pediatric Specialist',
+    role: 'Clinical Director & Pediatric Intensivist',
     qualifications: 'MD (Pediatrics), DCH, FEBP',
     experience: '15+ Years Clinical Experience',
-    specialties: ['General Pediatrics', 'Growth & Milestone Tracking', 'Child Infectious Diseases', 'Asthma Care'],
-    bio: 'Dedicated to compassionate child care with over 15 years of hospital experience in managing childhood illnesses, preventive health, and pediatric emergencies.',
+    specialties: ['Pediatric Intensive Care (PICU)', 'Growth & Development', 'Child Asthma & Allergy', 'Infectious Diseases'],
+    bio: 'Dedicated to compassionate child healthcare with 15+ years experience managing complex childhood illnesses, critical PICU care, and daily OPD services.',
     image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600'
   },
   {
     id: '2',
-    name: 'Dr. Lead Neonatologist',
-    role: 'Head of Neonatology & NICU Unit',
+    name: 'Dr. Senior Neonatologist',
+    role: 'Head of Neonatology & Level III NICU',
     qualifications: 'MD (Pediatrics), DM (Neonatology)',
     experience: '12+ Years Neonatal ICU Expertise',
-    specialties: ['Premature Baby Survival', 'Level III NICU Management', 'Neonatal Ventilation', 'Congenital Disorders'],
-    bio: 'Specialist in critical newborn care, saving hundreds of low birthweight babies and leading our 24x7 NICU team with clinical precision.',
+    specialties: ['Premature Baby Survival', 'Level III NICU & HFOV', 'Therapeutic Hypothermia', 'ROP & OAE Screening'],
+    bio: 'Specialist in critical newborn care, HFOV ventilation, surfactant therapy, and guiding our 24x7 NICU team for intact survival of premature graduates.',
     image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600'
   }
 ];

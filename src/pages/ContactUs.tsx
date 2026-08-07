@@ -95,6 +95,19 @@ export const ContactUs: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Email */}
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-xl shrink-0 mt-1">
+                    ✉️
+                  </div>
+                  <div>
+                    <h4 className="text-base font-extrabold text-slate-900">Email Address</h4>
+                    <a href={`mailto:${HOSPITAL_INFO.email}`} className="text-cyan-700 font-bold text-xs hover:underline block mt-1">
+                      {HOSPITAL_INFO.email}
+                    </a>
+                  </div>
+                </div>
+
                 {/* Phone */}
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl shrink-0 mt-1">
@@ -110,12 +123,15 @@ export const ContactUs: React.FC = () => {
 
                 {/* Hours */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center text-xl shrink-0 mt-1">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl shrink-0 mt-1">
                     <FaClock />
                   </div>
                   <div>
-                    <h4 className="text-base font-extrabold text-slate-900">Operating Hours</h4>
-                    <p className="text-slate-600 text-xs mt-1 font-semibold">{HOSPITAL_INFO.hours}</p>
+                    <h4 className="text-base font-extrabold text-slate-900">OPD & Emergency Hours</h4>
+                    <p className="text-slate-700 text-xs mt-1 font-bold">Monday - Saturday OPD:</p>
+                    <p className="text-slate-600 text-xs font-semibold">• Morning: 9:00 AM - 3:00 PM</p>
+                    <p className="text-slate-600 text-xs font-semibold">• Evening: 5:00 PM - 9:00 PM</p>
+                    <p className="text-emerald-600 text-xs font-black mt-1">24x7 Emergency & Intensivists</p>
                   </div>
                 </div>
 

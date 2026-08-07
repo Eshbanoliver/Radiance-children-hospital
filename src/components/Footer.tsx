@@ -120,8 +120,19 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <FaClock className="text-cyan-400 text-sm shrink-0" />
-                <span>24 Hours Emergency & OPD</span>
+                <span className="text-cyan-400 text-sm shrink-0">✉️</span>
+                <a href={`mailto:${HOSPITAL_INFO.email}`} className="hover:text-white text-xs text-cyan-300">
+                  {HOSPITAL_INFO.email}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <FaClock className="text-cyan-400 text-sm shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-white">OPD: Mon - Sat</p>
+                  <p className="text-[11px] text-slate-400">Morning: 9:00 AM - 3:00 PM</p>
+                  <p className="text-[11px] text-slate-400">Evening: 5:00 PM - 9:00 PM</p>
+                  <p className="font-bold text-emerald-400 text-[11px] mt-0.5">24×7 Emergency & Intensivists</p>
+                </div>
               </li>
             </ul>
 

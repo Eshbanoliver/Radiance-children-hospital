@@ -1,10 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FaHeartbeat, FaAward, FaUserMd, FaShieldAlt, FaClock, 
-  FaHospital, FaCalendarCheck 
+  FaHeartbeat, FaUserMd, FaShieldAlt, FaCalendarCheck, 
+  FaCheckCircle, FaHospital 
 } from 'react-icons/fa';
-import { DOCTORS } from '../data/hospitalData';
+import { 
+  DOCTORS, INTACT_SURVIVAL_COMMITMENT, INFECTION_CONTROL_PROTOCOLS, 
+  CHILDREN_FACILITIES_LIST 
+} from '../data/hospitalData';
 import { SEO } from '../components/SEO';
 
 interface AboutUsProps {
@@ -13,31 +16,31 @@ interface AboutUsProps {
 
 export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
   const timeline = [
-    { year: 'Founding Vision', title: 'Established in Udaipur', desc: 'Started with a passion for child-centric healthcare and zero compromise on hygiene and safety.' },
-    { year: 'NICU Upgrade', title: 'Level III NICU Facility', desc: 'Installed advanced incubators, ventilators, phototherapy units, and trained specialized neonatal nurses.' },
-    { year: '24x7 Emergency', title: 'Emergency Pediatric Response', desc: 'Launched round-the-clock emergency triage for asthma, fevers, injuries, and infant trauma.' },
-    { year: 'PICU Addition', title: 'Pediatric Intensive Care Unit', desc: 'Expanded facilities to include dedicated critical care beds for children up to 18 years.' },
-    { year: 'Vaccination Hub', title: 'Digital Immunization Centre', desc: 'Established WHO & IAP recommended cold-chain vaccination center with digital reminder tracking.' }
+    { year: '40 Bedded Center', title: 'Established in Udaipur', desc: '40-bedded advanced pediatric facility with General, Semi-Deluxe & Deluxe patient rooms.' },
+    { year: 'Level III NICU', title: 'Intensive Neonatal Care', desc: 'Equipped with HFOV, Bubble CPAP, Mira Cradle Hypothermia, Surfactant Therapy & KMC.' },
+    { year: '24x7 Emergency', title: 'Intensivists Availability', desc: 'Round-the-clock availability of Neonatal & Paediatric Intensivists & emergency triage.' },
+    { year: 'Equipped PICU', title: 'Pediatric Intensive Care', desc: 'Ventilators, multipara monitors, syringe pumps & volumetric infusion pumps.' },
+    { year: 'In-House ABG & Labs', title: 'Bedside Diagnostics', desc: 'In-house ABG analyzer, bedside 2D Echo, Ultrasonography, X-Ray & 24x7 Pharmacy.' }
   ];
 
   return (
     <div className="space-y-16 sm:space-y-24 pb-16">
       <SEO 
         title="About Us | Radiant Children's Hospital Udaipur" 
-        description="Learn about Radiant Children's Hospital, our expert pediatric doctors, Level III NICU, PICU facilities, and 15+ years commitment to child healthcare in Rajasthan."
+        description="Learn about Radiant Children's Hospital, a 40-bedded pediatric center in Udaipur with Level III NICU, PICU, 24x7 Intensivists, and intact survival commitment."
       />
 
       {/* Header Banner */}
       <section className="relative pt-8 pb-12 overflow-hidden text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-xs">
-            <FaHeartbeat /> About Radiant Children's Hospital
+            <FaHeartbeat /> 40 Bedded Neonatal & Paediatric Care Centre
           </div>
           <h1 className="text-4xl sm:text-5xl font-black text-slate-900">
-            Dedicated to <span className="gradient-text">Child Healthcare</span> Excellence
+            Dedicated to <span className="gradient-text">Child Healthcare Excellence</span>
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-            Providing compassionate, world-class medical care for newborns, infants, children, and adolescents from birth to 18 years of age in Udaipur, Rajasthan.
+            Providing 24x7 Emergency & Availability of Neonatal & Paediatric Intensivists for children from birth to 18 years of age in Udaipur, Rajasthan.
           </p>
         </div>
       </section>
@@ -50,25 +53,25 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
               
               <div className="lg:col-span-6 space-y-6">
                 <h2 className="text-3xl font-black text-slate-900">
-                  Our Hospital <span className="gradient-text">Story & Commitment</span>
+                  Our Hospital <span className="gradient-text">Story & Infrastructure</span>
                 </h2>
 
                 <p className="text-slate-600 text-base leading-relaxed">
-                  Radiant Children’s Hospital was founded with a single mission: to create a healthcare environment where children feel safe, cared for, and treated with gentle hands, while parents feel confident in the highest clinical standards.
+                  Radiant Children’s Hospital is a 40-bedded specialized pediatric hospital located behind Ashoka Palace in New Bhupalpura, Udaipur.
                 </p>
 
                 <p className="text-slate-600 text-base leading-relaxed">
-                  Located behind Ashoka Palace in New Bhupalpura, Udaipur, our hospital brings together senior pediatricians, best neonatologists, advanced Level III NICU, PICU critical care, and round-the-clock emergency support.
+                  We bring together senior pediatricians, expert neonatologists, Level III NICU (HFOV, Bubble CPAP, Mira Cradle), PICU, in-house ABG analyzer, X-Ray, 2D Echo, and 24x7 Neonatal Transport Ambulance equipped with Neopuff and Embrace Nest.
                 </p>
 
                 <div className="pt-2 grid grid-cols-2 gap-4">
                   <div className="p-4 rounded-2xl bg-white/70 border border-slate-200 text-center">
-                    <div className="text-2xl font-black text-primary">100%</div>
-                    <div className="text-xs font-bold text-slate-700 mt-1">Pediatric Dedicated</div>
+                    <div className="text-2xl font-black text-primary">40 Beds</div>
+                    <div className="text-xs font-bold text-slate-700 mt-1">General, Semi-Deluxe & Deluxe</div>
                   </div>
                   <div className="p-4 rounded-2xl bg-white/70 border border-slate-200 text-center">
                     <div className="text-2xl font-black text-emerald-500">24×7</div>
-                    <div className="text-xs font-bold text-slate-700 mt-1">Emergency Desk</div>
+                    <div className="text-xs font-bold text-slate-700 mt-1">Intensivists On-Call</div>
                   </div>
                 </div>
               </div>
@@ -80,10 +83,10 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                     alt="Radiant Children's Hospital Facilities"
                     className="w-full h-96 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent flex items-end p-8 text-white">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8 text-white">
                     <div>
-                      <div className="text-lg font-bold">State-of-the-Art Pediatric Wing</div>
-                      <div className="text-xs text-slate-200">Equipped with central oxygen lines & modern incubators</div>
+                      <div className="text-lg font-bold">40 Bedded Pediatric & Neonatal Nursery</div>
+                      <div className="text-xs text-slate-200">Equipped with Central Oxygen, Compressed Air & Suction</div>
                     </div>
                   </div>
                 </div>
@@ -94,15 +97,67 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
+      {/* Intact Survival Commitment */}
+      <section className="relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-white/80 shadow-2xl space-y-8">
+            <div className="max-w-3xl space-y-3">
+              <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">
+                NICU Care Protocol
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
+                Commitment for Intact Survival of <span className="gradient-text">Our NICU Graduates</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {INTACT_SURVIVAL_COMMITMENT.map((item, idx) => (
+                <div key={idx} className="glass-card p-5 rounded-2xl border border-white/80 space-y-2">
+                  <div className="flex items-center gap-2 text-emerald-600 font-black text-sm">
+                    <FaCheckCircle className="shrink-0" />
+                    <h4>{item.title}</h4>
+                  </div>
+                  <p className="text-slate-600 text-xs leading-relaxed font-medium">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Infection Control & Safety */}
+      <section className="relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <h2 className="text-3xl font-black text-slate-900">
+              Prevention is Better Than Cure <span className="gradient-text">— Infection Protocols</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {INFECTION_CONTROL_PROTOCOLS.map((protocol, idx) => (
+              <div key={idx} className="glass-card p-5 rounded-2xl border border-white/80 space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-lg font-black">
+                  <FaShieldAlt />
+                </div>
+                <p className="text-slate-700 text-xs font-bold leading-relaxed">
+                  {protocol}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Modern Timeline */}
       <section className="relative">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
           <div className="text-center space-y-3">
             <h2 className="text-3xl font-black text-slate-900">
               Our Journey of <span className="gradient-text">Excellence & Growth</span>
             </h2>
-            <p className="text-slate-600 text-sm">Key milestones in our commitment to pediatric healthcare in Rajasthan.</p>
           </div>
 
           <div className="relative border-l-4 border-primary/30 ml-4 sm:ml-32 space-y-8">
@@ -115,9 +170,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="relative pl-8 sm:pl-10"
               >
-                {/* Timeline Dot */}
                 <div className="absolute -left-[14px] top-1 w-6 h-6 rounded-full bg-primary border-4 border-white shadow-md" />
-
                 <div className="glass-card p-6 rounded-2xl border border-white/80 shadow-md">
                   <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs mb-2">
                     {item.year}
@@ -128,24 +181,19 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
               </motion.div>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* Doctor / Team Section */}
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs">
               <FaUserMd /> Medical Leadership
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-              Meet Our Senior <span className="gradient-text">Doctors & Specialists</span>
+              Meet Our Senior <span className="gradient-text">Doctors & Intensivists</span>
             </h2>
-            <p className="text-slate-600 text-sm">
-              Renowned pediatricians and neonatologists dedicated to giving your child the best clinical outcome.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -159,7 +207,6 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                   alt={doc.name}
                   className="w-36 h-36 rounded-2xl object-cover shadow-md shrink-0 border-2 border-white"
                 />
-
                 <div className="space-y-2 text-center sm:text-left">
                   <span className="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 font-bold text-[10px] uppercase">
                     {doc.experience}
@@ -168,7 +215,6 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                   <p className="text-primary font-bold text-xs">{doc.role}</p>
                   <p className="text-slate-500 font-semibold text-xs">{doc.qualifications}</p>
                   <p className="text-slate-600 text-xs leading-relaxed pt-1">{doc.bio}</p>
-
                   <div className="flex flex-wrap gap-1.5 pt-2 justify-center sm:justify-start">
                     {doc.specialties.map((spec, i) => (
                       <span key={i} className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 font-semibold text-[10px]">
@@ -180,33 +226,25 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* Facilities Highlight */}
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          
           <div className="text-center space-y-3">
             <h2 className="text-3xl font-black text-slate-900">
-              Advanced Hospital <span className="gradient-text">Facilities</span>
+              40 Bedded Center <span className="gradient-text">Facilities</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "Level III NICU", desc: "Advanced incubators, ventilators, phototherapy & continuous neonatal monitoring.", icon: FaHospital },
-              { title: "Pediatric ICU (PICU)", desc: "Life-support critical care unit for acute childhood illnesses.", icon: FaAward },
-              { title: "24x7 Emergency Room", desc: "Triage room equipped with pediatric oxygen & emergency resuscitation.", icon: FaClock },
-              { title: "Vaccination Hub", desc: "WHO-compliant cold storage for 100% genuine vaccines.", icon: FaShieldAlt }
-            ].map((fac, idx) => (
+            {CHILDREN_FACILITIES_LIST.slice(0, 8).map((fac, idx) => (
               <div key={idx} className="glass-card p-6 rounded-3xl text-center border border-white/80 space-y-3">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-primary to-accent text-white mx-auto flex items-center justify-center text-xl shadow-md">
-                  <fac.icon />
+                  <FaHospital />
                 </div>
-                <h4 className="text-lg font-bold text-slate-900">{fac.title}</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">{fac.desc}</p>
+                <h4 className="text-base font-bold text-slate-900">{fac.name}</h4>
               </div>
             ))}
           </div>
@@ -219,7 +257,6 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
               <FaCalendarCheck /> Schedule a Consultation
             </button>
           </div>
-
         </div>
       </section>
     </div>

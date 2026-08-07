@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaPhoneAlt, FaBars, FaTimes, FaCalendarCheck, FaHeartbeat, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhoneAlt, FaBars, FaTimes, FaCalendarCheck, FaHeartbeat, FaClock } from 'react-icons/fa';
 import { HOSPITAL_INFO } from '../data/hospitalData';
 
 interface NavbarProps {
@@ -45,11 +45,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
-              <FaClock className="text-emerald-300" /> 24×7 Emergency & OPD Services Available
+              <FaClock className="text-emerald-300" /> OPD: Mon-Sat 9am-3pm & 5pm-9pm | 24x7 Emergency
             </span>
-            <span className="flex items-center gap-2">
-              <FaMapMarkerAlt className="text-cyan-200" /> 9 Kamla Nagar, 100 Feet Road, Udaipur
-            </span>
+            <a href={`mailto:${HOSPITAL_INFO.email}`} className="flex items-center gap-2 hover:underline text-cyan-100">
+              ✉️ {HOSPITAL_INFO.email}
+            </a>
           </div>
 
           <div className="flex items-center gap-4">
