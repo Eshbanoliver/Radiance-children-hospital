@@ -879,62 +879,92 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
 
           </div>
 
-          {/* Bottom Grid: 6 Infrastructure Cards with Multi-Colored Background Glow Shadows */}
+          {/* Bottom Grid: 6 Infrastructure Cards with Rich Inside Graphic Designs */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "In-House Pharmacy & Medical Store",
                 desc: "100% genuine pediatric medications, cold-chain vaccines, and medical supplies available round-the-clock.",
                 tag: "24x7 Pharmacy",
-                badgeBg: "bg-amber-500/10 border-amber-300 text-amber-900",
-                shadow: "shadow-amber-500/15 hover:shadow-amber-500/30 border-amber-200/80 bg-gradient-to-br from-white via-amber-50/30 to-white",
-                iconBg: "from-amber-400 to-orange-500",
-                icon: FaPills
+                badgeBg: "bg-amber-500/15 border-amber-300 text-amber-900",
+                shadow: "shadow-amber-500/20 hover:shadow-amber-500/35 border-amber-200/90 bg-gradient-to-br from-amber-500/10 via-white to-amber-500/5",
+                iconBg: "from-amber-400 via-orange-500 to-amber-600",
+                icon: FaPills,
+                highlights: [
+                  "100% Genuine Pediatric Medicines",
+                  "Strict Cold-Chain Refrigeration",
+                  "24/7 Night Dispatch Counter"
+                ]
               },
               {
                 title: "24x7 Transport Ambulance",
                 desc: "Neonatal ambulance equipped with Neopuff, Embrace Nest, oximeter & accompanied by Intensivist.",
                 tag: "Emergency Dispatch",
-                badgeBg: "bg-rose-500/10 border-rose-300 text-rose-900",
-                shadow: "shadow-rose-500/15 hover:shadow-rose-500/30 border-rose-200/80 bg-gradient-to-br from-white via-rose-50/30 to-white",
-                iconBg: "from-rose-500 to-pink-500",
-                icon: FaAmbulance
+                badgeBg: "bg-rose-500/15 border-rose-300 text-rose-900",
+                shadow: "shadow-rose-500/20 hover:shadow-rose-500/35 border-rose-200/90 bg-gradient-to-br from-rose-500/10 via-white to-rose-500/5",
+                iconBg: "from-rose-500 via-pink-500 to-rose-600",
+                icon: FaAmbulance,
+                highlights: [
+                  "Neopuff & Embrace Nest Care",
+                  "Accompanied by Intensivist Doctor",
+                  "Multipara Vital Pulse Oximeter"
+                ]
               },
               {
                 title: "100% DG Auto Power Backup",
                 desc: "Uninterrupted power supply generators ensuring ventilators, incubators, & ICU monitors never shut down.",
                 tag: "Zero Downtime",
-                badgeBg: "bg-purple-500/10 border-purple-300 text-purple-900",
-                shadow: "shadow-purple-500/15 hover:shadow-purple-500/30 border-purple-200/80 bg-gradient-to-br from-white via-purple-50/30 to-white",
-                iconBg: "from-purple-500 to-indigo-600",
-                icon: FaBolt
+                badgeBg: "bg-purple-500/15 border-purple-300 text-purple-900",
+                shadow: "shadow-purple-500/20 hover:shadow-purple-500/35 border-purple-200/90 bg-gradient-to-br from-purple-500/10 via-white to-purple-500/5",
+                iconBg: "from-purple-500 via-indigo-600 to-purple-700",
+                icon: FaBolt,
+                highlights: [
+                  "Zero Downtime Auto-Generators",
+                  "Uninterrupted ICU Ventilators",
+                  "Automatic Transfer Switch (ATS)"
+                ]
               },
               {
                 title: "HD CCTV Surveillance & Security",
                 desc: "24x7 camera surveillance and smart access security for total infant safety and parent peace of mind.",
                 tag: "Child Security",
-                badgeBg: "bg-sky-500/10 border-sky-300 text-sky-900",
-                shadow: "shadow-sky-500/15 hover:shadow-sky-500/30 border-sky-200/80 bg-gradient-to-br from-white via-sky-50/30 to-white",
-                iconBg: "from-sky-400 to-blue-600",
-                icon: FaVideo
+                badgeBg: "bg-sky-500/15 border-sky-300 text-sky-900",
+                shadow: "shadow-sky-500/20 hover:shadow-sky-500/35 border-sky-200/90 bg-gradient-to-br from-sky-500/10 via-white to-sky-500/5",
+                iconBg: "from-sky-400 via-blue-500 to-indigo-600",
+                icon: FaVideo,
+                highlights: [
+                  "High-Definition 24x7 Cameras",
+                  "Smart Access Restricted NICU",
+                  "Parent Comfort Security Setup"
+                ]
               },
               {
                 title: "Lactation Management Support",
                 desc: "Private breastfeeding spaces, infant weaning diet support, and Kangaroo Mother Care (KMC) guidance.",
                 tag: "Mother Wellness",
-                badgeBg: "bg-pink-500/10 border-pink-300 text-pink-900",
-                shadow: "shadow-pink-500/15 hover:shadow-pink-500/30 border-pink-200/80 bg-gradient-to-br from-white via-pink-50/30 to-white",
-                iconBg: "from-pink-500 to-rose-500",
-                icon: FaHeart
+                badgeBg: "bg-pink-500/15 border-pink-300 text-pink-900",
+                shadow: "shadow-pink-500/20 hover:shadow-pink-500/35 border-pink-200/90 bg-gradient-to-br from-pink-500/10 via-white to-pink-500/5",
+                iconBg: "from-pink-500 via-rose-500 to-purple-500",
+                icon: FaHeart,
+                highlights: [
+                  "Private Lactation & Nursing Rooms",
+                  "Infant Weaning Nutrition Chart",
+                  "Skin-to-Skin Kangaroo Care"
+                ]
               },
               {
                 title: "WHO Newborn Screening & Vaccination",
                 desc: "Full vaccine stock in cold chain storage, ROP retina screening, and OAE objective hearing checks.",
                 tag: "WHO Standard",
-                badgeBg: "bg-teal-500/10 border-teal-300 text-teal-900",
-                shadow: "shadow-teal-500/15 hover:shadow-teal-500/30 border-teal-200/80 bg-gradient-to-br from-white via-teal-50/30 to-white",
-                iconBg: "from-teal-400 to-emerald-600",
-                icon: FaSyringe
+                badgeBg: "bg-teal-500/15 border-teal-300 text-teal-900",
+                shadow: "shadow-teal-500/20 hover:shadow-teal-500/35 border-teal-200/90 bg-gradient-to-br from-teal-500/10 via-white to-teal-500/5",
+                iconBg: "from-teal-400 via-emerald-500 to-teal-700",
+                icon: FaSyringe,
+                highlights: [
+                  "WHO & IAP Immunization Stock",
+                  "Retina Specialist ROP Check",
+                  "OAE Objective Hearing Test"
+                ]
               }
             ].map((fac, idx) => {
               const IconComp = fac.icon;
@@ -946,30 +976,40 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.06 }}
                   whileHover={{ y: -6, scale: 1.02 }}
-                  className={`rounded-3xl p-6 border shadow-xl flex flex-col justify-between space-y-4 transition-all duration-300 group ${fac.shadow}`}
+                  className={`rounded-3xl p-6 border shadow-xl flex flex-col justify-between space-y-5 transition-all duration-300 group ${fac.shadow}`}
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <div className={`w-13 h-13 rounded-2xl bg-gradient-to-tr ${fac.iconBg} text-white flex items-center justify-center text-xl font-black shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${fac.iconBg} text-white flex items-center justify-center text-2xl font-black shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-white`}>
                         <IconComp />
                       </div>
-                      <span className={`px-2.5 py-0.5 rounded-full font-black text-[10px] uppercase tracking-wider border ${fac.badgeBg}`}>
+                      <span className={`px-2.5 py-1 rounded-full font-black text-[10px] uppercase tracking-wider border ${fac.badgeBg}`}>
                         {fac.tag}
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-black text-slate-900 group-hover:text-primary transition-colors leading-snug">
+                    <h3 className="text-xl font-black text-slate-900 group-hover:text-primary transition-colors leading-snug">
                       {fac.title}
                     </h3>
 
                     <p className="text-slate-600 text-xs font-semibold leading-relaxed">
                       {fac.desc}
                     </p>
+
+                    {/* Rich Inside Graphic Sub-Pills */}
+                    <div className="pt-2 space-y-1.5">
+                      {fac.highlights.map((item, i) => (
+                        <div key={i} className="flex items-center gap-2 p-2 rounded-xl bg-white/80 border border-slate-200/80 text-[11px] font-bold text-slate-800 shadow-sm">
+                          <FaCheckCircle className="text-emerald-500 text-xs shrink-0" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  <div className="pt-3 border-t border-slate-200/60 flex items-center justify-between text-[11px] font-extrabold text-emerald-600">
-                    <span className="flex items-center gap-1"><FaCheckCircle className="text-xs" /> Verified Facility</span>
-                    <span className="text-slate-400 font-bold">24 Hours</span>
+                  <div className="pt-3 border-t border-slate-200/80 flex items-center justify-between text-[11px] font-extrabold text-emerald-600">
+                    <span className="flex items-center gap-1"><FaCheckCircle className="text-xs text-emerald-500" /> Clinical Standard</span>
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-black">Active 24/7</span>
                   </div>
                 </motion.div>
               );
