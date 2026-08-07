@@ -6,7 +6,7 @@ import {
   FaUserMd, FaSyringe, FaMicroscope, FaProcedures, FaChevronDown, 
   FaStar, FaQuoteLeft, FaAmbulance, FaAward, FaShieldAlt, FaCheckCircle,
   FaHeart, FaLightbulb, FaHandsWash, FaBalanceScale, FaSyncAlt, FaUserCheck,
-  FaChevronLeft, FaChevronRight
+  FaChevronLeft, FaChevronRight, FaHospital
 } from 'react-icons/fa';
 import { HOSPITAL_INFO, KEY_METRICS, SERVICES_DATA, CORE_VALUES, WHY_CHOOSE_US, TESTIMONIALS, FAQS } from '../data/hospitalData';
 import { SEO } from '../components/SEO';
@@ -27,29 +27,29 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
   const heroSlides = [
     {
       image: hospitalExterior,
-      title: "Radiant Children's Hospital Building",
+      title: "Radiant Children's Hospital Exterior",
       badge: "9 Kamla Nagar, 100 Feet Road, Udaipur",
-      highlight: "Advanced Child Healthcare Infrastructure"
+      highlight: "Advanced Pediatric Hospital Facility"
     },
     {
       image: hospitalNicu,
-      title: "Level III NICU & PICU Unit",
-      badge: "State-of-the-Art Incubators & Ventilators",
-      highlight: "Specialized Newborn & Infant Care"
+      title: "Level III NICU & PICU Critical Care Nursery",
+      badge: "24×7 Intensive Newborn & Child Monitoring",
+      highlight: "State-of-the-Art Incubators & Ventilators"
     },
     {
       image: hospitalNight,
       title: "24×7 Emergency Desk & Reception",
-      badge: "24 Hours Response • Udaipur",
-      highlight: "Emergency Pediatricians Always On-Call"
+      badge: "24 Hours Emergency Response • Udaipur",
+      highlight: "Round-the-Clock Pediatricians On-Call"
     }
   ];
 
-  // Auto slide hero every 4.5 seconds
+  // Auto slide hero every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroSlideIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 4500);
+    }, 5000);
     return () => clearInterval(timer);
   }, [heroSlides.length]);
 
@@ -77,181 +77,151 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
     <div className="space-y-16 sm:space-y-24 pb-12">
       <SEO title="Radiant Children's Hospital | Trusted Pediatric & Emergency Care in Udaipur" />
 
-      {/* 1. HERO SECTION */}
-      <section className="relative pt-6 sm:pt-12 pb-16 overflow-hidden">
-        {/* Soft Background Gradient Blobs */}
-        <div className="absolute top-10 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl pointer-events-none animate-float-slow" />
-        <div className="absolute top-40 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl pointer-events-none animate-float-medium" />
-        <div className="absolute bottom-10 left-1/3 w-80 h-80 bg-secondary/20 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-7 space-y-6 text-center lg:text-left"
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-primary/30 text-primary font-bold text-xs sm:text-sm shadow-sm">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-                Premier Pediatric, Neonatal & Emergency Hospital in Udaipur
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
-                {HOSPITAL_INFO.tagline.split('Every Step')[0]}
-                <span className="gradient-text">Every Step</span>
-                {HOSPITAL_INFO.tagline.split('Every Step')[1]}
-              </h1>
-
-              <p className="text-slate-600 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                {HOSPITAL_INFO.subheading}
-              </p>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                <button
-                  onClick={onOpenBooking}
-                  className="px-8 py-4 rounded-full gradient-btn text-white font-extrabold text-base shadow-xl hover:scale-105 transition-all flex items-center gap-3"
-                >
-                  <FaCalendarCheck /> Book Appointment
-                </button>
-
-                <Link
-                  to="/contact"
-                  className="px-8 py-4 rounded-full secondary-glass-btn font-extrabold text-base shadow-md flex items-center gap-2"
-                >
-                  <FaPhoneAlt /> Contact Us
-                </Link>
-              </div>
-
-              {/* Trust Badges */}
-              <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 border-t border-slate-200/60">
-                {[
-                  { title: "0-18 Years", sub: "Complete Care" },
-                  { title: "24×7 Emergency", sub: "Always Ready" },
-                  { title: "NICU & PICU", sub: "Level III ICUs" },
-                  { title: "Vaccination", sub: "WHO Approved" }
-                ].map((item, idx) => (
-                  <div key={idx} className="glass-panel p-3 rounded-2xl text-center">
-                    <div className="text-sm font-extrabold text-slate-800">{item.title}</div>
-                    <div className="text-[11px] font-semibold text-primary">{item.sub}</div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Right Hero Image Slider */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+      {/* 1. FULL-WIDTH HERO SECTION SLIDER */}
+      <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-2 sm:mt-4">
+        <div className="relative w-full min-h-[580px] lg:min-h-[640px] rounded-3xl overflow-hidden shadow-2xl border border-white/40 flex items-center">
+          
+          {/* Background Sliding Images */}
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={heroSlideIndex}
+              src={heroSlides[heroSlideIndex].image}
+              alt={heroSlides[heroSlideIndex].title}
+              initial={{ opacity: 0, scale: 1.08 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:col-span-5 relative"
-            >
-              <div className="relative mx-auto max-w-md lg:max-w-none">
-                
-                {/* Main Hero Card Container */}
-                <div className="relative rounded-3xl overflow-hidden glass-panel p-3.5 border border-white/80 shadow-2xl">
-                  
-                  <div className="relative h-96 sm:h-[420px] rounded-2xl overflow-hidden group">
-                    <AnimatePresence mode="wait">
-                      <motion.img
-                        key={heroSlideIndex}
-                        src={heroSlides[heroSlideIndex].image}
-                        alt={heroSlides[heroSlideIndex].title}
-                        initial={{ opacity: 0, scale: 1.08 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.96 }}
-                        transition={{ duration: 0.6 }}
-                        className="w-full h-full object-cover"
-                        loading="eager"
-                      />
-                    </AnimatePresence>
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+              loading="eager"
+            />
+          </AnimatePresence>
 
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-transparent pointer-events-none" />
+          {/* Dark Glass Overlay gradient for 100% legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-slate-900/40 backdrop-blur-[2px] pointer-events-none" />
 
-                    {/* Arrow Navigation Controls */}
-                    <button
-                      onClick={prevHeroSlide}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/40 hover:bg-slate-900/80 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-md hover:scale-110"
-                      aria-label="Previous slide"
-                    >
-                      <FaChevronLeft className="text-sm" />
-                    </button>
+          {/* Slider Side Arrow Buttons */}
+          <button
+            onClick={prevHeroSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/50 hover:bg-slate-900/90 border border-white/30 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-xl hover:scale-110"
+            aria-label="Previous image"
+          >
+            <FaChevronLeft className="text-base" />
+          </button>
 
-                    <button
-                      onClick={nextHeroSlide}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/40 hover:bg-slate-900/80 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-md hover:scale-110"
-                      aria-label="Next slide"
-                    >
-                      <FaChevronRight className="text-sm" />
-                    </button>
+          <button
+            onClick={nextHeroSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-slate-900/50 hover:bg-slate-900/90 border border-white/30 text-white flex items-center justify-center backdrop-blur-md transition-all shadow-xl hover:scale-110"
+            aria-label="Next image"
+          >
+            <FaChevronRight className="text-base" />
+          </button>
 
-                    {/* Slide Caption Box */}
-                    <div className="absolute bottom-5 left-5 right-5 text-white z-10">
-                      <div className="inline-block px-3 py-1 bg-emerald-500 text-white font-extrabold text-[11px] rounded-full mb-1.5 shadow-md uppercase tracking-wider">
-                        {heroSlides[heroSlideIndex].highlight}
-                      </div>
-                      <h3 className="text-lg sm:text-xl font-black leading-snug">
-                        {heroSlides[heroSlideIndex].title}
-                      </h3>
-                      <p className="text-slate-200 text-xs mt-0.5">
-                        {heroSlides[heroSlideIndex].badge}
-                      </p>
-
-                      {/* Dots Indicators */}
-                      <div className="flex items-center gap-1.5 mt-3">
-                        {heroSlides.map((_, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() => setHeroSlideIndex(idx)}
-                            className={`h-2 rounded-full transition-all duration-300 ${
-                              idx === heroSlideIndex ? 'bg-emerald-400 w-7' : 'bg-white/40 w-2 hover:bg-white'
-                            }`}
-                            aria-label={`Go to slide ${idx + 1}`}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
+          {/* Hero Content Overlay */}
+          <div className="relative z-10 w-full p-6 sm:p-12 lg:p-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              {/* Left Column: Headline, Subtitle & Action Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="lg:col-span-8 space-y-6 text-left text-white"
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white font-bold text-xs sm:text-sm shadow-md">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                  Premier Pediatric, Neonatal & Emergency Hospital in Udaipur
                 </div>
 
-                {/* Animated Floating Badges */}
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12]">
+                  Caring for Every Child, <span className="bg-gradient-to-r from-cyan-300 via-emerald-300 to-teal-200 bg-clip-text text-transparent">Every Step of the Way</span>
+                </h1>
+
+                <p className="text-slate-200 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl">
+                  {HOSPITAL_INFO.subheading}
+                </p>
+
+                {/* Buttons */}
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <button
+                    onClick={onOpenBooking}
+                    className="px-8 py-4 rounded-full gradient-btn text-white font-extrabold text-base shadow-2xl hover:scale-105 transition-all flex items-center gap-3"
+                  >
+                    <FaCalendarCheck /> Book Appointment
+                  </button>
+
+                  <Link
+                    to="/contact"
+                    className="px-8 py-4 rounded-full bg-white/20 hover:bg-white/30 border border-white/40 text-white font-extrabold text-base backdrop-blur-md transition-all flex items-center gap-2 shadow-lg"
+                  >
+                    <FaPhoneAlt /> Contact Us
+                  </Link>
+                </div>
+
+                {/* Trust Badges */}
+                <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 border-t border-white/20">
+                  {[
+                    { title: "0-18 Years", sub: "Complete Care" },
+                    { title: "24×7 Emergency", sub: "Always Ready" },
+                    { title: "NICU & PICU", sub: "Level III ICUs" },
+                    { title: "Vaccination", sub: "WHO Approved" }
+                  ].map((item, idx) => (
+                    <div key={idx} className="bg-slate-900/40 backdrop-blur-md p-3 rounded-2xl border border-white/15 text-center">
+                      <div className="text-sm font-black text-white">{item.title}</div>
+                      <div className="text-[11px] font-bold text-cyan-300">{item.sub}</div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Right Column: Slide Info Card & Indicators */}
+              <div className="lg:col-span-4 flex flex-col justify-end items-end space-y-4">
+                
+                {/* Active Slide Info Card */}
                 <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute -top-6 -left-6 glass-panel p-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-white z-20"
+                  key={heroSlideIndex}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-slate-900/60 backdrop-blur-xl p-5 rounded-2xl border border-white/25 text-white max-w-sm w-full shadow-2xl space-y-2"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-xl shadow-md">
-                    <FaBaby />
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="px-2.5 py-1 rounded-full bg-emerald-500 text-white font-black uppercase tracking-wider text-[10px]">
+                      {heroSlides[heroSlideIndex].highlight}
+                    </span>
+                    <span className="font-bold text-cyan-300">
+                      0{heroSlideIndex + 1} / 0{heroSlides.length}
+                    </span>
                   </div>
-                  <div>
-                    <div className="text-xs font-black text-slate-800">Best Neonatologist</div>
-                    <div className="text-[10px] font-bold text-emerald-600">Specialized NICU Care</div>
-                  </div>
+
+                  <h3 className="text-base font-extrabold leading-snug">
+                    {heroSlides[heroSlideIndex].title}
+                  </h3>
+
+                  <p className="text-slate-300 text-xs flex items-center gap-1.5 font-semibold">
+                    <FaHospital className="text-emerald-400 shrink-0" />
+                    {heroSlides[heroSlideIndex].badge}
+                  </p>
                 </motion.div>
 
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                  className="absolute -bottom-6 -right-4 glass-panel p-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-white z-20"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center text-xl shadow-md">
-                    <FaAmbulance />
-                  </div>
-                  <div>
-                    <div className="text-xs font-black text-slate-800">24×7 Emergency</div>
-                    <div className="text-[10px] font-bold text-primary">Call: {HOSPITAL_INFO.phone}</div>
-                  </div>
-                </motion.div>
+                {/* Slide Indicators Dots */}
+                <div className="flex items-center gap-2 bg-slate-900/50 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+                  {heroSlides.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setHeroSlideIndex(idx)}
+                      className={`h-2.5 rounded-full transition-all duration-300 ${
+                        idx === heroSlideIndex ? 'bg-emerald-400 w-8' : 'bg-white/40 w-2.5 hover:bg-white'
+                      }`}
+                      aria-label={`Slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
 
               </div>
-            </motion.div>
 
+            </div>
           </div>
+
         </div>
       </section>
 
