@@ -10,8 +10,7 @@ import {
 } from 'react-icons/fa';
 import { 
   HOSPITAL_INFO, KEY_METRICS, SERVICES_DATA, WHY_CHOOSE_US, 
-  TESTIMONIALS, FAQS, NICU_EQUIPMENT_SPECS, PICU_EQUIPMENT_SPECS, 
-  INTACT_SURVIVAL_COMMITMENT, INFECTION_CONTROL_PROTOCOLS, 
+  TESTIMONIALS, FAQS, INTACT_SURVIVAL_COMMITMENT, INFECTION_CONTROL_PROTOCOLS, 
   CHILDREN_FACILITIES_LIST, TRANSPORT_SYSTEM_DETAILS 
 } from '../data/hospitalData';
 import { SEO } from '../components/SEO';
@@ -289,72 +288,134 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            {/* Level III NICU Equipment Card */}
+            {/* 1. Level III NICU Equipment Card (Vibrant Teal / Cyan Theme) */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="glass-panel p-8 rounded-3xl border border-white/80 shadow-2xl space-y-6 relative overflow-hidden"
+              className="rounded-3xl bg-white border border-slate-200/80 shadow-2xl overflow-hidden flex flex-col justify-between group hover:shadow-cyan-500/20 transition-all duration-300"
             >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white flex items-center justify-center text-2xl shadow-lg">
-                    <FaMicroscope />
+              {/* Vibrant Gradient Header */}
+              <div className="bg-gradient-to-r from-slate-900 via-cyan-900 to-teal-900 text-white p-6 sm:p-8 relative overflow-hidden border-b border-cyan-500/30">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-400/20 rounded-full blur-3xl pointer-events-none" />
+                <div className="flex items-center justify-between relative z-10">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-400 to-emerald-400 text-slate-950 flex items-center justify-center text-2xl font-black shadow-xl shadow-cyan-400/30 group-hover:scale-110 transition-transform">
+                      <FaMicroscope />
+                    </div>
+                    <div>
+                      <span className="px-2.5 py-0.5 rounded-full bg-cyan-400/20 text-cyan-300 font-extrabold text-[10px] uppercase tracking-wider border border-cyan-400/30">
+                        Level III Specialty
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl font-black text-white mt-1">Highly Equipped NICU</h3>
+                      <p className="text-xs font-semibold text-teal-200">Neonatal Intensive Care Unit</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-black text-slate-900">Highly Equipped Level III NICU</h3>
-                    <p className="text-xs font-bold text-primary">Neonatal Intensive Care Unit</p>
-                  </div>
+
+                  <span className="hidden sm:inline-block px-3 py-1.5 rounded-full bg-emerald-400 text-slate-950 font-black text-xs shadow-md">
+                    24×7 Intensivists
+                  </span>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 font-extrabold text-xs">
-                  24×7 Intensivists
-                </span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                {NICU_EQUIPMENT_SPECS.map((spec, i) => (
-                  <div key={i} className="flex items-start gap-2 text-xs font-bold text-slate-700 bg-white/70 p-2.5 rounded-xl border border-slate-100">
-                    <FaCheckCircle className="text-cyan-500 text-sm shrink-0 mt-0.5" />
-                    <span>{spec}</span>
-                  </div>
-                ))}
+              {/* Equipment Items Grid with Vibrant Custom Color Badges */}
+              <div className="p-6 sm:p-8 space-y-4">
+                <p className="text-xs font-black uppercase tracking-wider text-slate-700">Advanced Newborn Life Support Tech:</p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { text: "High Frequency Ventilator (HFOV)", theme: "bg-cyan-500/10 border-cyan-300/60 text-cyan-900", iconColor: "text-cyan-600" },
+                    { text: "Conventional & Bubble CPAP", theme: "bg-teal-500/10 border-teal-300/60 text-teal-900", iconColor: "text-teal-600" },
+                    { text: "High Flow Nasal Cannula (HFNC)", theme: "bg-emerald-500/10 border-emerald-300/60 text-emerald-900", iconColor: "text-emerald-600" },
+                    { text: "Servo Radiant Warner & LED Phototherapy", theme: "bg-amber-500/10 border-amber-300/60 text-amber-900", iconColor: "text-amber-600" },
+                    { text: "Mira Cradle Therapeutic Hypothermia", theme: "bg-sky-500/10 border-sky-300/60 text-sky-900", iconColor: "text-sky-600" },
+                    { text: "Multi Para Monitors & Transilluminator", theme: "bg-purple-500/10 border-purple-300/60 text-purple-900", iconColor: "text-purple-600" },
+                    { text: "Surfactant & Exchange Transfusion", theme: "bg-rose-500/10 border-rose-300/60 text-rose-900", iconColor: "text-rose-600" },
+                    { text: "Parenteral Nutrition (TPN) Setup", theme: "bg-indigo-500/10 border-indigo-300/60 text-indigo-900", iconColor: "text-indigo-600" },
+                    { text: "Kangaroo Mother Care (KMC)", theme: "bg-pink-500/10 border-pink-300/60 text-pink-900", iconColor: "text-pink-600" },
+                    { text: "Bedside 2D Echo & Ultrasound", theme: "bg-blue-500/10 border-blue-300/60 text-blue-900", iconColor: "text-blue-600" }
+                  ].map((spec, i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{ scale: 1.02 }}
+                      className={`flex items-start gap-2.5 p-3 rounded-2xl border ${spec.theme} shadow-sm font-bold text-xs transition-all`}
+                    >
+                      <FaCheckCircle className={`${spec.iconColor} text-sm shrink-0 mt-0.5`} />
+                      <span className="leading-snug">{spec.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Footer Note */}
+              <div className="px-6 sm:px-8 pb-6 pt-2">
+                <div className="p-3.5 rounded-2xl bg-slate-900 text-white flex items-center justify-between text-xs font-bold">
+                  <span>Sterile Smart Access NICU Nursery</span>
+                  <span className="text-cyan-300">Level III Certified</span>
+                </div>
               </div>
             </motion.div>
 
-            {/* Highly Equipped PICU Card */}
+            {/* 2. Highly Equipped PICU Card (Vibrant Purple / Indigo / Pink Theme) */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="glass-panel p-8 rounded-3xl border border-white/80 shadow-2xl space-y-6 relative overflow-hidden"
+              className="rounded-3xl bg-white border border-slate-200/80 shadow-2xl overflow-hidden flex flex-col justify-between group hover:shadow-purple-500/20 transition-all duration-300"
             >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 text-white flex items-center justify-center text-2xl shadow-lg">
-                    <FaProcedures />
+              {/* Vibrant Gradient Header */}
+              <div className="bg-gradient-to-r from-slate-900 via-purple-950 to-indigo-950 text-white p-6 sm:p-8 relative overflow-hidden border-b border-purple-500/30">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
+                <div className="flex items-center justify-between relative z-10">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-400 via-pink-400 to-rose-400 text-slate-950 flex items-center justify-center text-2xl font-black shadow-xl shadow-purple-500/30 group-hover:scale-110 transition-transform">
+                      <FaProcedures />
+                    </div>
+                    <div>
+                      <span className="px-2.5 py-0.5 rounded-full bg-purple-400/20 text-purple-300 font-extrabold text-[10px] uppercase tracking-wider border border-purple-400/30">
+                        Critical Care Unit
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl font-black text-white mt-1">Highly Equipped PICU</h3>
+                      <p className="text-xs font-semibold text-pink-200">Pediatric Intensive Care Unit</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-black text-slate-900">Highly Equipped PICU</h3>
-                    <p className="text-xs font-bold text-purple-600">Pediatric Intensive Care Unit</p>
-                  </div>
+
+                  <span className="hidden sm:inline-block px-3 py-1.5 rounded-full bg-pink-400 text-slate-950 font-black text-xs shadow-md">
+                    24×7 Intensivists
+                  </span>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-purple-100 text-purple-800 font-extrabold text-xs">
-                  Critical Care
-                </span>
               </div>
 
-              <div className="space-y-3 pt-2">
-                {PICU_EQUIPMENT_SPECS.map((spec, i) => (
-                  <div key={i} className="flex items-center gap-3 text-xs font-bold text-slate-700 bg-white/70 p-3 rounded-xl border border-slate-100">
-                    <FaCheckCircle className="text-purple-500 text-base shrink-0" />
-                    <span>{spec}</span>
-                  </div>
-                ))}
+              {/* Equipment Items Grid with Vibrant Custom Color Badges */}
+              <div className="p-6 sm:p-8 space-y-4">
+                <p className="text-xs font-black uppercase tracking-wider text-slate-700">Child Life Support Equipment:</p>
+
+                <div className="space-y-3">
+                  {[
+                    { text: "Pediatric Advanced Ventilators (Volume & Pressure Control)", theme: "bg-purple-500/10 border-purple-300/60 text-purple-950", iconColor: "text-purple-600" },
+                    { text: "Multipara Patient Vital Monitors (ECG, NIBP, SpO2, Temp)", theme: "bg-fuchsia-500/10 border-fuchsia-300/60 text-fuchsia-950", iconColor: "text-fuchsia-600" },
+                    { text: "Precision Syringe Pumps & Volumetric Infusion Pumps", theme: "bg-rose-500/10 border-rose-300/60 text-rose-950", iconColor: "text-rose-600" },
+                    { text: "Central Oxygen Lines, Compressed Air & High Vacuum Suction", theme: "bg-cyan-500/10 border-cyan-300/60 text-cyan-950", iconColor: "text-cyan-600" },
+                    { text: "Dedicated Pediatric Critical Care Nursing Staff (1:1 Ratio)", theme: "bg-emerald-500/10 border-emerald-300/60 text-emerald-950", iconColor: "text-emerald-600" }
+                  ].map((spec, i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{ scale: 1.01 }}
+                      className={`flex items-center gap-3 p-3.5 rounded-2xl border ${spec.theme} shadow-sm font-bold text-xs transition-all`}
+                    >
+                      <FaCheckCircle className={`${spec.iconColor} text-base shrink-0`} />
+                      <span className="leading-snug">{spec.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-purple-50 border border-purple-200/60 text-xs space-y-1">
-                <p className="font-black text-purple-900">Dedicated Pediatric Intensivists Support</p>
-                <p className="text-slate-600">Continuous monitoring with syringe pumps, volumetric pumps, and central oxygen lines.</p>
+              {/* Footer Note */}
+              <div className="px-6 sm:px-8 pb-6 pt-2">
+                <div className="p-3.5 rounded-2xl bg-gradient-to-r from-purple-900 to-slate-900 text-white flex items-center justify-between text-xs font-bold border border-purple-500/30">
+                  <span>24x7 Pediatric ICU Doctor On-Site</span>
+                  <span className="text-pink-300">Monitored 24 Hours</span>
+                </div>
               </div>
             </motion.div>
 
