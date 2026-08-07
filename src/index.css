@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    background: linear-gradient(135deg, #F8FBFF 0%, #EBF4FF 50%, #E6FAF5 100%);
+    background-attachment: fixed;
+    color: #0F172A;
+  }
+}
+
+/* Custom Glassmorphism Utility Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px -5px rgba(13, 110, 253, 0.08), 0 4px 12px 0 rgba(0, 0, 0, 0.03);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(13, 110, 253, 0.07);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(13, 110, 253, 0.35);
+  box-shadow: 0 20px 40px -10px rgba(13, 110, 253, 0.18), 0 0 25px rgba(32, 201, 151, 0.18);
+  transform: translateY(-6px);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 20px rgba(13, 110, 253, 0.06);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0D6EFD 0%, #00B4D8 50%, #20C997 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-btn {
+  background: linear-gradient(135deg, #0D6EFD 0%, #00B4D8 100%);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px -4px rgba(13, 110, 253, 0.4);
+}
+
+.gradient-btn:hover {
+  background: linear-gradient(135deg, #0B5ED7 0%, #20C997 100%);
+  box-shadow: 0 12px 30px -2px rgba(32, 201, 151, 0.5);
+  transform: translateY(-2px);
+}
+
+.secondary-glass-btn {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(13, 110, 253, 0.25);
+  color: #0D6EFD;
+  transition: all 0.3s ease;
+}
+
+.secondary-glass-btn:hover {
+  background: rgba(13, 110, 253, 0.08);
+  border-color: #0D6EFD;
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FBFF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #93C5FD;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0D6EFD;
+}
