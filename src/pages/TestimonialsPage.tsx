@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  FaStar, FaCheckCircle, FaGoogle, FaSmile, FaCalendarCheck, 
-  FaPhoneAlt, FaQuoteLeft, FaSearch, FaHeart, FaAward, FaShieldAlt 
+  FaStar, FaCheckCircle, FaGoogle, FaCalendarCheck, 
+  FaPhoneAlt, FaQuoteLeft, FaSearch, FaHeart
 } from 'react-icons/fa';
 import { TESTIMONIALS, HOSPITAL_INFO } from '../data/hospitalData';
 import { SEO } from '../components/SEO';

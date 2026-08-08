@@ -73,12 +73,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Hospital Brand Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="h-12 sm:h-14 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
+          <Link to="/" className="flex items-center group py-1">
+            <div className="h-16 sm:h-20 max-h-20 sm:-my-2.5 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
               <img
                 src={logoImg}
                 alt="Radiant Children's Hospital Logo"
-                className="h-full w-auto object-contain rounded-xl shadow-xs"
+                className="h-full w-auto object-contain rounded-2xl shadow-md border-2 border-white/80 bg-white"
               />
             </div>
           </Link>

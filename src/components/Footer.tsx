@@ -16,11 +16,11 @@ export const Footer: React.FC = () => {
           
           {/* Column 1: Hospital Overview & Social */}
           <div className="space-y-6">
-            <Link to="/" className="inline-block group bg-white p-2.5 rounded-2xl shadow-md hover:scale-105 transition-transform">
+            <Link to="/" className="inline-block group bg-white p-3 rounded-2xl shadow-lg hover:scale-105 transition-transform border border-slate-100">
               <img
                 src={logoImg}
                 alt="Radiant Children's Hospital Logo"
-                className="h-14 sm:h-16 w-auto object-contain"
+                className="h-20 sm:h-24 w-auto object-contain"
               />
             </Link>
 
