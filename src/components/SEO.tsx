@@ -24,6 +24,12 @@ export const SEO: React.FC<SEOProps> = ({
       metaDescription.setAttribute('content', description);
     }
 
+    // Update meta theme-color to green
+    let metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', '#20C997');
+    }
+
     // Add JSON-LD Schema markup for Hospital / MedicalBusiness
     const schemaData = {
       "@context": "https://schema.org",
