@@ -504,7 +504,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     parentName: 'Vikram Mehta',
     childInfo: 'Father of Ananya (Newborn)',
     rating: 5,
-    comment: 'Best Neonatologist in Udaipur! My premature daughter needed Level III NICU care and HFOV ventilation for 10 days. The incubators, Mira Cradle hypothermia care, and doctor explanations were top-notch.',
+    comment: 'Best Neonatologist in Udaipur! My premature daughter needed Level III NICU care and HFOV ventilation for 10 days. Dr. Dheeraj Diwaakar’s explanations, incubators, and Mira Cradle hypothermia care were top-notch.',
     date: '1 month ago',
     location: 'Shobhagpura, Udaipur',
     avatarBg: 'bg-teal-500',
@@ -541,6 +541,39 @@ export const TESTIMONIALS: TestimonialItem[] = [
     date: '1 week ago',
     location: '100 Feet Road, Udaipur',
     avatarBg: 'bg-amber-500',
+    verified: true
+  },
+  {
+    id: '6',
+    parentName: 'Bhagwat Singh',
+    childInfo: 'Father of Preterm Baby Twins (29 Wks)',
+    rating: 5,
+    comment: 'Our twins born at 29 weeks spent 25 days in Level III NICU. Dr. Dheeraj Diwaakar & the nursing staff guided us through every milestone. Today both babies are healthy and thriving at home!',
+    date: '4 days ago',
+    location: 'Kamla Nagar, Udaipur',
+    avatarBg: 'bg-cyan-600',
+    verified: true
+  },
+  {
+    id: '7',
+    parentName: 'Ankita Vyas',
+    childInfo: 'Mother of Rudra (Age 2)',
+    rating: 5,
+    comment: '100% painless vaccination experience! Cold chain storage is strictly maintained and we receive automated digital reminder alerts for upcoming vaccines. Highly recommended child care center!',
+    date: '5 days ago',
+    location: 'Hiran Magri, Udaipur',
+    avatarBg: 'bg-rose-500',
+    verified: true
+  },
+  {
+    id: '8',
+    parentName: 'Rajendra Kothari',
+    childInfo: 'Father of Hardik (Age 5)',
+    rating: 5,
+    comment: 'The bedside ABG blood gas analyzer gave instant reports during my son’s critical respiratory distress. Zero waiting time and 24x7 intensivist presence saved crucial minutes. Best pediatric hospital!',
+    date: '1 week ago',
+    location: 'Fatehpura, Udaipur',
+    avatarBg: 'bg-indigo-600',
     verified: true
   }
 ];
