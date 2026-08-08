@@ -554,38 +554,50 @@ export const FAQS: FAQItem[] = [
   },
   {
     id: '2',
-    question: 'What facilities are available in your Level III NICU?',
-    answer: 'Our Level III NICU features High Frequency Ventilators (HFOV), Conventional Ventilator, Non-Invasive Bubble CPAP, High Flow Nasal Cannula (HFNC), Mira Cradle for Therapeutic Hypothermia, Servo Controlled Radiant Warners, LED Phototherapy, Surfactant Therapy, Exchange Transfusion, Parenteral Nutrition, Bedside 2D Echo & Ultrasound, and Kangaroo Mother Care (KMC).',
+    question: 'What advanced life-support facilities are available in your Level III NICU?',
+    answer: 'Our Level III NICU features High Frequency Ventilators (HFOV), Conventional Ventilators, Non-Invasive Bubble CPAP, High Flow Nasal Cannula (HFNC), Mira Cradle for Therapeutic Hypothermia, Servo Controlled Radiant Warners, LED Phototherapy, Surfactant Therapy, Exchange Transfusion, Parenteral Nutrition (TPN), Bedside 2D Echo & Ultrasound, and Kangaroo Mother Care (KMC).',
     category: 'Facilities'
   },
   {
     id: '3',
-    question: 'Are Neonatal & Paediatric Intensivists available 24x7?',
-    answer: 'Yes, we have round-the-clock 24x7 availability of dedicated Neonatal & Paediatric Intensivists in our 40-bedded hospital to handle acute emergencies and critical ICU patients immediately.',
+    question: 'Are Neonatal & Paediatric Intensivists physically available 24x7?',
+    answer: 'Yes, we have round-the-clock 24x7 physical availability of dedicated Neonatal & Paediatric Intensivists in our 40-bedded hospital to handle acute emergencies and critical ICU admissions immediately with zero delay.',
     category: 'Emergency'
   },
   {
     id: '4',
-    question: 'Do you have an emergency ambulance transport service?',
-    answer: 'Yes, we operate a dedicated 24x7 Neonatal & Paediatric Transport System equipped with Neopuff resuscitator, Embrace Nest, Multipara Monitor/Pulse Oximeter, and accompanied by a Neonatal & Paediatric Intensivist and trained nursing staff.',
+    question: 'How quickly can your 24x7 Emergency Neonatal Transport Ambulance dispatch?',
+    answer: 'Our dedicated Neonatal & Paediatric Transport Ambulance dispatches rapidly upon receiving an emergency call. It is equipped with a Neopuff resuscitator, Embrace Nest thermal care unit, multipara pulse oximeter, and is accompanied on-board by an Intensivist doctor and emergency nursing staff.',
     category: 'Emergency'
   },
   {
     id: '5',
-    question: 'What patient room categories do you offer?',
-    answer: 'We offer General Wards, Semi-Deluxe Rooms, and Deluxe Private Rooms. All rooms feature Central Oxygen, Compressed Air, and Suction lines, along with DG Auto Backup for uninterrupted power.',
+    question: 'What patient room categories and hospital amenities do you offer?',
+    answer: 'We offer General Wards, Semi-Deluxe Private Rooms, and Deluxe Air-Conditioned Private Rooms. Every room features Central Oxygen, Compressed Air, and Suction lines, along with 100% DG Auto Backup for uninterrupted power supply.',
     category: 'Facilities'
   },
   {
     id: '6',
-    question: 'What in-house diagnostic and hospital facilities do you have?',
-    answer: 'Our in-house facilities include ABG (Arterial Blood Gas) Analyzer, Digital X-Ray, Ultrasonography, Bedside 2D Echo, In-House Pharmacy, Newborn Screening (ROP & OAE hearing), and 24x7 CCTV Surveillance.',
+    question: 'What in-house diagnostic and bedside blood lab facilities are operational?',
+    answer: 'Our in-house facilities include a bedside Arterial Blood Gas (ABG) Analyzer for instant blood gas evaluation in critical babies, Digital X-Ray, Ultrasonography, Bedside 2D Echo, 24x7 In-House Pharmacy, Newborn Screening (ROP & OAE hearing), and 24x7 CCTV Security.',
     category: 'Facilities'
   },
   {
     id: '7',
-    question: 'What is your email address and phone number for inquiries?',
-    answer: 'You can email us at radiantchildrenhospital@gmail.com or call our 24x7 hospital desk at 07424937788.',
+    question: 'Do you provide WHO & IAP recommended routine vaccinations for children?',
+    answer: 'Yes, our Vaccination & Cold Chain Centre maintains complete stock of WHO and IAP recommended vaccines from birth to 18 years with strict refrigeration monitoring, painless administration techniques, and digital schedule reminders.',
+    category: 'Vaccination'
+  },
+  {
+    id: '8',
+    question: 'What intact survival screening protocols do you follow for NICU babies?',
+    answer: 'We conduct protocol-based ROP (Retinopathy of Prematurity) retina specialist screening, OAE (Oto-Acoustic Emission) objective hearing checks, universal pulse oximetry, bedside neurosonogram, and follow-up milestone evaluations by consultant pediatricians and physiotherapists.',
+    category: 'Facilities'
+  },
+  {
+    id: '9',
+    question: 'How can parents contact the hospital emergency desk or book an appointment?',
+    answer: 'You can call our 24x7 Emergency Desk at 07424937788, WhatsApp us at +91 74249 37788, email radiantchildrenhospital@gmail.com, or click "Book Appointment" anywhere on our website for online OPD booking.',
     category: 'General'
   }
 ];

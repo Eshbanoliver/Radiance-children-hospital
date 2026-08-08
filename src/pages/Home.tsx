@@ -7,7 +7,8 @@ import {
   FaStar, FaQuoteLeft, FaAmbulance, FaAward, FaShieldAlt, FaCheckCircle,
   FaHeart, FaChevronLeft, FaChevronRight, FaHospital, FaChild, FaWind,
   FaPills, FaXRay, FaFlask, FaBolt, FaVideo, FaBed, FaHandsWash as FaHands,
-  FaAppleAlt, FaThermometerHalf, FaLungs, FaClock
+  FaAppleAlt, FaThermometerHalf, FaLungs, FaClock, FaPause, FaPlay,
+  FaSearch, FaQuestionCircle, FaWhatsapp, FaTimes, FaFilter
 } from 'react-icons/fa';
 import { 
   HOSPITAL_INFO, KEY_METRICS, SERVICES_DATA, WHY_CHOOSE_US, 
@@ -28,6 +29,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [heroSlideIndex, setHeroSlideIndex] = useState(0);
   const [activePillarTab, setActivePillarTab] = useState<'all' | 'critical' | 'facility' | 'safety' | 'convenience'>('all');
+  const [isTestimonialAutoPlaying, setIsTestimonialAutoPlaying] = useState(true);
+  const [faqCategoryFilter, setFaqCategoryFilter] = useState<string>('All');
+  const [faqSearchQuery, setFaqSearchQuery] = useState<string>('');
 
   const chooseUsIconMap: Record<string, React.ElementType> = {
     FaBed,
@@ -77,6 +81,14 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
     }, 5000);
     return () => clearInterval(timer);
   }, [heroSlides.length]);
+
+  useEffect(() => {
+    if (!isTestimonialAutoPlaying) return;
+    const testimonialTimer = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
+    }, 4200);
+    return () => clearInterval(testimonialTimer);
+  }, [isTestimonialAutoPlaying]);
 
   const nextHeroSlide = () => {
     setHeroSlideIndex((prev) => (prev + 1) % heroSlides.length);
@@ -1814,120 +1826,469 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 12. TESTIMONIALS CAROUSEL */}
-      <section className="relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      {/* 12. TESTIMONIALS AUTO-SCROLL CAROUSEL */}
+      <section className="relative py-12 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-xs">
-              <FaStar className="text-amber-500" /> Parent Reviews
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/90 border border-amber-200 text-amber-900 font-extrabold text-xs shadow-xs">
+              <FaStar className="text-amber-500 animate-spin-slow" /> 5.0 Rated Parent Reviews
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
               What Parents Say About <span className="gradient-text">Our Care</span>
             </h2>
+            <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed">
+              Authentic Google reviews & stories from Udaipur parents whose children received expert treatment in our Level III NICU, PICU & OPD.
+            </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              key={currentTestimonial}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4 }}
-              className="glass-panel p-8 sm:p-12 rounded-3xl border border-white/80 shadow-2xl text-center relative"
-            >
-              <FaQuoteLeft className="text-4xl sm:text-5xl text-primary/20 mx-auto mb-6" />
-              <p className="text-slate-700 text-lg sm:text-xl italic font-medium leading-relaxed mb-6">
-                "{TESTIMONIALS[currentTestimonial].comment}"
-              </p>
-              <div className="flex justify-center gap-1 text-amber-400 mb-4 text-lg">
-                {[...Array(TESTIMONIALS[currentTestimonial].rating)].map((_, i) => (
-                  <FaStar key={i} />
-                ))}
+          <div
+            onMouseEnter={() => setIsTestimonialAutoPlaying(false)}
+            onMouseLeave={() => setIsTestimonialAutoPlaying(true)}
+            className="max-w-4xl mx-auto relative"
+          >
+            {/* Auto Scroll Indicator & Control Bar */}
+            <div className="flex items-center justify-between px-2 mb-3 text-xs font-bold text-slate-600">
+              <div className="flex items-center gap-2">
+                <span className="flex h-2.5 w-2.5 relative">
+                  {isTestimonialAutoPlaying && (
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  )}
+                  <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isTestimonialAutoPlaying ? 'bg-emerald-500' : 'bg-amber-500'}`} />
+                </span>
+                <span className="text-[11px] uppercase tracking-wider text-slate-500 font-extrabold">
+                  {isTestimonialAutoPlaying ? 'Auto-Scrolling (Hover to Pause)' : 'Paused for Reading'}
+                </span>
               </div>
-              <h4 className="text-xl font-black text-slate-900">
-                {TESTIMONIALS[currentTestimonial].parentName}
-              </h4>
-              <p className="text-xs font-bold text-primary">
-                {TESTIMONIALS[currentTestimonial].childInfo} • {TESTIMONIALS[currentTestimonial].location}
-              </p>
-            </motion.div>
 
+              <button
+                onClick={() => setIsTestimonialAutoPlaying(!isTestimonialAutoPlaying)}
+                className="px-3 py-1 rounded-full bg-white border border-slate-200 shadow-xs hover:bg-slate-100 text-slate-700 font-black text-[11px] flex items-center gap-1.5 transition-all"
+                title={isTestimonialAutoPlaying ? 'Pause Auto Scroll' : 'Resume Auto Scroll'}
+              >
+                {isTestimonialAutoPlaying ? (
+                  <>
+                    <FaPause className="text-[10px] text-amber-600" /> Pause
+                  </>
+                ) : (
+                  <>
+                    <FaPlay className="text-[10px] text-emerald-600" /> Auto-Play
+                  </>
+                )}
+              </button>
+            </div>
+
+            {/* Testimonial Spotlight Card */}
+            <div className="relative rounded-3xl bg-white/95 backdrop-blur-md p-8 sm:p-12 border border-slate-200/90 shadow-2xl overflow-hidden group">
+              {/* Animated Progress Bar */}
+              {isTestimonialAutoPlaying && (
+                <motion.div
+                  key={currentTestimonial}
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 4.2, ease: "linear" }}
+                  className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-primary to-emerald-500 origin-left"
+                />
+              )}
+
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentTestimonial}
+                  initial={{ opacity: 0, x: 25 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -25 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-center space-y-6"
+                >
+                  <FaQuoteLeft className="text-4xl sm:text-5xl text-primary/20 mx-auto" />
+                  
+                  <p className="text-slate-800 text-lg sm:text-2xl italic font-medium leading-relaxed max-w-3xl mx-auto">
+                    "{TESTIMONIALS[currentTestimonial].comment}"
+                  </p>
+
+                  <div className="space-y-2">
+                    <div className="flex justify-center gap-1 text-amber-400 text-lg">
+                      {[...Array(TESTIMONIALS[currentTestimonial].rating)].map((_, i) => (
+                        <FaStar key={i} />
+                      ))}
+                    </div>
+                    
+                    <h4 className="text-xl font-black text-slate-900">
+                      {TESTIMONIALS[currentTestimonial].parentName}
+                    </h4>
+                    
+                    <p className="text-xs sm:text-sm font-extrabold text-primary flex items-center justify-center gap-2">
+                      <span>{TESTIMONIALS[currentTestimonial].childInfo}</span>
+                      <span className="text-slate-400">•</span>
+                      <span className="text-slate-600">{TESTIMONIALS[currentTestimonial].location}</span>
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Navigation Controls & Slide Dots */}
             <div className="flex items-center justify-center gap-4 mt-6">
               <button
                 onClick={prevTestimonial}
-                className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-slate-700 hover:text-primary font-bold shadow-md transition-transform active:scale-95"
+                className="w-12 h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-700 hover:text-primary hover:border-primary/40 font-bold shadow-md transition-all active:scale-95"
                 aria-label="Previous review"
               >
                 ←
               </button>
+              
               <div className="flex items-center gap-2">
                 {TESTIMONIALS.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentTestimonial(idx)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      idx === currentTestimonial ? 'bg-primary w-8' : 'bg-slate-300'
+                    className={`h-3 rounded-full transition-all duration-300 ${
+                      idx === currentTestimonial 
+                        ? 'bg-gradient-to-r from-primary to-accent w-8 shadow-sm' 
+                        : 'bg-slate-300 w-3 hover:bg-slate-400'
                     }`}
+                    aria-label={`Go to slide ${idx + 1}`}
                   />
                 ))}
               </div>
+
               <button
                 onClick={nextTestimonial}
-                className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-slate-700 hover:text-primary font-bold shadow-md transition-transform active:scale-95"
+                className="w-12 h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-700 hover:text-primary hover:border-primary/40 font-bold shadow-md transition-all active:scale-95"
                 aria-label="Next review"
               >
                 →
               </button>
             </div>
           </div>
+
+          {/* Continuous Auto-Scrolling Horizontal Marquee Pill Track */}
+          <div className="pt-4 overflow-hidden relative">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
+            
+            <div className="flex space-x-6 animate-marquee whitespace-nowrap">
+              {[...TESTIMONIALS, ...TESTIMONIALS].map((t, idx) => (
+                <div
+                  key={idx}
+                  className="inline-flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm text-xs font-semibold text-slate-700 shrink-0 hover:border-amber-400/60 transition-all cursor-pointer"
+                >
+                  <div className="flex text-amber-400 gap-0.5">
+                    {[...Array(t.rating)].map((_, i) => (
+                      <FaStar key={i} className="text-[10px]" />
+                    ))}
+                  </div>
+                  <span className="font-extrabold text-slate-900">{t.parentName}:</span>
+                  <span className="truncate max-w-[280px] font-medium text-slate-600">"{t.comment}"</span>
+                  <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-black">{t.location}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* 13. FAQ ACCORDION */}
-      <section className="relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="text-center space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+      {/* 13. FREQUENTLY ASKED QUESTIONS (UNIQUE & INTERACTIVE REDESIGN) */}
+      <section className="relative py-12 overflow-hidden">
+        {/* Decorative Ambient Lighting */}
+        <div className="absolute top-1/3 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10">
+          
+          {/* Header & Eyebrow Pill */}
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 text-white font-extrabold text-xs shadow-md"
+            >
+              <FaQuestionCircle className="text-amber-400" />
+              <span>PARENT HELPDESK & FAQS</span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight"
+            >
               Frequently Asked <span className="gradient-text">Questions</span>
-            </h2>
-            <p className="text-slate-600 text-sm">
-              Answers to common parent questions regarding OPD timings, Level III NICU, emergency care, and hospital amenities.
+            </motion.h2>
+
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
+              Everything you need to know about OPD schedules, Level III NICU admissions, emergency triage, room categories, and vaccination services.
             </p>
           </div>
 
-          <div className="space-y-4">
-            {FAQS.map((faq) => (
-              <div
-                key={faq.id}
-                className="glass-panel rounded-2xl overflow-hidden border border-white/80 shadow-md transition-all"
-              >
-                <button
-                  onClick={() => toggleFaq(faq.id)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-800 hover:text-primary text-base sm:text-lg"
-                >
-                  <span>{faq.question}</span>
-                  <FaChevronDown
-                    className={`text-slate-400 transition-transform duration-300 ${
-                      activeFaq === faq.id ? 'rotate-180 text-primary' : ''
-                    }`}
-                  />
-                </button>
-
-                <AnimatePresence>
-                  {activeFaq === faq.id && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="px-5 pb-6 sm:px-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4"
-                    >
-                      {faq.answer}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+          {/* Interactive Search Bar & Topic Quick Chips */}
+          <div className="max-w-3xl mx-auto space-y-4">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 text-lg">
+                <FaSearch />
               </div>
-            ))}
+              <input
+                type="text"
+                value={faqSearchQuery}
+                onChange={(e) => setFaqSearchQuery(e.target.value)}
+                placeholder="Search any question... e.g. OPD timings, NICU, Ambulance, ABG, Rooms"
+                className="w-full pl-12 pr-10 py-4 rounded-2xl bg-white border border-slate-200/90 shadow-lg text-slate-800 font-bold placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              />
+              {faqSearchQuery && (
+                <button
+                  onClick={() => setFaqSearchQuery('')}
+                  className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600"
+                >
+                  <FaTimes />
+                </button>
+              )}
+            </div>
+
+            {/* Quick Topic Suggestion Chips */}
+            <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-extrabold text-slate-600">
+              <span className="text-slate-400 flex items-center gap-1 font-bold"><FaFilter className="text-[10px]" /> Popular Queries:</span>
+              {[
+                'OPD Timings',
+                'Level III NICU',
+                '24x7 Ambulance',
+                'Room Categories',
+                'ABG Analyzer',
+                'Vaccination'
+              ].map((chip, cIdx) => (
+                <button
+                  key={cIdx}
+                  onClick={() => setFaqSearchQuery(chip)}
+                  className={`px-3 py-1 rounded-xl transition-all ${
+                    faqSearchQuery.toLowerCase() === chip.toLowerCase()
+                      ? 'bg-primary text-white shadow-sm'
+                      : 'bg-white border border-slate-200 hover:bg-slate-100 text-slate-700'
+                  }`}
+                >
+                  {chip}
+                </button>
+              ))}
+            </div>
           </div>
+
+          {/* Category Filter Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            {[
+              { id: 'All', label: '✨ All Questions' },
+              { id: 'Emergency', label: '🚨 24×7 Emergency Care' },
+              { id: 'Facilities', label: '🏥 Level III NICU & Facilities' },
+              { id: 'General', label: '⏰ OPD & Contact Info' },
+              { id: 'Vaccination', label: '💉 Vaccination Centre' }
+            ].map((cat) => {
+              const isActive = faqCategoryFilter === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setFaqCategoryFilter(cat.id)}
+                  className={`px-4 py-2 rounded-full text-xs font-black transition-all ${
+                    isActive
+                      ? 'bg-slate-900 text-white shadow-md'
+                      : 'bg-white/80 border border-slate-200 text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* 2-Column FAQ Layout (Sidebar Widget + Accordions) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            {/* Left Sidebar: Urgent Doctor Consultation Widget */}
+            <div className="lg:col-span-4 space-y-6">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-teal-950 text-white p-7 shadow-xl border border-teal-500/30 space-y-6 relative overflow-hidden"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 to-rose-500 text-slate-950 flex items-center justify-center text-xl font-black shadow-lg">
+                  <FaStethoscope />
+                </div>
+
+                <div>
+                  <span className="px-2.5 py-0.5 rounded-full bg-teal-400/20 text-teal-300 font-extrabold text-[10px] uppercase border border-teal-400/30 block w-fit mb-2">
+                    Didn't find your question?
+                  </span>
+                  <h3 className="text-xl font-black text-white">Ask Our Medical Desk Directly</h3>
+                  <p className="text-slate-300 text-xs font-medium leading-relaxed mt-2">
+                    Our 24x7 hospital desk and pediatric intensivists are available on call or WhatsApp for emergency queries.
+                  </p>
+                </div>
+
+                <div className="space-y-3 pt-2">
+                  <a
+                    href={`tel:${HOSPITAL_INFO.phone}`}
+                    className="w-full py-3 px-4 rounded-2xl bg-gradient-to-r from-rose-500 to-red-600 text-white font-extrabold text-xs shadow-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform animate-pulse"
+                  >
+                    <FaPhoneAlt /> Call Desk: {HOSPITAL_INFO.phone}
+                  </a>
+
+                  <a
+                    href={`https://wa.me/${HOSPITAL_INFO.whatsappPhone}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs shadow-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform"
+                  >
+                    <FaWhatsapp className="text-base" /> WhatsApp Doctor Inquiry
+                  </a>
+
+                  <button
+                    onClick={onOpenBooking}
+                    className="w-full py-3 px-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-extrabold text-xs backdrop-blur-md flex items-center justify-center gap-2 transition-all"
+                  >
+                    <FaCalendarCheck /> Book OPD Consult
+                  </button>
+                </div>
+
+                <div className="pt-3 border-t border-slate-800 text-[11px] text-slate-400 font-semibold flex items-center gap-2">
+                  <FaCheckCircle className="text-emerald-400 text-xs shrink-0" />
+                  <span>Average phone response time: &lt; 1 Minute</span>
+                </div>
+              </motion.div>
+
+              {/* Quick Stat Pill */}
+              <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm space-y-2">
+                <div className="flex items-center justify-between text-xs font-extrabold text-slate-900">
+                  <span>Hospital Coverage</span>
+                  <span className="text-emerald-600 font-black">24×7 / 365 Days</span>
+                </div>
+                <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
+                  Radiant Children's Hospital operates 40 beds, Level III NICU, PICU & Emergency OPD all 365 days of the year in Udaipur.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column: Unique Interactive Accordions */}
+            <div className="lg:col-span-8 space-y-4">
+              {(() => {
+                const filteredFaqs = FAQS.filter((faq) => {
+                  const matchesCategory = faqCategoryFilter === 'All' || faq.category === faqCategoryFilter;
+                  const matchesQuery = !faqSearchQuery || (
+                    faq.question.toLowerCase().includes(faqSearchQuery.toLowerCase()) ||
+                    faq.answer.toLowerCase().includes(faqSearchQuery.toLowerCase())
+                  );
+                  return matchesCategory && matchesQuery;
+                });
+
+                if (filteredFaqs.length === 0) {
+                  return (
+                    <div className="rounded-3xl bg-white border border-slate-200 p-12 text-center space-y-4 shadow-sm">
+                      <div className="w-16 h-16 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto font-black">
+                        <FaSearch />
+                      </div>
+                      <h4 className="text-xl font-black text-slate-900">No matching questions found</h4>
+                      <p className="text-slate-600 text-xs font-medium max-w-md mx-auto">
+                        We couldn't find an exact match for "{faqSearchQuery}". Try clearing your search or call our 24x7 desk directly.
+                      </p>
+                      <button
+                        onClick={() => { setFaqSearchQuery(''); setFaqCategoryFilter('All'); }}
+                        className="px-5 py-2.5 rounded-full bg-slate-900 text-white font-extrabold text-xs"
+                      >
+                        Clear Search Filters
+                      </button>
+                    </div>
+                  );
+                }
+
+                return filteredFaqs.map((faq, idx) => {
+                  const isOpen = activeFaq === faq.id;
+                  const qNum = String(idx + 1).padStart(2, '0');
+                  return (
+                    <motion.div
+                      key={faq.id}
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: idx * 0.04 }}
+                      className={`rounded-3xl transition-all duration-300 overflow-hidden border ${
+                        isOpen
+                          ? 'bg-white border-primary/50 shadow-xl shadow-primary/5 ring-1 ring-primary/30'
+                          : 'bg-white/90 border-slate-200/90 hover:border-slate-300 shadow-sm hover:shadow-md'
+                      }`}
+                    >
+                      <button
+                        onClick={() => toggleFaq(faq.id)}
+                        className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 group"
+                      >
+                        <div className="flex items-center gap-3.5">
+                          <span className={`w-9 h-9 rounded-xl font-black text-xs flex items-center justify-center shrink-0 transition-colors ${
+                            isOpen ? 'bg-primary text-white shadow-md' : 'bg-slate-100 text-slate-600 group-hover:bg-slate-200'
+                          }`}>
+                            Q{qNum}
+                          </span>
+                          <div>
+                            <span className="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 font-extrabold text-[10px] uppercase tracking-wider mb-1 inline-block">
+                              {faq.category}
+                            </span>
+                            <h3 className={`text-base sm:text-lg font-black leading-snug transition-colors ${
+                              isOpen ? 'text-primary' : 'text-slate-900 group-hover:text-primary'
+                            }`}>
+                              {faq.question}
+                            </h3>
+                          </div>
+                        </div>
+
+                        <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all ${
+                          isOpen ? 'bg-primary/10 text-primary rotate-180' : 'bg-slate-100 text-slate-400 group-hover:text-slate-600'
+                        }`}>
+                          <FaChevronDown className="text-sm" />
+                        </div>
+                      </button>
+
+                      <AnimatePresence>
+                        {isOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <div className="px-6 pb-6 pt-2 text-slate-700 text-xs sm:text-sm leading-relaxed border-t border-slate-100 space-y-4">
+                              <p className="font-semibold leading-relaxed">
+                                {faq.answer}
+                              </p>
+
+                              <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-xs border-t border-slate-100">
+                                <div className="flex items-center gap-2 text-emerald-700 font-extrabold text-[11px]">
+                                  <FaCheckCircle className="text-emerald-500 text-xs" />
+                                  <span>Verified Clinical Information</span>
+                                </div>
+
+                                <div className="flex items-center gap-2">
+                                  <a
+                                    href={`tel:${HOSPITAL_INFO.phone}`}
+                                    className="px-3 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-extrabold text-[11px] flex items-center gap-1 transition-colors"
+                                  >
+                                    <FaPhoneAlt className="text-[10px]" /> Call Hotline
+                                  </a>
+                                  <button
+                                    onClick={onOpenBooking}
+                                    className="px-3 py-1 rounded-lg bg-primary/10 hover:bg-primary hover:text-white text-primary font-extrabold text-[11px] transition-colors"
+                                  >
+                                    Book Consult
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  );
+                });
+              })()}
+            </div>
+
+          </div>
+
         </div>
       </section>
     </div>
