@@ -23,14 +23,6 @@ interface AboutUsProps {
 export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
   const [activeTab, setActiveTab] = useState<'wards' | 'nicu' | 'diagnostics' | 'transport'>('wards');
 
-  const timeline = [
-    { year: '40 Bedded Center', title: 'Established in Udaipur', desc: '40-bedded advanced pediatric facility with General, Semi-Deluxe & Deluxe patient rooms.', badge: 'Infrastructure' },
-    { year: 'Level III NICU', title: 'Advanced Neonatal Care', desc: 'Equipped with HFOV Ventilator, Non-Invasive CPAP, Mira Cradle Hypothermia, Surfactant Therapy & KMC.', badge: 'Apex NICU' },
-    { year: '24x7 Emergency', title: 'Intensivists Availability', desc: 'Round-the-clock physical availability of Neonatal & Paediatric Intensivists & emergency triage.', badge: '365 Days Triage' },
-    { year: 'Equipped PICU', title: 'Pediatric Intensive Care', desc: 'Pediatric ventilators, multipara monitors, syringe pumps & volumetric infusion pumps.', badge: 'Critical Care' },
-    { year: 'In-House ABG & Labs', title: 'Bedside Diagnostics Desk', desc: 'In-house ABG analyzer, bedside 2D Echo, Ultrasonography, Digital X-Ray & 24x7 In-House Pharmacy.', badge: 'Instant Diagnostics' }
-  ];
-
   return (
     <div className="space-y-16 sm:space-y-24 pb-16 overflow-hidden">
       <SEO 
@@ -675,44 +667,6 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                 </motion.div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. MILESTONE JOURNEY TIMELINE */}
-      <section className="relative">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
-              Our Journey of <span className="gradient-text">Pediatric Clinical Excellence</span>
-            </h2>
-          </div>
-
-          <div className="relative border-l-4 border-primary/30 ml-4 sm:ml-28 space-y-8">
-            {timeline.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="relative pl-8 sm:pl-10"
-              >
-                <div className="absolute -left-[14px] top-1.5 w-6 h-6 rounded-full bg-primary border-4 border-white shadow-md" />
-                <div className="rounded-3xl bg-white/95 p-6 border border-slate-200/90 shadow-lg space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full bg-primary/10 text-primary font-black text-xs">
-                      {item.year}
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 font-extrabold text-[10px] uppercase">
-                      {item.badge}
-                    </span>
-                  </div>
-                  <h4 className="text-xl font-black text-slate-900">{item.title}</h4>
-                  <p className="text-slate-600 text-xs sm:text-sm font-semibold">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
