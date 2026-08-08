@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaPhoneAlt, FaBars, FaTimes, FaCalendarCheck, FaHeartbeat, FaClock } from 'react-icons/fa';
+import { FaPhoneAlt, FaBars, FaTimes, FaCalendarCheck, FaClock } from 'react-icons/fa';
 import { HOSPITAL_INFO } from '../data/hospitalData';
+
+import logoImg from '../assets/logo.jpg';
 
 interface NavbarProps {
   onOpenBooking: () => void;
@@ -72,18 +74,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Hospital Brand Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-primary via-accent to-secondary p-0.5 shadow-md group-hover:scale-105 transition-transform">
-              <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center text-primary text-xl font-black">
-                <FaHeartbeat className="animate-pulse text-primary" />
-              </div>
-            </div>
-            <div>
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 block leading-none">
-                Radiant<span className="gradient-text font-black"> Hospital</span>
-              </span>
-              <span className="text-[10px] font-bold tracking-wider uppercase text-primary block mt-1">
-                Children's & Neonatal Care • Udaipur
-              </span>
+            <div className="h-12 sm:h-14 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
+              <img
+                src={logoImg}
+                alt="Radiant Children's Hospital Logo"
+                className="h-full w-auto object-contain rounded-xl shadow-xs"
+              />
             </div>
           </Link>
 

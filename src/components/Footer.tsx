@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaHeartbeat, FaPhoneAlt, FaMapMarkerAlt, FaClock, FaFacebookF, FaInstagram, FaChevronRight, FaShieldAlt } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt, FaClock, FaFacebookF, FaInstagram, FaChevronRight, FaShieldAlt } from 'react-icons/fa';
 import { HOSPITAL_INFO, SERVICES_DATA } from '../data/hospitalData';
+import logoImg from '../assets/logo.jpg';
 
 export const Footer: React.FC = () => {
   return (
@@ -15,20 +16,12 @@ export const Footer: React.FC = () => {
           
           {/* Column 1: Hospital Overview & Social */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-primary to-accent p-0.5 shadow-lg">
-                <div className="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center text-primary text-2xl font-black">
-                  <FaHeartbeat className="text-primary animate-pulse" />
-                </div>
-              </div>
-              <div>
-                <span className="text-2xl font-black tracking-tight text-white block">
-                  Radiant<span className="text-cyan-400"> Hospital</span>
-                </span>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-emerald-400 block mt-0.5">
-                  Children's & Neonatal Care
-                </span>
-              </div>
+            <Link to="/" className="inline-block group bg-white p-2.5 rounded-2xl shadow-md hover:scale-105 transition-transform">
+              <img
+                src={logoImg}
+                alt="Radiant Children's Hospital Logo"
+                className="h-14 sm:h-16 w-auto object-contain"
+              />
             </Link>
 
             <p className="text-slate-400 text-sm leading-relaxed">
