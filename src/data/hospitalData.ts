@@ -1,4 +1,4 @@
-import type { ServiceItem, MetricItem, TestimonialItem, DoctorItem, FAQItem, CoreValueItem } from '../types';
+import type { ServiceItem, MetricItem, TestimonialItem, DoctorItem, FAQItem, CoreValueItem, WhyChooseUsItem } from '../types';
 
 export const HOSPITAL_INFO = {
   name: "Radiant Children's Hospital",
@@ -340,51 +340,150 @@ export const CORE_VALUES: CoreValueItem[] = [
   }
 ];
 
-export const WHY_CHOOSE_US = [
+export const WHY_CHOOSE_US: WhyChooseUsItem[] = [
   {
-    title: "40 Bedded Center",
-    desc: "General, Semi-Deluxe, and Deluxe patient rooms with central oxygen, compressed air & suction.",
-    icon: "FaBed"
+    id: "40-bed-center",
+    title: "40 Bedded Care Center",
+    desc: "General Wards, Semi-Deluxe, and Deluxe private patient rooms equipped with central oxygen, compressed air & suction lines.",
+    iconName: "FaBed",
+    category: "facility",
+    badge: "40 Beds Facility",
+    gradient: "from-blue-600 via-cyan-500 to-sky-400",
+    shadow: "shadow-blue-500/20 hover:shadow-blue-500/40 border-blue-200/90",
+    badgeBg: "bg-blue-500/15 border-blue-300 text-blue-900",
+    highlights: [
+      "General, Semi-Deluxe & Deluxe Wards",
+      "Central Medical Gas & Suction Lines",
+      "100% DG Auto Backup (Power & Air)"
+    ]
   },
   {
-    title: "24×7 Intensivists",
-    desc: "Round-the-clock availability of Neonatal & Paediatric Intensivists for emergency & critical care.",
-    icon: "FaUserMd"
+    id: "24-7-intensivists",
+    title: "24×7 On-Duty Intensivists",
+    desc: "Round-the-clock physical availability of Neonatal & Paediatric Intensivists for immediate emergency & critical ICU triage.",
+    iconName: "FaUserMd",
+    category: "critical",
+    badge: "24×7 Coverage",
+    gradient: "from-rose-500 via-red-500 to-amber-500",
+    shadow: "shadow-rose-500/20 hover:shadow-rose-500/40 border-rose-200/90",
+    badgeBg: "bg-rose-500/15 border-rose-300 text-rose-900",
+    highlights: [
+      "Zero Emergency Waiting Time",
+      "Dedicated Neonatal Intensivists",
+      "365 Days Uninterrupted Triage"
+    ]
   },
   {
-    title: "Level III Equipped NICU",
-    desc: "HFOV ventilator, Bubble CPAP, Mira Cradle for therapeutic hypothermia, surfactant therapy & KMC.",
-    icon: "FaMicroscope"
+    id: "level-3-nicu",
+    title: "Level III Advanced NICU",
+    desc: "HFOV Ventilator, Non-Invasive CPAP, Mira Cradle for therapeutic hypothermia, surfactant therapy & Kangaroo Mother Care.",
+    iconName: "FaMicroscope",
+    category: "critical",
+    badge: "Level III NICU",
+    gradient: "from-purple-600 via-violet-500 to-indigo-600",
+    shadow: "shadow-purple-500/20 hover:shadow-purple-500/40 border-purple-200/90",
+    badgeBg: "bg-purple-500/15 border-purple-300 text-purple-900",
+    highlights: [
+      "HFOV & Bubble CPAP Ventilation",
+      "Mira Cradle Therapeutic Hypothermia",
+      "Exchange Transfusion & Surfactant Care"
+    ]
   },
   {
-    title: "Equipped PICU Unit",
-    desc: "Pediatric ventilators, multipara monitors, syringe pumps & volumetric pumps.",
-    icon: "FaProcedures"
+    id: "equipped-picu",
+    title: "Highly Equipped PICU Unit",
+    desc: "Advanced pediatric ventilators, multipara patient monitors, syringe pumps & volumetric pumps for critical child care.",
+    iconName: "FaProcedures",
+    category: "critical",
+    badge: "Pediatric ICU",
+    gradient: "from-fuchsia-600 via-purple-600 to-indigo-700",
+    shadow: "shadow-fuchsia-500/20 hover:shadow-fuchsia-500/40 border-fuchsia-200/90",
+    badgeBg: "bg-fuchsia-500/15 border-fuchsia-300 text-fuchsia-900",
+    highlights: [
+      "Pediatric Advanced Ventilators",
+      "Volumetric & Syringe Infusion Pumps",
+      "24x7 Pediatric Critical Nursing"
+    ]
   },
   {
-    title: "In-House ABG & Labs",
-    desc: "In-house ABG analyzer, digital X-Ray, Ultrasonography, 2D Echo, and pharmacy.",
-    icon: "FaFlask"
+    id: "inhouse-abg",
+    title: "In-House ABG & Diagnostics",
+    desc: "Bedside Arterial Blood Gas (ABG) analyzer, digital X-Ray, Ultrasonography, 2D Echo, and 24x7 in-house medical store.",
+    iconName: "FaFlask",
+    category: "facility",
+    badge: "Bedside ABG",
+    gradient: "from-teal-500 via-emerald-500 to-cyan-600",
+    shadow: "shadow-teal-500/20 hover:shadow-teal-500/40 border-teal-200/90",
+    badgeBg: "bg-teal-500/15 border-teal-300 text-teal-900",
+    highlights: [
+      "Bedside ABG Blood Gas Analyzer",
+      "Digital X-Ray & Bedside 2D Echo",
+      "24x7 In-House Medical Pharmacy"
+    ]
   },
   {
-    title: "Emergency Transport",
-    desc: "Dedicated transport ambulance with Neopuff, Embrace Nest, oximeter & Intensivist on-board.",
-    icon: "FaAmbulance"
+    id: "emergency-transport",
+    title: "24x7 Transport Ambulance",
+    desc: "Dedicated transport ambulance with Neopuff resuscitator, Embrace Nest, oximeter & Intensivist doctor on-board.",
+    iconName: "FaAmbulance",
+    category: "critical",
+    badge: "Rapid Transport",
+    gradient: "from-red-600 via-rose-600 to-pink-600",
+    shadow: "shadow-red-500/20 hover:shadow-red-500/40 border-red-200/90",
+    badgeBg: "bg-red-500/15 border-red-300 text-red-900",
+    highlights: [
+      "Neopuff & Embrace Nest Thermal Care",
+      "Accompanied by Pediatric Doctor",
+      "Rapid Pickup Across Udaipur Region"
+    ]
   },
   {
-    title: "Intact Survival Care",
-    desc: "ROP retina screening, OAE hearing screening, bedside neurosonogram, and lactation support.",
-    icon: "FaHeart"
+    id: "intact-survival",
+    title: "Intact Survival Commitment",
+    desc: "Protocol-based ROP retina screening, OAE hearing screening, bedside neurosonogram, and milestone development tracking.",
+    iconName: "FaHeart",
+    category: "safety",
+    badge: "Intact Survival",
+    gradient: "from-pink-500 via-rose-500 to-purple-500",
+    shadow: "shadow-pink-500/20 hover:shadow-pink-500/40 border-pink-200/90",
+    badgeBg: "bg-pink-500/15 border-pink-300 text-pink-900",
+    highlights: [
+      "ROP Retina Specialist Screening",
+      "OAE Objective Hearing Assessment",
+      "High-Risk NICU Milestone Tracking"
+    ]
   },
   {
+    id: "infection-control",
     title: "Strict Infection Control",
-    desc: "Clean air sterilizers, micro defoggers, ETO sterilization, smart access NICU & cluster care.",
-    icon: "FaShieldAlt"
+    desc: "Clean air sterilizers, micro defogger area fumigation, ETO sterilization, smart access NICU & cluster care approach.",
+    iconName: "FaShieldAlt",
+    category: "safety",
+    badge: "Sterile Clean-Air",
+    gradient: "from-emerald-600 via-teal-600 to-cyan-700",
+    shadow: "shadow-emerald-500/20 hover:shadow-emerald-500/40 border-emerald-200/90",
+    badgeBg: "bg-emerald-500/15 border-emerald-300 text-emerald-900",
+    highlights: [
+      "Micro Defogger Total Fumigation",
+      "Smart Access Restricted NICU Zone",
+      "ETO Equipment Sterilization"
+    ]
   },
   {
+    id: "flexible-opd",
     title: "Flexible OPD Timings",
-    desc: "Mon-Sat Morning (9:00 AM-3:00 PM) & Evening (5:00 PM-9:00 PM) + 24×7 Emergency OPD.",
-    icon: "FaClock"
+    desc: "Mon-Sat Morning (9:00 AM - 3:00 PM) & Evening (5:00 PM - 9:00 PM) shifts plus 24×7 Emergency OPD availability.",
+    iconName: "FaClock",
+    category: "convenience",
+    badge: "Double OPD Shift",
+    gradient: "from-amber-500 via-orange-500 to-yellow-500",
+    shadow: "shadow-amber-500/20 hover:shadow-amber-500/40 border-amber-200/90",
+    badgeBg: "bg-amber-500/15 border-amber-300 text-amber-900",
+    highlights: [
+      "Morning Shift: 9:00 AM - 3:00 PM",
+      "Evening Shift: 5:00 PM - 9:00 PM",
+      "24×7 Round-the-Clock Emergency Desk"
+    ]
   }
 ];
 

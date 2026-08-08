@@ -65,3 +65,17 @@ export interface AppointmentFormData {
   preferredTime: string;
   notes?: string;
 }
+
+export interface WhyChooseUsItem {
+  id: string;
+  title: string;
+  desc: string;
+  iconName: string;
+  category: 'critical' | 'facility' | 'safety' | 'convenience';
+  badge: string;
+  gradient: string;
+  shadow: string;
+  badgeBg: string;
+  highlights: string[];
+}
+
