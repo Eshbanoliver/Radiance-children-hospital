@@ -19,6 +19,7 @@ import { SEO } from '../components/SEO';
 import hospitalExterior from '../assets/hospital-exterior.png';
 import hospitalNicu from '../assets/hospital-nicu.png';
 import hospitalNight from '../assets/hospital-night.png';
+import drDheerajImg from '../assets/dr-dheeraj-diwaakar.jpg';
 
 interface HomeProps {
   onOpenBooking: () => void;
@@ -445,6 +446,157 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
             </motion.div>
 
           </div>
+
+        </div>
+      </section>
+
+      {/* 3.5. KNOW OUR DOCTOR - DR. DHEERAJ DIWAAKAR SECTION */}
+      <section className="relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-[2.5rem] bg-gradient-to-br from-white via-cyan-50/60 to-white border border-cyan-200/90 shadow-2xl p-8 sm:p-12 relative overflow-hidden group hover:shadow-cyan-500/15 transition-all duration-300"
+          >
+            {/* Ambient Background Accents */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-cyan-400/15 via-teal-400/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-400/15 via-purple-400/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+              
+              {/* Left Column: Doctor Photo Frame */}
+              <div className="lg:col-span-5 flex flex-col items-center text-center space-y-4">
+                <div className="relative group/photo">
+                  {/* Glowing Ring Backdrop */}
+                  <div className="absolute -inset-2 rounded-[2.2rem] bg-gradient-to-tr from-cyan-500 via-teal-400 to-blue-600 opacity-80 blur-lg group-hover/photo:opacity-100 transition-opacity duration-300" />
+
+                  {/* Image Container */}
+                  <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl bg-slate-900">
+                    <img
+                      src={drDheerajImg}
+                      alt="Dr. Dheeraj Diwaakar - DM Neonatologist JIPMER"
+                      className="w-full h-full object-cover object-top group-hover/photo:scale-105 transition-transform duration-500"
+                    />
+                    
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent flex flex-col justify-end p-5 text-left">
+                      <span className="px-3 py-1 rounded-full bg-cyan-400 text-slate-950 font-black text-[10px] uppercase tracking-wider w-fit shadow-md">
+                        DM Neonatology • JIPMER
+                      </span>
+                      <h4 className="text-xl font-black text-white mt-1">Dr. Dheeraj Diwaakar</h4>
+                      <p className="text-xs font-bold text-cyan-200">Lead Neonatologist & Level III NICU Director</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Quick Action Buttons under photo */}
+                <div className="flex flex-wrap items-center justify-center gap-3 pt-2 w-full max-w-sm">
+                  <button
+                    onClick={onOpenBooking}
+                    className="flex-1 py-3.5 px-5 rounded-2xl gradient-btn text-white font-extrabold text-xs shadow-xl flex items-center justify-center gap-2"
+                  >
+                    <FaCalendarCheck /> Book Appointment
+                  </button>
+                  <a
+                    href={`tel:${HOSPITAL_INFO.phone}`}
+                    className="py-3.5 px-5 rounded-2xl bg-white border border-slate-200 text-slate-800 font-extrabold text-xs shadow-md hover:bg-slate-100 flex items-center gap-2 transition-colors"
+                  >
+                    <FaPhoneAlt className="text-primary" /> Call Desk
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column: Doctor Credentials & Career Highlights */}
+              <div className="lg:col-span-7 space-y-6">
+                
+                {/* Header Tag */}
+                <div className="space-y-2">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-100 text-cyan-900 font-extrabold text-xs shadow-xs border border-cyan-200">
+                    <FaUserMd className="text-cyan-600" /> KNOW OUR LEAD NEONATOLOGIST
+                  </div>
+                  
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                    Dr. Dheeraj <span className="gradient-text">Diwaakar</span>
+                  </h2>
+
+                  <p className="text-slate-600 text-sm sm:text-base font-semibold leading-relaxed">
+                    Apex trained DM Neonatologist dedicated to critical newborn care, Level III NICU ventilation, and intact milestone development.
+                  </p>
+                </div>
+
+                {/* Medical Qualifications Badge Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  <div className="p-4 rounded-2xl bg-white border border-cyan-200 shadow-sm flex items-center gap-3.5 hover:border-cyan-400 transition-colors">
+                    <div className="w-11 h-11 rounded-2xl bg-cyan-500/10 text-cyan-700 flex items-center justify-center text-xl shrink-0 font-black">
+                      <FaAward />
+                    </div>
+                    <div>
+                      <span className="text-xs sm:text-sm font-black text-slate-900 block">MBBS, MD (Pediatrics)</span>
+                      <span className="text-[11px] font-bold text-slate-500">Post Graduate Pediatric Medicine</span>
+                    </div>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-white border border-emerald-200 shadow-sm flex items-center gap-3.5 hover:border-emerald-400 transition-colors">
+                    <div className="w-11 h-11 rounded-2xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center text-xl shrink-0 font-black">
+                      <FaMicroscope />
+                    </div>
+                    <div>
+                      <span className="text-xs sm:text-sm font-black text-emerald-950 block">DM (Neonatology)</span>
+                      <span className="text-[11px] font-bold text-emerald-700">JIPMER Pondicherry (Apex Institute)</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Experience & Previous Clinical Positions */}
+                <div className="space-y-3 pt-2">
+                  <span className="text-xs font-black uppercase tracking-wider text-slate-700 block">
+                    Leadership & Clinical Background:
+                  </span>
+
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-primary/40 transition-colors">
+                      <FaCheckCircle className="text-primary text-lg shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-snug">
+                          Ex-Consultant — NICE Hospital for Women, Children & Newborn Care, Hyderabad
+                        </h4>
+                        <p className="text-[11px] font-medium text-slate-500 mt-0.5">
+                          Managed complex tertiary neonatal cases & high-risk newborn critical intensive care.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-emerald-400/60 transition-colors">
+                      <FaCheckCircle className="text-emerald-500 text-lg shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-snug">
+                          Ex-HOD — Department of Neonatology, GMCH Udaipur
+                        </h4>
+                        <p className="text-[11px] font-medium text-slate-500 mt-0.5">
+                          Head of Department leading neonatal clinical operations, medical training & Level III NICU protocols.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Clinical Promise Quote Box */}
+                <div className="p-4 rounded-2xl bg-slate-900 text-white flex items-center justify-between text-xs font-bold shadow-lg">
+                  <div className="flex items-center gap-2">
+                    <FaHeart className="text-rose-400 text-base shrink-0" />
+                    <span className="italic text-slate-200">"Pioneering Level III NICU care & intact survival for every newborn graduate."</span>
+                  </div>
+                  <span className="hidden sm:inline-block px-2.5 py-1 rounded-full bg-cyan-400/20 text-cyan-300 font-extrabold text-[10px] uppercase border border-cyan-400/30 shrink-0">
+                    24/7 NICU Director
+                  </span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </motion.div>
 
         </div>
       </section>

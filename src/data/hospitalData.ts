@@ -604,23 +604,18 @@ export const FAQS: FAQItem[] = [
 
 export const DOCTORS: DoctorItem[] = [
   {
-    id: '1',
-    name: 'Dr. Senior Pediatric Specialist',
-    role: 'Clinical Director & Pediatric Intensivist',
-    qualifications: 'MD (Pediatrics), DCH, FEBP',
-    experience: '15+ Years Clinical Experience',
-    specialties: ['Pediatric Intensive Care (PICU)', 'Growth & Development', 'Child Asthma & Allergy', 'Infectious Diseases'],
-    bio: 'Dedicated to compassionate child healthcare with 15+ years experience managing complex childhood illnesses, critical PICU care, and daily OPD services.',
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600'
-  },
-  {
-    id: '2',
-    name: 'Dr. Senior Neonatologist',
-    role: 'Head of Neonatology & Level III NICU',
-    qualifications: 'MD (Pediatrics), DM (Neonatology)',
-    experience: '12+ Years Neonatal ICU Expertise',
-    specialties: ['Premature Baby Survival', 'Level III NICU & HFOV', 'Therapeutic Hypothermia', 'ROP & OAE Screening'],
-    bio: 'Specialist in critical newborn care, HFOV ventilation, surfactant therapy, and guiding our 24x7 NICU team for intact survival of premature graduates.',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600'
+    id: 'dr-dheeraj-diwaakar',
+    name: 'Dr. Dheeraj Diwaakar',
+    role: 'Lead Neonatologist & Head of Level III NICU',
+    qualifications: 'MBBS, MD (Pediatrics), DM (Neonatology JIPMER Pondicherry)',
+    experience: '12+ Years Apex Neonatal ICU Expertise',
+    specialties: [
+      'DM Neonatology (JIPMER Pondicherry)',
+      'Ex-Consultant NICE Hospital Hyderabad',
+      'Ex-HOD Neonatology GMCH Udaipur',
+      'Level III NICU & Intact Survival Protocols'
+    ],
+    bio: 'Apex trained DM Neonatologist from JIPMER Pondicherry. Former HOD of Neonatology at GMCH Udaipur and former Consultant at NICE Hospital for Women, Children & Newborn Care, Hyderabad. Pioneer in Level III NICU, HFOV ventilation, surfactant therapy, and intact survival care.',
+    image: '/src/assets/dr-dheeraj-diwaakar.jpg'
   }
 ];
