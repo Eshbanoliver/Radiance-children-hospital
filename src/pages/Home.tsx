@@ -2045,44 +2045,6 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Interactive Parent Peace of Mind Guarantee Spotlight Banner */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="rounded-[2.5rem] bg-gradient-to-r from-slate-950 via-teal-950 to-slate-950 text-white p-8 sm:p-12 shadow-2xl border border-teal-500/30 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8"
-          >
-            {/* Background Glow Effect */}
-            <div className="absolute -top-20 -right-20 w-80 h-80 bg-teal-500/20 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="space-y-4 max-w-2xl relative z-10 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-400/20 text-teal-300 font-extrabold text-xs uppercase tracking-wider border border-teal-400/30">
-                <FaShieldAlt className="text-teal-400" /> Parent Peace of Mind Guarantee
-              </div>
-              <h3 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight">
-                24 Hours a Day, 365 Days a Year — <span className="bg-gradient-to-r from-teal-300 via-cyan-200 to-emerald-300 bg-clip-text text-transparent">Your Child is in Safe Hands</span>
-              </h3>
-              <p className="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
-                Whether it's a routine OPD consultation, midnight fever, emergency transport, or critical Level III NICU ventilation care, our pediatricians and 40-bedded hospital are fully ready for your family.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10 shrink-0 w-full sm:w-auto">
-              <a
-                href={`tel:${HOSPITAL_INFO.phone}`}
-                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-gradient-to-r from-rose-500 to-red-600 text-white font-black text-sm shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2.5 animate-pulse"
-              >
-                <FaPhoneAlt /> Call 24/7 Hotline: {HOSPITAL_INFO.phone}
-              </a>
-              <button
-                onClick={onOpenBooking}
-                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 text-white font-black text-sm backdrop-blur-md transition-all flex items-center justify-center gap-2"
-              >
-                <FaCalendarCheck /> Book OPD Appointment
-              </button>
-            </div>
-          </motion.div>
-
         </div>
       </section>
 
