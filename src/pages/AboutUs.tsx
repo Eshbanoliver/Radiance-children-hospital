@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   FaUserMd, FaShieldAlt, FaCalendarCheck, 
   FaCheckCircle, FaHospital, FaPhoneAlt, FaMicroscope, 
@@ -207,12 +208,12 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                   </div>
                 </div>
 
-                <button
-                  onClick={onOpenBooking}
+                <Link
+                  to="/contact"
                   className="w-full max-w-xs py-3.5 px-6 rounded-2xl bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500 text-slate-950 font-black text-xs shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2"
                 >
                   <FaCalendarCheck /> Consult Dr. Dheeraj Diwaakar
-                </button>
+                </Link>
               </div>
 
               {/* Right Bio & Credentials */}
