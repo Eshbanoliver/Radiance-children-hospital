@@ -9,6 +9,7 @@ const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })))
 const AboutUs = lazy(() => import('./pages/AboutUs').then(m => ({ default: m.AboutUs })));
 const ServicesPage = lazy(() => import('./pages/ServicesPage').then(m => ({ default: m.ServicesPage })));
 const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage').then(m => ({ default: m.TestimonialsPage })));
+const GalleryPage = lazy(() => import('./pages/GalleryPage').then(m => ({ default: m.GalleryPage })));
 const ContactUs = lazy(() => import('./pages/ContactUs').then(m => ({ default: m.ContactUs })));
 const AppointmentModal = lazy(() => import('./components/AppointmentModal').then(m => ({ default: m.AppointmentModal })));
 
@@ -94,6 +95,7 @@ export const AppContent: React.FC = () => {
             <Route path="/" element={<PageScrollWrapper><Home onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
             <Route path="/about" element={<PageScrollWrapper><AboutUs onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
             <Route path="/services" element={<PageScrollWrapper><ServicesPage onOpenBooking={(srv) => handleOpenBooking(srv)} /></PageScrollWrapper>} />
+            <Route path="/gallery" element={<PageScrollWrapper><GalleryPage onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
             <Route path="/testimonials" element={<PageScrollWrapper><TestimonialsPage onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
             <Route path="/contact" element={<PageScrollWrapper><ContactUs /></PageScrollWrapper>} />
           </Routes>

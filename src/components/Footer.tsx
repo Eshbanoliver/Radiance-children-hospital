@@ -61,6 +61,7 @@ export const Footer: React.FC = () => {
                 { name: 'Home', path: '/' },
                 { name: 'About Us', path: '/about' },
                 { name: 'Pediatric Services', path: '/services' },
+                { name: 'Photo Gallery', path: '/gallery' },
                 { name: 'Parent Reviews & Ratings', path: '/testimonials' },
                 { name: 'Contact & Location', path: '/contact' }
               ].map((link) => (

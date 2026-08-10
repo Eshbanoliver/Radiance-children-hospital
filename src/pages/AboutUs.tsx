@@ -8,7 +8,7 @@ import {
   FaWind, FaHandsWash as FaHands, FaBaby, FaPills, FaHeart
 } from 'react-icons/fa';
 import { 
-  HOSPITAL_INFO, INTACT_SURVIVAL_COMMITMENT 
+  HOSPITAL_INFO 
 } from '../data/hospitalData';
 import { SEO } from '../components/SEO';
 
