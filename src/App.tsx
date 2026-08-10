@@ -24,10 +24,43 @@ const ScrollToTopOnRoute: React.FC = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    const forceScrollTop = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    forceScrollTop();
+
+    const t1 = setTimeout(forceScrollTop, 0);
+    const t2 = setTimeout(forceScrollTop, 50);
+    const t3 = setTimeout(forceScrollTop, 150);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
   }, [pathname]);
 
   return null;
+};
+
+// Page component wrapper to guarantee top scroll when lazy chunk mounts
+const PageScrollWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [pathname]);
+
+  return <>{children}</>;
 };
 
 export const AppContent: React.FC = () => {
@@ -58,11 +91,11 @@ export const AppContent: React.FC = () => {
       <main className="flex-grow">
         <Suspense fallback={<PageLoader />}>
           <Routes>
-            <Route path="/" element={<Home onOpenBooking={() => handleOpenBooking()} />} />
-            <Route path="/about" element={<AboutUs onOpenBooking={() => handleOpenBooking()} />} />
-            <Route path="/services" element={<ServicesPage onOpenBooking={(srv) => handleOpenBooking(srv)} />} />
-            <Route path="/testimonials" element={<TestimonialsPage onOpenBooking={() => handleOpenBooking()} />} />
-            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/" element={<PageScrollWrapper><Home onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
+            <Route path="/about" element={<PageScrollWrapper><AboutUs onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
+            <Route path="/services" element={<PageScrollWrapper><ServicesPage onOpenBooking={(srv) => handleOpenBooking(srv)} /></PageScrollWrapper>} />
+            <Route path="/testimonials" element={<PageScrollWrapper><TestimonialsPage onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
+            <Route path="/contact" element={<PageScrollWrapper><ContactUs /></PageScrollWrapper>} />
           </Routes>
         </Suspense>
       </main>
