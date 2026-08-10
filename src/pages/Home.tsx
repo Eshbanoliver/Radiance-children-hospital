@@ -20,6 +20,12 @@ import hospitalExterior from '../assets/hospital-exterior.png';
 import hospitalNicu from '../assets/hospital-nicu.png';
 import hospitalNight from '../assets/hospital-night.png';
 import drDheerajImg from '../assets/dr-dheeraj-diwaakar.jpg';
+import facilitiesShowcase from '../assets/hospital-facilities-photo-showcase.jpg';
+import photoUnitCollage from '../assets/hospital-10-photo-unit-collage.jpg';
+import exteriorBuildingFront from '../assets/hospital-exterior-building-front.jpg';
+import drDheerajCredentialsPoster from '../assets/dr-dheeraj-credentials-team-poster.jpg';
+import waImage1 from '../assets/WhatsApp Image 2026-08-07 at 2.34.25 PM.jpeg';
+import waImage2 from '../assets/WhatsApp Image 2026-08-07 at 2.34.29 PM.jpeg';
 
 interface HomeProps {
   onOpenBooking: () => void;
@@ -64,6 +70,18 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
       title: "24×7 Emergency Desk & Reception",
       badge: "Mon-Sat OPD: 9am-3pm & 5pm-9pm",
       highlight: "Round-the-Clock Emergency Triage"
+    },
+    {
+      image: facilitiesShowcase,
+      title: "Bedside Diagnostics & Inpatient Suites",
+      badge: "In-House ABG, X-Ray & 2D Echo",
+      highlight: "40 Bedded Hospital Facility"
+    },
+    {
+      image: photoUnitCollage,
+      title: "Level III Incubators, Operation Theatre & ICU Team",
+      badge: "Comprehensive Pediatric Care",
+      highlight: "State-of-the-Art Infrastructure"
     }
   ];
 
@@ -600,6 +618,126 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
             </div>
 
           </motion.div>
+
+        </div>
+      </section>
+      <section className="relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-100 text-cyan-900 font-extrabold text-xs shadow-xs border border-cyan-200">
+              <FaHospital className="text-cyan-600" /> VISUAL INFRASTRUCTURE TOUR
+            </div>
+            
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+              Explore Our <span className="gradient-text">Hospital Infrastructure & Facilities</span>
+            </h2>
+
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
+              Take a visual tour inside our 40-bedded pediatric hospital campus, Level III NICU incubators, 24x7 emergency desk, and bedside diagnostic suites in Udaipur.
+            </p>
+          </div>
+
+          {/* 6 Photo Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Hospital Building Exterior",
+                subtitle: "40 Bedded Center • Udaipur",
+                image: exteriorBuildingFront,
+                tag: "Building Facade",
+                tagBg: "bg-cyan-500/90 text-white"
+              },
+              {
+                title: "Level III NICU Nursery",
+                subtitle: "HFOV Ventilator & Bubble CPAP",
+                image: hospitalNicu,
+                tag: "Level III NICU",
+                tagBg: "bg-emerald-500/90 text-white"
+              },
+              {
+                title: "10-Unit Facility & ICU Collage",
+                subtitle: "Incubators, Wards & Staff",
+                image: photoUnitCollage,
+                tag: "10-Photo Collage",
+                tagBg: "bg-purple-600/90 text-white"
+              },
+              {
+                title: "Bedside Diagnostic & Wards",
+                subtitle: "In-House ABG, X-Ray & Echo",
+                image: facilitiesShowcase,
+                tag: "Bedside Diagnostics",
+                tagBg: "bg-blue-600/90 text-white"
+              },
+              {
+                title: "24x7 Emergency Desk Triage",
+                subtitle: "24 Hours On-Duty Intensivists",
+                image: hospitalNight,
+                tag: "24x7 Emergency Desk",
+                tagBg: "bg-rose-500/90 text-white"
+              },
+              {
+                title: "Outpatient Consultation OPD",
+                subtitle: "Morning & Evening OPD",
+                image: waImage1,
+                tag: "OPD Chambers",
+                tagBg: "bg-amber-600/90 text-white"
+              },
+              {
+                title: "Sterile Inpatient Patient Suites",
+                subtitle: "General, Semi-Deluxe & Deluxe Wards",
+                image: waImage2,
+                tag: "Inpatient Ward",
+                tagBg: "bg-teal-600/90 text-white"
+              },
+              {
+                title: "Doctor & Pediatric Nursing Staff",
+                subtitle: "DM Neonatologist & ICU Team",
+                image: drDheerajCredentialsPoster,
+                tag: "Medical Team",
+                tagBg: "bg-cyan-600/90 text-white"
+              }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="rounded-[2.5rem] bg-white border border-slate-200 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/15 overflow-hidden group flex flex-col justify-between transition-all duration-300"
+              >
+                <div className="relative h-64 sm:h-72 overflow-hidden bg-slate-950">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent flex flex-col justify-between p-6">
+                    <span className={`px-3 py-1 rounded-full font-black text-[10px] uppercase tracking-wider shadow-md w-fit ${item.tagBg}`}>
+                      {item.tag}
+                    </span>
+                    <div>
+                      <span className="text-cyan-300 font-extrabold text-xs block">{item.subtitle}</span>
+                      <h3 className="text-xl font-black text-white leading-snug mt-0.5">{item.title}</h3>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA Link to Full Photo Gallery */}
+          <div className="text-center pt-2">
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full gradient-btn text-white font-black text-sm sm:text-base shadow-2xl hover:scale-105 transition-all"
+            >
+              🖼️ View All Hospital Photos in Gallery →
+            </Link>
+          </div>
 
         </div>
       </section>
