@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Deployment and scratch scripts
+deploy.py
+scratch/
+*.py
+
