@@ -135,6 +135,8 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                   <img
                     src={hospitalExterior}
                     alt="Radiant Children's Hospital Exterior"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4 text-white">
@@ -152,6 +154,8 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                   <img
                     src={hospitalNicu}
                     alt="Level III NICU Nursery"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4 text-white">
@@ -196,6 +200,8 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                     <img
                       src={drDheerajImg}
                       alt="Dr. Dheeraj Diwaakar - DM Neonatologist"
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover object-top group-hover/photo:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent flex flex-col justify-end p-4 text-left">

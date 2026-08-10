@@ -128,6 +128,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             loading="eager"
+            decoding="async"
           />
         </AnimatePresence>
 
@@ -477,6 +478,8 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
                     <img
                       src={drDheerajImg}
                       alt="Dr. Dheeraj Diwaakar - DM Neonatologist JIPMER"
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover object-top group-hover/photo:scale-105 transition-transform duration-500"
                     />
                     
