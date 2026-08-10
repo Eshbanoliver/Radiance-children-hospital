@@ -1,0 +1,6 @@
+# Robots.txt for Radiance Children's Hospital
+User-agent: *
+Allow: /
+
+# Sitemap URL
+Sitemap: https://radiancechildrenshospital.com/sitemap.xml
