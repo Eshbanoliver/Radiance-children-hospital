@@ -18,6 +18,11 @@ import nicuPicuSpecsBrochure from '../assets/hospital-nicu-picu-specs-brochure.j
 import facilitiesShowcase from '../assets/hospital-facilities-photo-showcase.jpg';
 import transportIntactSurvivalBrochure from '../assets/hospital-transport-intact-survival-brochure.jpg';
 import drDheerajCredentialsPoster from '../assets/dr-dheeraj-credentials-team-poster.jpg';
+import exteriorBuildingFront from '../assets/hospital-exterior-building-front.jpg';
+import photoUnitCollage from '../assets/hospital-10-photo-unit-collage.jpg';
+import infrastructureMapPoster from '../assets/hospital-infrastructure-location-map-poster.jpg';
+import hindiSuperSpecialtyBrochure from '../assets/hospital-hindi-super-specialty-brochure.jpg';
+import hindiFacilityBanner from '../assets/hospital-hindi-facility-photo-banner.jpg';
 
 interface GalleryPageProps {
   onOpenBooking: () => void;
@@ -39,6 +44,16 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const galleryItems: GalleryItem[] = [
+    {
+      id: 'ext-front',
+      title: 'Hospital Front Building Facade & Glass Elevation',
+      category: 'Exterior',
+      image: exteriorBuildingFront,
+      subtitle: 'Radiant Children\'s Hospital Udaipur',
+      description: 'Full multi-story modern building glass facade with official Radiant emblem and appointment hotline banner.',
+      badge: 'Building Facade',
+      badgeBg: 'bg-cyan-600/90 text-white'
+    },
     {
       id: 'ext-1',
       title: 'Hospital Building Exterior & Front Elevation',
@@ -148,6 +163,46 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
       description: 'Inpatient rooms equipped with central oxygen lines, compressed air, high vacuum suction & 100% DG auto backup generator power.',
       badge: 'Inpatient Suite',
       badgeBg: 'bg-blue-500/90 text-white'
+    },
+    {
+      id: 'collage-1',
+      title: '10-Unit Hospital Facility & ICU Photo Collage',
+      category: 'Facilities',
+      image: photoUnitCollage,
+      subtitle: 'NICU, Wards, Lab & Operation Theatre',
+      description: 'Comprehensive 10-picture collage displaying radiant incubators, operation theatre, emergency triage, lab counters, and medical nursing staff.',
+      badge: 'Photo Collage',
+      badgeBg: 'bg-purple-600/90 text-white'
+    },
+    {
+      id: 'map-poster',
+      title: '40 Bedded Infrastructure & Regional Location Map',
+      category: 'Exterior',
+      image: infrastructureMapPoster,
+      subtitle: 'Shobhagpura Circle, 100 Ft Rd, Udaipur',
+      description: 'Official hospital infrastructure layout poster featuring detailed location map, NICU equipment list, transport hotline & contact information.',
+      badge: 'Map & Poster',
+      badgeBg: 'bg-indigo-600/90 text-white'
+    },
+    {
+      id: 'hindi-brochure-1',
+      title: 'Super Specialty Child Care & Premature Survival Overview',
+      category: 'Doctor',
+      image: hindiSuperSpecialtyBrochure,
+      subtitle: 'Southern Rajasthan Lead Pediatric Care',
+      description: 'Official super specialty medical poster highlighting 500-600gm premature baby survival success (97-99%), 24x7 intensivist availability, and Dr. Dheeraj Diwaakar.',
+      badge: 'Super Specialty',
+      badgeBg: 'bg-amber-600/90 text-white'
+    },
+    {
+      id: 'hindi-banner-1',
+      title: 'Super Specialty Hospital & 5-Unit Facility Banner',
+      category: 'Facilities',
+      image: hindiFacilityBanner,
+      subtitle: 'Advanced NICU, Modular OT & ICU Staff',
+      description: 'Official banner showcasing Level III NICU incubators, modular operation theatre, bedside ultrasound, and senior pediatric ICU team in Udaipur.',
+      badge: 'Facility Banner',
+      badgeBg: 'bg-emerald-600/90 text-white'
     }
   ];
 
