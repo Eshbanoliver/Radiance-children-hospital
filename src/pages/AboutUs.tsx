@@ -5,7 +5,7 @@ import {
   FaUserMd, FaShieldAlt, FaCalendarCheck, 
   FaCheckCircle, FaHospital, FaPhoneAlt, FaMicroscope, 
   FaFlask, FaAmbulance, FaBed, FaAward, FaHeartbeat, 
-  FaWind, FaHandsWash as FaHands, FaBaby, FaPills
+  FaWind, FaHandsWash as FaHands, FaBaby, FaPills, FaHeart
 } from 'react-icons/fa';
 import { 
   HOSPITAL_INFO, INTACT_SURVIVAL_COMMITMENT 
@@ -486,36 +486,148 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 5. INTACT SURVIVAL COMMITMENT SHOWCASE */}
+      {/* 5. INTACT SURVIVAL COMMITMENT SHOWCASE — VIBRANT MODERN DESIGN */}
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-[2.5rem] bg-gradient-to-br from-slate-950 via-teal-950 to-slate-950 text-white p-8 sm:p-12 shadow-2xl border border-emerald-500/30 space-y-8 relative overflow-hidden">
-            <div className="max-w-3xl space-y-3 relative z-10">
-              <span className="px-3.5 py-1 rounded-full bg-emerald-400/20 text-emerald-300 font-extrabold text-xs border border-emerald-400/30 uppercase tracking-wider">
-                NICU Care Benchmark
-              </span>
+          
+          {/* Main Midnight Emerald & Cyan Glow Card Container */}
+          <div className="rounded-[3rem] bg-gradient-to-br from-slate-950 via-teal-950 to-slate-950 text-white p-8 sm:p-14 shadow-2xl border-2 border-emerald-500/40 relative overflow-hidden space-y-10">
+            
+            {/* Ambient Background Neon Glows */}
+            <div className="absolute -top-24 -left-24 w-96 h-96 bg-emerald-500/25 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-cyan-500/25 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Section Header with Animated Glowing Badge */}
+            <div className="relative z-10 text-center max-w-3xl mx-auto space-y-4">
+              <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/40 text-emerald-300 font-extrabold text-xs sm:text-sm shadow-lg">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                NICU Care Benchmark • Zero Compromise Child Wellness
+              </div>
+
               <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
-                Commitment for Intact Survival of <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent">NICU Graduates</span>
+                Commitment for <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent">Intact Survival of NICU Graduates</span>
               </h2>
-              <p className="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
-                Dedicated protocols to ensure high-risk NICU graduates grow up healthy, safeguarding brain, retina vision, hearing, and motor milestones.
+
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-medium">
+                Beyond saving lives in the NICU, our neonatologists and pediatric specialists ensure premature & high-risk babies grow up healthy — safeguarding brain development, vision, hearing, and physical milestones.
               </p>
             </div>
 
+            {/* 7 Vibrant 3D Feature Cards in Responsive Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
-              {INTACT_SURVIVAL_COMMITMENT.map((item, idx) => (
-                <div key={idx} className="rounded-3xl bg-slate-900/80 backdrop-blur-md p-6 border border-emerald-500/25 space-y-3 hover:border-emerald-400/60 transition-all group">
-                  <div className="flex items-center gap-2 text-emerald-400 font-black text-sm">
-                    <FaCheckCircle className="shrink-0 text-emerald-400 text-base" />
-                    <h4 className="group-hover:text-emerald-300 transition-colors">{item.title}</h4>
-                  </div>
-                  <p className="text-slate-300 text-xs leading-relaxed font-medium">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
+              {[
+                {
+                  title: "Bedside Neurosonogram & 2D Echo",
+                  desc: "Real-time bedside cardiac and neuro imaging for precise neonatal diagnostics.",
+                  badge: "Bedside Imaging",
+                  gradient: "from-cyan-500 via-teal-400 to-blue-600",
+                  glow: "shadow-cyan-500/30",
+                  icon: FaHeartbeat
+                },
+                {
+                  title: "Newborn Screening for Congenital Disorders",
+                  desc: "Early detection screening for metabolic and genetic congenital conditions.",
+                  badge: "Metabolic Check",
+                  gradient: "from-emerald-500 via-teal-400 to-emerald-600",
+                  glow: "shadow-emerald-500/30",
+                  icon: FaFlask
+                },
+                {
+                  title: "ROP (Retinopathy of Prematurity) Screening",
+                  desc: "Protocol-based retina specialist screening & ROP management for premature babies.",
+                  badge: "Vision Safety",
+                  gradient: "from-purple-500 via-violet-400 to-indigo-600",
+                  glow: "shadow-purple-500/30",
+                  icon: FaMicroscope
+                },
+                {
+                  title: "OAE (Oto-Acoustic Emission) Hearing Screening",
+                  desc: "Advanced objective hearing assessment for every newborn before discharge.",
+                  badge: "Hearing Check",
+                  gradient: "from-amber-400 via-orange-400 to-amber-600",
+                  glow: "shadow-amber-500/30",
+                  icon: FaUserMd
+                },
+                {
+                  title: "Pulse Oximetry Screening",
+                  desc: "Routine universal pulse oximetry screening for early detection of critical heart defects.",
+                  badge: "Cardiac Safety",
+                  gradient: "from-rose-500 via-red-400 to-pink-600",
+                  glow: "shadow-rose-500/30",
+                  icon: FaShieldAlt
+                },
+                {
+                  title: "Neurodevelopmental Assessment",
+                  desc: "Follow-up milestones evaluation of high-risk NICU graduates by Consultant & Physiotherapist.",
+                  badge: "Milestone Tracking",
+                  gradient: "from-sky-400 via-blue-500 to-indigo-600",
+                  glow: "shadow-sky-500/30",
+                  icon: FaBaby
+                },
+                {
+                  title: "Lactation Management & KMC",
+                  desc: "Dedicated breastfeeding support and Kangaroo Mother Care (KMC) for bonding and growth.",
+                  badge: "Mother Bonding",
+                  gradient: "from-pink-500 via-rose-400 to-purple-600",
+                  glow: "shadow-pink-500/30",
+                  icon: FaHeart
+                }
+              ].map((pillar, idx) => {
+                const IconComp = pillar.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.06 }}
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    className="rounded-3xl bg-slate-900/80 backdrop-blur-xl border border-emerald-500/30 p-6 flex flex-col justify-between space-y-4 hover:border-emerald-400/80 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-300 group"
+                  >
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className={`w-13 h-13 rounded-2xl bg-gradient-to-tr ${pillar.gradient} text-white flex items-center justify-center text-xl shadow-lg ${pillar.glow} group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                          <IconComp />
+                        </div>
+                        <span className="px-2.5 py-1 rounded-full bg-emerald-400/10 text-emerald-300 font-extrabold text-[10px] uppercase tracking-wider border border-emerald-400/20">
+                          {pillar.badge}
+                        </span>
+                      </div>
+
+                      <h3 className="text-lg font-black text-white group-hover:text-emerald-300 transition-colors leading-snug">
+                        {pillar.title}
+                      </h3>
+
+                      <p className="text-slate-300 text-xs leading-relaxed font-medium">
+                        {pillar.desc}
+                      </p>
+                    </div>
+
+                    <div className="pt-3 border-t border-white/10 flex items-center gap-1.5 text-[11px] font-extrabold text-emerald-400">
+                      <FaCheckCircle className="shrink-0 text-emerald-400" />
+                      <span>Intact Survival Protocol Included</span>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
+
+            {/* Bottom Highlight Seal Banner */}
+            <div className="relative z-10 pt-4 text-center">
+              <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-6 rounded-3xl bg-emerald-950/90 border border-emerald-400/40 text-emerald-200 text-xs sm:text-sm font-bold shadow-2xl backdrop-blur-md">
+                <div className="w-11 h-11 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-xl shrink-0 font-black shadow-lg">
+                  ✓
+                </div>
+                <div className="text-center sm:text-left">
+                  <span className="font-extrabold text-white block text-sm sm:text-base">100% Comprehensive Follow-Up Care for Premature & High-Risk Babies</span>
+                  <span className="text-slate-300 font-medium">Dedicated to ensuring intact physical, neurological, visual & auditory growth for every newborn graduate.</span>
+                </div>
+              </div>
+            </div>
+
           </div>
+
         </div>
       </section>
 
