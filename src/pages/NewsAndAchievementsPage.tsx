@@ -8,7 +8,9 @@ import { HOSPITAL_INFO, NEWS_AND_ACHIEVEMENTS } from '../data/hospitalData';
 import { SEO } from '../components/SEO';
 import type { NewsItem } from '../types';
 
-import hospitalExterior from '../assets/hospital-exterior.png';
+import sammanPatra from '../assets/samman-patra-dr-dheeraj.JPG';
+import newsCovid from '../assets/news-covid-baby-survival.JPG';
+import noticeBoard from '../assets/notice-board-achievements.JPG';
 
 interface NewsAndAchievementsPageProps {
   onOpenBooking: () => void;
@@ -68,7 +70,127 @@ export const NewsAndAchievementsPage: React.FC<NewsAndAchievementsPageProps> = (
         </div>
       </section>
 
-      {/* 2. TOP MILESTONE STAT CARDS */}
+      {/* 2. FEATURED PHOTO STORIES */}
+      <section className="relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-10 space-y-2"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 font-black text-xs uppercase tracking-wider border border-amber-200">
+              🏆 Featured Stories & Recognition
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900">In the Press & On the Wall</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            {/* Card 1 — Samman Patra */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.05 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="rounded-[2.5rem] bg-white border border-slate-200 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 overflow-hidden group transition-all duration-300 flex flex-col"
+            >
+              <div className="relative h-72 overflow-hidden bg-slate-950">
+                <img
+                  src={sammanPatra}
+                  alt="Samman Patra — Dr. Dheeraj Ji Diwaakar"
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-amber-500/90 text-white font-black text-[10px] uppercase tracking-wider shadow">
+                  🏅 Award & Recognition
+                </span>
+              </div>
+              <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-black text-slate-900 leading-snug">Samman Patra — Dr. Dheeraj Ji Diwaakar</h3>
+                  <p className="text-slate-600 text-xs font-semibold leading-relaxed">
+                    A heartfelt "Samman Patra" (Certificate of Honour) presented to Dr. Dheeraj Ji Diwaakar by grateful parents and community members. The letter commends his extraordinary commitment, round-the-clock availability, and life-saving expertise in neonatal care at Radiant Children's Hospital, Udaipur — recognising him as an exceptional physician and compassionate human being.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-slate-100 flex items-center gap-1.5 text-xs font-extrabold text-amber-600">
+                  <FaAward className="text-amber-500" /> Community Award • Radiant Children's Hospital
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 2 — Newspaper COVID Baby */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="rounded-[2.5rem] bg-white border border-slate-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 overflow-hidden group transition-all duration-300 flex flex-col"
+            >
+              <div className="relative h-72 overflow-hidden bg-slate-950">
+                <img
+                  src={newsCovid}
+                  alt="Newspaper: Corona mein Jaan Ganwane Wali Yogita ke Putra Garv ko Mila Jeevandam"
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-emerald-500/90 text-white font-black text-[10px] uppercase tracking-wider shadow">
+                  📰 Press Coverage
+                </span>
+              </div>
+              <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-black text-slate-900 leading-snug">COVID Baby Saved After 61 Days — Featured in Local Press</h3>
+                  <p className="text-slate-600 text-xs font-semibold leading-relaxed">
+                    A premature baby born to Yogita Kunwar — who lost her life to COVID-19 during delivery — was given a second chance at life by Dr. Dheeraj Diwaakar and the Radiant team. After 61 gruelling days of battling between life and death in the NICU, baby Garv was successfully discharged. The story was widely covered in regional newspapers and brought widespread recognition to Radiant Children's Hospital.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-slate-100 flex items-center gap-1.5 text-xs font-extrabold text-emerald-600">
+                  <FaCheckCircle className="text-emerald-500" /> Clinical Milestone • Udaipur, Rajasthan
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 3 — Notice Board */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="rounded-[2.5rem] bg-white border border-slate-200 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/10 overflow-hidden group transition-all duration-300 flex flex-col"
+            >
+              <div className="relative h-72 overflow-hidden bg-slate-950">
+                <img
+                  src={noticeBoard}
+                  alt="Achievement Notice Board at Radiant Children's Hospital"
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-cyan-500/90 text-white font-black text-[10px] uppercase tracking-wider shadow">
+                  📋 Achievements Board
+                </span>
+              </div>
+              <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-black text-slate-900 leading-snug">Wall of Recognition — Certificates, Letters & Press Clippings</h3>
+                  <p className="text-slate-600 text-xs font-semibold leading-relaxed">
+                    Radiant Children's Hospital proudly displays its achievement notice board — featuring Rajasthan Medical Council certificates, multiple heartfelt gratitude letters from parents, local newspaper coverage, and hospital brochures. This board stands as a testament to the trust placed in Dr. Dheeraj Diwaakar and the entire medical team by thousands of families across Udaipur.
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-slate-100 flex items-center gap-1.5 text-xs font-extrabold text-cyan-600">
+                  <FaCheckCircle className="text-cyan-500" /> Verified Credentials • Radiant Children's Hospital
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 3. TOP MILESTONE STAT CARDS */}
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -172,7 +294,7 @@ export const NewsAndAchievementsPage: React.FC<NewsAndAchievementsPageProps> = (
                   {/* Card Header Media Container */}
                   <div className="h-52 bg-slate-900 relative overflow-hidden">
                     <img
-                      src={article.image || hospitalExterior}
+                      src={article.image || ''}
                       alt={article.title}
                       loading="lazy"
                       decoding="async"
