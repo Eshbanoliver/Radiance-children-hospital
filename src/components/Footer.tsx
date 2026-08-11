@@ -60,6 +60,7 @@ export const Footer: React.FC = () => {
               {[
                 { name: 'Home', path: '/' },
                 { name: 'About Us', path: '/about' },
+                { name: 'Key Specialities & Care', path: '/key-specialities-and-care' },
                 { name: 'Pediatric Services', path: '/services' },
                 { name: 'Photo Gallery', path: '/gallery' },
                 { name: 'Parent Reviews & Ratings', path: '/testimonials' },
