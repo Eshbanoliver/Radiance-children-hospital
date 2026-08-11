@@ -7,13 +7,52 @@ import {
 import { SEO } from '../components/SEO';
 import { HOSPITAL_INFO } from '../data/hospitalData';
 
-import hospitalExterior from '../assets/hospital-exterior.png';
-import hospitalNicu from '../assets/hospital-nicu.png';
-import hospitalNight from '../assets/hospital-night.png';
-import drDheerajImg from '../assets/dr-dheeraj-diwaakar.jpg';
-import waImage1 from '../assets/WhatsApp Image 2026-08-07 at 2.34.25 PM.jpeg';
-import waImage2 from '../assets/WhatsApp Image 2026-08-07 at 2.34.29 PM.jpeg';
-import exteriorBuildingFront from '../assets/hospital-exterior-building-front.jpg';
+import img1873 from '../assets/Hospital/IMG_1873.JPG';
+import img1876 from '../assets/Hospital/IMG_1876.JPG';
+import img1877 from '../assets/Hospital/IMG_1877.JPG';
+import img1878 from '../assets/Hospital/IMG_1878.JPG';
+import img1879 from '../assets/Hospital/IMG_1879.JPG';
+import img1880 from '../assets/Hospital/IMG_1880.JPG';
+import img1881 from '../assets/Hospital/IMG_1881.JPG';
+import img1882 from '../assets/Hospital/IMG_1882.JPG';
+import img1886 from '../assets/Hospital/IMG_1886.JPG';
+import img1887 from '../assets/Hospital/IMG_1887.JPG';
+import img1889 from '../assets/Hospital/IMG_1889.JPG';
+import img1893 from '../assets/Hospital/IMG_1893.JPG';
+import img1894 from '../assets/Hospital/IMG_1894.JPG';
+import img1895 from '../assets/Hospital/IMG_1895.JPG';
+import img1896 from '../assets/Hospital/IMG_1896.JPG';
+import img1897 from '../assets/Hospital/IMG_1897.JPG';
+import img1898 from '../assets/Hospital/IMG_1898.JPG';
+import img1899 from '../assets/Hospital/IMG_1899.JPG';
+import img1900 from '../assets/Hospital/IMG_1900.JPG';
+import img1902 from '../assets/Hospital/IMG_1902.JPG';
+import img1904 from '../assets/Hospital/IMG_1904.JPG';
+import img1905 from '../assets/Hospital/IMG_1905.JPG';
+import img1906 from '../assets/Hospital/IMG_1906.JPG';
+import img1907 from '../assets/Hospital/IMG_1907.JPG';
+import img1909 from '../assets/Hospital/IMG_1909.JPG';
+import img1910 from '../assets/Hospital/IMG_1910.JPG';
+import img1911 from '../assets/Hospital/IMG_1911.JPG';
+import img1912 from '../assets/Hospital/IMG_1912.JPG';
+import img1914 from '../assets/Hospital/IMG_1914.JPG';
+import img1915 from '../assets/Hospital/IMG_1915.JPG';
+import img1916 from '../assets/Hospital/IMG_1916.JPG';
+import img1917 from '../assets/Hospital/IMG_1917.JPG';
+import img1918 from '../assets/Hospital/IMG_1918.JPG';
+import img1919 from '../assets/Hospital/IMG_1919.JPG';
+import img1923 from '../assets/Hospital/IMG_1923.JPG';
+import img1924 from '../assets/Hospital/IMG_1924.JPG';
+import img1925 from '../assets/Hospital/IMG_1925.JPG';
+import img1926 from '../assets/Hospital/IMG_1926.JPG';
+import img1927 from '../assets/Hospital/IMG_1927.JPG';
+import img1928 from '../assets/Hospital/IMG_1928.JPG';
+import img1929 from '../assets/Hospital/IMG_1929.JPG';
+import img1930 from '../assets/Hospital/IMG_1930.JPG';
+import img1932 from '../assets/Hospital/IMG_1932.JPG';
+import img1934 from '../assets/Hospital/IMG_1934.JPG';
+import img1935 from '../assets/Hospital/IMG_1935.JPG';
+import img1936 from '../assets/Hospital/IMG_1936.JPG';
 
 interface GalleryPageProps {
   onOpenBooking: () => void;
@@ -21,97 +60,65 @@ interface GalleryPageProps {
 
 interface GalleryItem {
   id: string;
-  title: string;
-  category: 'Exterior' | 'NICU & PICU' | 'Emergency' | 'Doctor' | 'Facilities';
   image: string;
+  title: string;
   subtitle: string;
   description: string;
   badge: string;
   badgeBg: string;
 }
 
+const galleryItems: GalleryItem[] = [
+  { id: 'img-1873', image: img1873, title: 'Inpatient Ward & Nursing Desk', subtitle: 'Patient Beds & Reception Counter', description: 'General inpatient ward with patient beds and nursing station at Radiant Children\'s Hospital, Udaipur.', badge: 'Inpatient Ward', badgeBg: 'bg-cyan-600/90 text-white' },
+  { id: 'img-1876', image: img1876, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Interior view of hospital infrastructure and facilities at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-teal-600/90 text-white' },
+  { id: 'img-1877', image: img1877, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility photo showcasing the inpatient and care infrastructure at Radiant Children\'s Hospital.', badge: 'Facility', badgeBg: 'bg-blue-600/90 text-white' },
+  { id: 'img-1878', image: img1878, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Detailed view of hospital rooms and infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-indigo-600/90 text-white' },
+  { id: 'img-1879', image: img1879, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital interior showing patient care areas and facilities at Radiant Children\'s Hospital.', badge: 'Facility', badgeBg: 'bg-violet-600/90 text-white' },
+  { id: 'img-1880', image: img1880, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-purple-600/90 text-white' },
+  { id: 'img-1881', image: img1881, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Interior hospital photo of Radiant Children\'s Hospital infrastructure and patient care areas.', badge: 'Facility', badgeBg: 'bg-fuchsia-600/90 text-white' },
+  { id: 'img-1882', image: img1882, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital rooms and care infrastructure view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-pink-600/90 text-white' },
+  { id: 'img-1886', image: img1886, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility photo at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-rose-600/90 text-white' },
+  { id: 'img-1887', image: img1887, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Inpatient facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-orange-600/90 text-white' },
+  { id: 'img-1889', image: img1889, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility and patient care area at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-amber-600/90 text-white' },
+  { id: 'img-1893', image: img1893, title: 'Sterile Critical Care Wards', subtitle: 'Blue Divider Curtain Beds', description: 'Sterile pediatric critical care ward with blue divider curtains, hospital beds, and central oxygen supply at Radiant Children\'s Hospital.', badge: 'Critical Care Ward', badgeBg: 'bg-sky-600/90 text-white' },
+  { id: 'img-1894', image: img1894, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital infrastructure and facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-cyan-500/90 text-white' },
+  { id: 'img-1895', image: img1895, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care area and infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-teal-500/90 text-white' },
+  { id: 'img-1896', image: img1896, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Facility infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-emerald-600/90 text-white' },
+  { id: 'img-1897', image: img1897, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-green-600/90 text-white' },
+  { id: 'img-1898', image: img1898, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Infrastructure and patient care area at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-lime-600/90 text-white' },
+  { id: 'img-1899', image: img1899, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-yellow-600/90 text-white' },
+  { id: 'img-1900', image: img1900, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care area and infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-blue-500/90 text-white' },
+  { id: 'img-1902', image: img1902, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility interior at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-indigo-500/90 text-white' },
+  { id: 'img-1904', image: img1904, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility and patient care area at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-violet-500/90 text-white' },
+  { id: 'img-1905', image: img1905, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital rooms and care infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-purple-500/90 text-white' },
+  { id: 'img-1906', image: img1906, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Facility interior photo at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-fuchsia-500/90 text-white' },
+  { id: 'img-1907', image: img1907, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care area and infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-pink-500/90 text-white' },
+  { id: 'img-1909', image: img1909, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Facility infrastructure view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-rose-500/90 text-white' },
+  { id: 'img-1910', image: img1910, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care facility at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-orange-500/90 text-white' },
+  { id: 'img-1911', image: img1911, title: 'Level III Advanced NICU Nursery', subtitle: 'HFOV Ventilators & LED Phototherapy', description: 'Level III NICU nursery with advanced incubators, LED phototherapy units, HFOV ventilators and 24x7 intensivist availability at Radiant Children\'s Hospital.', badge: 'Level III NICU', badgeBg: 'bg-emerald-500/90 text-white' },
+  { id: 'img-1912', image: img1912, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital infrastructure and facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-teal-600/90 text-white' },
+  { id: 'img-1914', image: img1914, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care area at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-cyan-700/90 text-white' },
+  { id: 'img-1915', image: img1915, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-sky-600/90 text-white' },
+  { id: 'img-1916', image: img1916, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital infrastructure view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-blue-700/90 text-white' },
+  { id: 'img-1917', image: img1917, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Facility interior at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-indigo-700/90 text-white' },
+  { id: 'img-1918', image: img1918, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility photo at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-violet-700/90 text-white' },
+  { id: 'img-1919', image: img1919, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care area and facility at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-purple-700/90 text-white' },
+  { id: 'img-1923', image: img1923, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital infrastructure and care facility at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-fuchsia-700/90 text-white' },
+  { id: 'img-1924', image: img1924, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Facility interior photo at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-pink-700/90 text-white' },
+  { id: 'img-1925', image: img1925, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care area and infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-rose-700/90 text-white' },
+  { id: 'img-1926', image: img1926, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility interior at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-orange-700/90 text-white' },
+  { id: 'img-1927', image: img1927, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-amber-700/90 text-white' },
+  { id: 'img-1928', image: img1928, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital infrastructure photo at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-yellow-700/90 text-white' },
+  { id: 'img-1929', image: img1929, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care area and facility at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-lime-700/90 text-white' },
+  { id: 'img-1930', image: img1930, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility interior at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-green-700/90 text-white' },
+  { id: 'img-1932', image: img1932, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-emerald-700/90 text-white' },
+  { id: 'img-1934', image: img1934, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital infrastructure and care area at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-teal-700/90 text-white' },
+  { id: 'img-1935', image: img1935, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care facility photo at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-cyan-800/90 text-white' },
+  { id: 'img-1936', image: img1936, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility and infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-sky-700/90 text-white' },
+];
+
 export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-
-  const galleryItems: GalleryItem[] = [
-    {
-      id: 'ext-front',
-      title: 'Hospital Front Building Facade & Glass Elevation',
-      category: 'Exterior',
-      image: exteriorBuildingFront,
-      subtitle: 'Radiant Children\'s Hospital Udaipur',
-      description: 'Full multi-story modern building glass facade with official Radiant emblem and appointment hotline banner.',
-      badge: 'Building Facade',
-      badgeBg: 'bg-cyan-600/90 text-white'
-    },
-    {
-      id: 'ext-1',
-      title: 'Hospital Building Exterior & Front Elevation',
-      category: 'Exterior',
-      image: hospitalExterior,
-      subtitle: '40 Bedded Hospital Center',
-      description: 'Modern 40-bedded pediatric hospital campus located behind Ashoka Palace, 100 Feet Road, New Bhupalpura, Udaipur.',
-      badge: 'Main Hospital Building',
-      badgeBg: 'bg-cyan-500/90 text-white'
-    },
-    {
-      id: 'nicu-1',
-      title: 'Level III Advanced NICU Nursery Unit',
-      category: 'NICU & PICU',
-      image: hospitalNicu,
-      subtitle: 'State-of-the-Art Critical Care',
-      description: 'Fully equipped Level III NICU nursery featuring HFOV ventilators, Non-Invasive Bubble CPAP, Mira Cradle hypothermia care & LED phototherapy.',
-      badge: 'Level III NICU',
-      badgeBg: 'bg-emerald-500/90 text-white'
-    },
-    {
-      id: 'emg-1',
-      title: '24x7 Emergency Desk & Night Triage Reception',
-      category: 'Emergency',
-      image: hospitalNight,
-      subtitle: 'Round-the-Clock Critical Triage',
-      description: '24x7 operational emergency reception desk with instant triage and physical availability of Neonatal & Paediatric Intensivists.',
-      badge: '24x7 Emergency Desk',
-      badgeBg: 'bg-rose-500/90 text-white'
-    },
-    {
-      id: 'doc-1',
-      title: 'Dr. Dheeraj Diwaakar — Lead Neonatologist',
-      category: 'Doctor',
-      image: drDheerajImg,
-      subtitle: 'DM Neonatology (JIPMER Pondicherry)',
-      description: 'Lead Neonatologist & Level III NICU Director, former HOD at GMCH Udaipur & former Consultant at NICE Hospital Hyderabad.',
-      badge: 'Clinical Director',
-      badgeBg: 'bg-teal-500/90 text-white'
-    },
-    {
-      id: 'fac-1',
-      title: 'Outpatient Consultation & Emergency OPD',
-      category: 'Facilities',
-      image: waImage1,
-      subtitle: '24x7 OPD Consultation',
-      description: 'Specialized consultation chambers operational 24 hours a day for pediatric OPD services.',
-      badge: 'OPD & Patient Desk',
-      badgeBg: 'bg-purple-500/90 text-white'
-    },
-    {
-      id: 'fac-2',
-      title: 'Sterile Newborn & Inpatient Treatment Ward',
-      category: 'Facilities',
-      image: waImage2,
-      subtitle: 'Sterile Wards & Private Suites',
-      description: 'Inpatient rooms equipped with central oxygen lines, compressed air, high vacuum suction & 100% DG auto backup generator power.',
-      badge: 'Inpatient Suite',
-      badgeBg: 'bg-blue-500/90 text-white'
-    }
-  ];
-
-  const categories = ['All', 'Exterior', 'NICU & PICU', 'Emergency', 'Doctor', 'Facilities'];
-
-  const filteredItems = selectedCategory === 'All' 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === selectedCategory);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -123,12 +130,12 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
 
   const prevLightbox = () => {
     if (lightboxIndex === null) return;
-    setLightboxIndex((lightboxIndex - 1 + filteredItems.length) % filteredItems.length);
+    setLightboxIndex((lightboxIndex - 1 + galleryItems.length) % galleryItems.length);
   };
 
   const nextLightbox = () => {
     if (lightboxIndex === null) return;
-    setLightboxIndex((lightboxIndex + 1) % filteredItems.length);
+    setLightboxIndex((lightboxIndex + 1) % galleryItems.length);
   };
 
   return (
@@ -140,7 +147,6 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
 
       {/* 1. HERO HEADER BANNER */}
       <section className="relative pt-6 pb-8 text-center overflow-hidden">
-        {/* Background Ambient Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-cyan-500/10 via-teal-500/10 to-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-6 relative z-10">
@@ -176,28 +182,15 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* 2. CATEGORY TABS & PHOTO GRID */}
+      {/* 2. PHOTO GRID */}
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            {categories.map((cat) => {
-              const isActive = selectedCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-5 py-3 rounded-full font-black text-xs sm:text-sm transition-all duration-300 ${
-                    isActive
-                      ? 'bg-slate-900 text-white shadow-xl scale-105 border border-slate-700'
-                      : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-sm'
-                  }`}
-                >
-                  {cat === 'All' ? '🖼️ All Photos' : cat}
-                </button>
-              );
-            })}
+
+          {/* Photo count badge */}
+          <div className="flex items-center justify-center">
+            <span className="px-5 py-2.5 rounded-full bg-slate-900 text-white font-black text-xs shadow-xl border border-slate-700/60">
+              🖼️ {galleryItems.length} Hospital Photos
+            </span>
           </div>
 
           {/* Photo Gallery Grid */}
@@ -206,14 +199,14 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             <AnimatePresence>
-              {filteredItems.map((item, idx) => (
+              {galleryItems.map((item, idx) => (
                 <motion.div
                   key={item.id}
                   layout
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                  transition={{ duration: 0.4, delay: Math.min(idx * 0.03, 0.5) }}
                   whileHover={{ y: -8, scale: 1.02 }}
                   onClick={() => openLightbox(idx)}
                   className="rounded-[2.5rem] bg-white border border-slate-200 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/15 overflow-hidden group cursor-pointer flex flex-col justify-between transition-all duration-300"
@@ -308,22 +301,22 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
             <div className="max-w-5xl w-full max-h-[90vh] flex flex-col items-center space-y-4 relative z-10">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20 max-h-[70vh] bg-slate-900 flex items-center justify-center">
                 <img
-                  src={filteredItems[lightboxIndex].image}
-                  alt={filteredItems[lightboxIndex].title}
+                  src={galleryItems[lightboxIndex].image}
+                  alt={galleryItems[lightboxIndex].title}
                   className="max-h-[70vh] w-auto max-w-full object-contain"
                 />
               </div>
 
               <div className="bg-slate-900/90 border border-white/20 p-6 rounded-3xl text-center max-w-2xl w-full text-white space-y-2 backdrop-blur-md shadow-2xl">
                 <span className="px-3 py-1 rounded-full bg-cyan-400 text-slate-950 font-black text-[10px] uppercase tracking-wider inline-block">
-                  {filteredItems[lightboxIndex].badge}
+                  {galleryItems[lightboxIndex].badge}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black">{filteredItems[lightboxIndex].title}</h3>
+                <h3 className="text-xl sm:text-2xl font-black">{galleryItems[lightboxIndex].title}</h3>
                 <p className="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
-                  {filteredItems[lightboxIndex].description}
+                  {galleryItems[lightboxIndex].description}
                 </p>
                 <div className="text-slate-400 text-[11px] font-bold pt-1">
-                  Photo {lightboxIndex + 1} of {filteredItems.length}
+                  Photo {lightboxIndex + 1} of {galleryItems.length}
                 </div>
               </div>
             </div>
