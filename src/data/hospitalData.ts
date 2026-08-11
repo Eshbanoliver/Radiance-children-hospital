@@ -16,16 +16,16 @@ export const HOSPITAL_INFO = {
   instagramUrl: "https://www.instagram.com/radiantch/",
   googleMapsIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d922350.4716782165!2d72.6897553765913!3d25.440552555194934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5fb71a80425%3A0x3965db8c2851267f!2sRadiant%20Children%E2%80%99s%20Hospital!5e0!3m2!1sen!2sin!4v1786074857847!5m2!1sen!2sin",
   description: "Radiant Children's Hospital is a 40-bedded advanced Neonatal & Paediatric Care Centre in Udaipur providing 24x7 emergency & availability of Neonatal & Paediatric Intensivists. Fully equipped with Level III NICU (HFOV, CPAP, Mira Cradle), PICU (Ventilators, Volumetric Pumps), In-house ABG Analyzer, 2D Echo, X-Ray, Pharmacy, and Neonatal Ambulance Transport.",
-  opdHours: "Monday - Saturday: Morning 9:00 AM - 3:00 PM | Evening 5:00 PM - 9:00 PM",
-  emergencyHours: "24×7 Emergency & OPD (365 Days)",
+  opdHours: "24×7 Hours Open (365 Days a Year)",
+  emergencyHours: "24×7 Emergency & OPD Services (365 Days)",
   emergencyHotline: "07424937788",
   specialties: [
     "40 Bedded Neonatal & Paediatric Care Centre",
-    "24x7 Emergency Services",
+    "24x7 Emergency & OPD Services",
     "24x7 Availability of Neonatal & Paediatric Intensivist",
     "Level III Advanced NICU (HFOV, CPAP, Mira Cradle)",
     "Highly Equipped PICU Unit",
-    "OPD Services (Mon - Sat: 9 AM-3 PM & 5 PM-9 PM)",
+    "24x7 OPD Consultation (365 Days)",
     "Vaccination & Cold Chain Centre",
     "Dedicated Neonatal & Paediatric Transport Ambulance"
   ]
@@ -197,13 +197,13 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
   {
     id: 'opd-services',
-    title: 'OPD Consultation Services',
-    shortDesc: 'Mon-Sat Morning (9 AM-3 PM) & Evening (5 PM-9 PM) by expert pediatricians.',
-    fullDesc: 'Outpatient consultation for all childhood illnesses from 0 to 18 years. Operating Monday to Saturday with Morning OPD (9:00 AM - 3:00 PM) and Evening OPD (5:00 PM - 9:00 PM) alongside 24x7 Emergency OPD.',
+    title: '24x7 OPD Consultation Services',
+    shortDesc: 'Round-the-clock 24x7 OPD consultation for children from birth to 18 years by expert pediatricians.',
+    fullDesc: 'Outpatient consultation for all childhood illnesses from 0 to 18 years. Operating 24 hours a day, 7 days a week (24x7 OPD) with on-site pediatric specialists and emergency doctors available round-the-clock.',
     iconName: 'FaStethoscope',
     category: 'General Care',
-    highlights: ['Mon-Sat Morning: 9 AM - 3 PM', 'Mon-Sat Evening: 5 PM - 9 PM', '24x7 Emergency OPD', 'Infant to Adolescent Care'],
-    badge: 'Daily OPD'
+    highlights: ['24x7 Round-the-Clock OPD', '365 Days Uninterrupted Consultation', 'On-Site Pediatric Specialists', 'Infant to Adolescent Care'],
+    badge: '24x7 OPD'
   },
   {
     id: 'intact-survival',
@@ -471,18 +471,18 @@ export const WHY_CHOOSE_US: WhyChooseUsItem[] = [
   },
   {
     id: "flexible-opd",
-    title: "Flexible OPD Timings",
-    desc: "Mon-Sat Morning (9:00 AM - 3:00 PM) & Evening (5:00 PM - 9:00 PM) shifts plus 24×7 Emergency OPD availability.",
+    title: "24×7 OPD Services",
+    desc: "Round-the-clock 24x7 OPD consultation with pediatric specialists and emergency doctors available 365 days a year.",
     iconName: "FaClock",
     category: "convenience",
-    badge: "Double OPD Shift",
+    badge: "24×7 OPD",
     gradient: "from-amber-500 via-orange-500 to-yellow-500",
     shadow: "shadow-amber-500/20 hover:shadow-amber-500/40 border-amber-200/90",
     badgeBg: "bg-amber-500/15 border-amber-300 text-amber-900",
     highlights: [
-      "Morning Shift: 9:00 AM - 3:00 PM",
-      "Evening Shift: 5:00 PM - 9:00 PM",
-      "24×7 Round-the-Clock Emergency Desk"
+      "24×7 Round-the-Clock OPD",
+      "Pediatric Doctors Always Available",
+      "365 Days Uninterrupted Coverage"
     ]
   }
 ];
@@ -515,7 +515,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     parentName: 'Pooja Rajpurohit',
     childInfo: 'Mother of Kavi (Age 6)',
     rating: 5,
-    comment: 'We visit Radiant Children’s Hospital for all vaccinations and growth checkups. OPD timings (Morning 9-3 and Evening 5-9) are super convenient. Friendly doctors and sterile rooms!',
+    comment: 'We visit Radiant Children’s Hospital for all vaccinations and growth checkups. 24x7 OPD availability is super convenient. Friendly doctors and sterile rooms!',
     date: '3 weeks ago',
     location: 'New Bhupalpura, Udaipur',
     avatarBg: 'bg-purple-500',
@@ -582,7 +582,7 @@ export const FAQS: FAQItem[] = [
   {
     id: '1',
     question: 'What are the OPD Timings at Radiant Children’s Hospital?',
-    answer: 'Our OPD Services run Monday to Saturday with Morning OPD from 9:00 a.m. to 3:00 p.m. and Evening OPD from 5:00 p.m. to 9:00 p.m. Additionally, Emergency OPD and Intensivists are available 24 hours a day, 7 days a week.',
+    answer: 'Our OPD Services operate 24 hours a day, 7 days a week (24x7 OPD, 365 Days a Year). Senior pediatric specialists, emergency doctors, Level III NICU/PICU teams, and diagnostic facilities are continuously operational round-the-clock.',
     category: 'General'
   },
   {

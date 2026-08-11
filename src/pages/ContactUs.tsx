@@ -158,9 +158,9 @@ export const ContactUs: React.FC = () => {
 
                 <h3 className="text-xl font-black text-slate-900">OPD Timings</h3>
                 <div className="text-xs text-slate-600 font-bold space-y-1">
-                  <p>• Morning: 9:00 AM - 3:00 PM (Mon-Sat)</p>
-                  <p>• Evening: 5:00 PM - 9:00 PM (Mon-Sat)</p>
-                  <p className="text-emerald-600 font-black pt-0.5">24×7 Emergency OPD & NICU</p>
+                  <p>• 24×7 Round-the-Clock OPD Services</p>
+                  <p>• Operational 365 Days a Year</p>
+                  <p className="text-emerald-600 font-black pt-0.5">24×7 Emergency Doctor & NICU</p>
                 </div>
               </div>
 

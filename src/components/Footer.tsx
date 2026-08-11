@@ -123,9 +123,8 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-3">
                 <FaClock className="text-cyan-400 text-sm shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-white">OPD: Mon - Sat</p>
-                  <p className="text-[11px] text-slate-400">Morning: 9:00 AM - 3:00 PM</p>
-                  <p className="text-[11px] text-slate-400">Evening: 5:00 PM - 9:00 PM</p>
+                  <p className="font-semibold text-white">OPD: 24×7 Hours Open</p>
+                  <p className="text-[11px] text-slate-400">Operational 24 Hours (365 Days)</p>
                   <p className="font-bold text-emerald-400 text-[11px] mt-0.5">24×7 Emergency & Intensivists</p>
                 </div>
               </li>

@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
-              <FaClock className="text-emerald-300" /> OPD: Mon-Sat 9am-3pm & 5pm-9pm | 24x7 Emergency
+              <FaClock className="text-emerald-300" /> 24x7 OPD & Emergency Services (365 Days)
             </span>
             <a href={`mailto:${HOSPITAL_INFO.email}`} className="flex items-center gap-2 hover:underline text-cyan-100">
               ✉️ {HOSPITAL_INFO.email}

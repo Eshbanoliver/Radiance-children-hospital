@@ -44,7 +44,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
     {
       image: hospitalNight,
       title: "24×7 Emergency Desk & Reception",
-      badge: "Mon-Sat OPD: 9am-3pm & 5pm-9pm",
+      badge: "24×7 OPD & Emergency Desk",
       highlight: "Round-the-Clock Emergency Triage"
     },
     {
@@ -159,7 +159,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
               </h1>
 
               <p className="text-slate-100 text-base sm:text-lg lg:text-xl font-semibold leading-relaxed max-w-2xl drop-shadow-sm">
-                24x7 Availability of Neonatal & Paediatric Intensivists, Level III NICU, PICU, OPD Services (Mon-Sat 9am-3pm & 5pm-9pm), and Dedicated Emergency Transport.
+                24x7 Availability of Neonatal & Paediatric Intensivists, Level III NICU, PICU, 24x7 OPD Services (365 Days), and Dedicated Emergency Transport.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -183,7 +183,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
                   { title: "40 Bedded", sub: "Care Centre" },
                   { title: "24×7 Emergency", sub: "Intensivists" },
                   { title: "Level III NICU", sub: "HFOV & CPAP" },
-                  { title: "OPD Services", sub: "Morning & Evening" }
+                  { title: "OPD Services", sub: "24x7 Hours Open" }
                 ].map((item, idx) => (
                   <div key={idx} className="bg-slate-900/50 backdrop-blur-md p-3.5 rounded-2xl border border-white/15 text-center">
                     <div className="text-sm font-black text-white">{item.title}</div>

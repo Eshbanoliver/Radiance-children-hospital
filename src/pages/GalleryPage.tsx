@@ -149,8 +149,8 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
       title: 'Outpatient Consultation & Emergency OPD',
       category: 'Facilities',
       image: waImage1,
-      subtitle: 'Mon-Sat Morning & Evening OPD',
-      description: 'Specialized consultation chambers for morning (9 AM - 3 PM) and evening (5 PM - 9 PM) OPD pediatric services.',
+      subtitle: '24x7 OPD Consultation',
+      description: 'Specialized consultation chambers operational 24 hours a day for pediatric OPD services.',
       badge: 'OPD & Patient Desk',
       badgeBg: 'bg-purple-500/90 text-white'
     },

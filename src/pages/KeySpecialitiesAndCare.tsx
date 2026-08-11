@@ -146,7 +146,7 @@ export const KeySpecialitiesAndCare: React.FC<KeySpecialitiesAndCareProps> = ({ 
               },
               {
                 title: "Outpatient Consultation OPD",
-                subtitle: "Morning & Evening OPD",
+                subtitle: "24x7 Round-the-Clock OPD",
                 image: waImage1,
                 tag: "OPD Chambers",
                 tagBg: "bg-amber-600/90 text-white"
