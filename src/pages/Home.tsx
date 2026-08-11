@@ -16,8 +16,8 @@ import hospitalExterior from '../assets/hospital-exterior.png';
 import hospitalNicu from '../assets/hospital-nicu.png';
 import hospitalNight from '../assets/hospital-night.png';
 import drDheerajImg from '../assets/dr-dheeraj-diwaakar.jpg';
-import facilitiesShowcase from '../assets/hospital-facilities-photo-showcase.jpg';
-import photoUnitCollage from '../assets/hospital-10-photo-unit-collage.jpg';
+import exteriorBuildingFront from '../assets/hospital-exterior-building-front.jpg';
+import waImage1 from '../assets/WhatsApp Image 2026-08-07 at 2.34.25 PM.jpeg';
 
 interface HomeProps {
   onOpenBooking: () => void;
@@ -48,16 +48,16 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
       highlight: "Round-the-Clock Emergency Triage"
     },
     {
-      image: facilitiesShowcase,
-      title: "Bedside Diagnostics & Inpatient Suites",
-      badge: "In-House ABG, X-Ray & 2D Echo",
-      highlight: "40 Bedded Hospital Facility"
+      image: exteriorBuildingFront,
+      title: "Hospital Front Elevation & Glass Facade",
+      badge: "40 Bedded Hospital Center",
+      highlight: "Modern Infrastructure in Udaipur"
     },
     {
-      image: photoUnitCollage,
-      title: "Level III Incubators, Operation Theatre & ICU Team",
-      badge: "Comprehensive Pediatric Care",
-      highlight: "State-of-the-Art Infrastructure"
+      image: waImage1,
+      title: "Outpatient Consultation & Emergency OPD",
+      badge: "24x7 OPD Services",
+      highlight: "Round-the-Clock Pediatric Specialists"
     }
   ];
 

@@ -15,10 +15,7 @@ import { SEO } from '../components/SEO';
 
 import hospitalNicu from '../assets/hospital-nicu.png';
 import hospitalNight from '../assets/hospital-night.png';
-import facilitiesShowcase from '../assets/hospital-facilities-photo-showcase.jpg';
-import photoUnitCollage from '../assets/hospital-10-photo-unit-collage.jpg';
 import exteriorBuildingFront from '../assets/hospital-exterior-building-front.jpg';
-import drDheerajCredentialsPoster from '../assets/dr-dheeraj-credentials-team-poster.jpg';
 import waImage1 from '../assets/WhatsApp Image 2026-08-07 at 2.34.25 PM.jpeg';
 import waImage2 from '../assets/WhatsApp Image 2026-08-07 at 2.34.29 PM.jpeg';
 
@@ -124,17 +121,17 @@ export const KeySpecialitiesAndCare: React.FC<KeySpecialitiesAndCareProps> = ({ 
                 tagBg: "bg-emerald-500/90 text-white"
               },
               {
-                title: "10-Unit Facility & ICU Collage",
-                subtitle: "Incubators, Wards & Staff",
-                image: photoUnitCollage,
-                tag: "10-Photo Collage",
+                title: "Hospital Building Front Facade",
+                subtitle: "Radiant Children's Hospital Udaipur",
+                image: exteriorBuildingFront,
+                tag: "Building Elevation",
                 tagBg: "bg-purple-600/90 text-white"
               },
               {
-                title: "Bedside Diagnostic & Wards",
-                subtitle: "In-House ABG, X-Ray & Echo",
-                image: facilitiesShowcase,
-                tag: "Bedside Diagnostics",
+                title: "Outpatient Consultation Desk",
+                subtitle: "24x7 Pediatric OPD Services",
+                image: waImage1,
+                tag: "OPD Chambers",
                 tagBg: "bg-blue-600/90 text-white"
               },
               {
@@ -159,9 +156,9 @@ export const KeySpecialitiesAndCare: React.FC<KeySpecialitiesAndCareProps> = ({ 
                 tagBg: "bg-teal-600/90 text-white"
               },
               {
-                title: "Doctor & Pediatric Nursing Staff",
-                subtitle: "DM Neonatologist & ICU Team",
-                image: drDheerajCredentialsPoster,
+                title: "24x7 Emergency Desk & Triage Reception",
+                subtitle: "Round-the-Clock Pediatric Intensivists",
+                image: hospitalNight,
                 tag: "Medical Team",
                 tagBg: "bg-cyan-600/90 text-white"
               }

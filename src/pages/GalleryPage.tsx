@@ -13,16 +13,7 @@ import hospitalNight from '../assets/hospital-night.png';
 import drDheerajImg from '../assets/dr-dheeraj-diwaakar.jpg';
 import waImage1 from '../assets/WhatsApp Image 2026-08-07 at 2.34.25 PM.jpeg';
 import waImage2 from '../assets/WhatsApp Image 2026-08-07 at 2.34.29 PM.jpeg';
-import childrenFacilitiesBrochure from '../assets/hospital-children-facilities-brochure.jpg';
-import nicuPicuSpecsBrochure from '../assets/hospital-nicu-picu-specs-brochure.jpg';
-import facilitiesShowcase from '../assets/hospital-facilities-photo-showcase.jpg';
-import transportIntactSurvivalBrochure from '../assets/hospital-transport-intact-survival-brochure.jpg';
-import drDheerajCredentialsPoster from '../assets/dr-dheeraj-credentials-team-poster.jpg';
 import exteriorBuildingFront from '../assets/hospital-exterior-building-front.jpg';
-import photoUnitCollage from '../assets/hospital-10-photo-unit-collage.jpg';
-import infrastructureMapPoster from '../assets/hospital-infrastructure-location-map-poster.jpg';
-import hindiSuperSpecialtyBrochure from '../assets/hospital-hindi-super-specialty-brochure.jpg';
-import hindiFacilityBanner from '../assets/hospital-hindi-facility-photo-banner.jpg';
 
 interface GalleryPageProps {
   onOpenBooking: () => void;
@@ -65,16 +56,6 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
       badgeBg: 'bg-cyan-500/90 text-white'
     },
     {
-      id: 'showcase-1',
-      title: 'Hospital Ward & ICU Facility Showcase',
-      category: 'Facilities',
-      image: facilitiesShowcase,
-      subtitle: 'Inpatient Beds, Incubators & Lab Counters',
-      description: 'Live photo showcase featuring inpatient general ward beds, Level III NICU incubators, bedside lab diagnostic counter, and hospital reception desk.',
-      badge: 'Facilities Showcase',
-      badgeBg: 'bg-blue-600/90 text-white'
-    },
-    {
       id: 'nicu-1',
       title: 'Level III Advanced NICU Nursery Unit',
       category: 'NICU & PICU',
@@ -83,16 +64,6 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
       description: 'Fully equipped Level III NICU nursery featuring HFOV ventilators, Non-Invasive Bubble CPAP, Mira Cradle hypothermia care & LED phototherapy.',
       badge: 'Level III NICU',
       badgeBg: 'bg-emerald-500/90 text-white'
-    },
-    {
-      id: 'nicu-brochure-1',
-      title: 'Level III NICU & PICU Infrastructure Specifications',
-      category: 'NICU & PICU',
-      image: nicuPicuSpecsBrochure,
-      subtitle: 'HFOV, CPAP, Mira Cradle & Life Support Tech',
-      description: 'Official equipment chart displaying conventional & HFOV ventilators, Bubble CPAP, Mira Cradle hypothermia, LED phototherapy & bedside ultrasound.',
-      badge: 'NICU & PICU Specs',
-      badgeBg: 'bg-indigo-600/90 text-white'
     },
     {
       id: 'emg-1',
@@ -105,16 +76,6 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
       badgeBg: 'bg-rose-500/90 text-white'
     },
     {
-      id: 'transport-brochure-1',
-      title: 'Neonatal Transport & Intact Survival Commitment',
-      category: 'Emergency',
-      image: transportIntactSurvivalBrochure,
-      subtitle: 'Neopuff, Embrace Nest & Sterile Protocols',
-      description: 'Official poster highlighting dedicated mobile ICU ambulance transport, Embrace Nest thermal care, Neopuff resuscitator, and infection control standards.',
-      badge: 'Transport & Protocol',
-      badgeBg: 'bg-rose-600/90 text-white'
-    },
-    {
       id: 'doc-1',
       title: 'Dr. Dheeraj Diwaakar — Lead Neonatologist',
       category: 'Doctor',
@@ -123,26 +84,6 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
       description: 'Lead Neonatologist & Level III NICU Director, former HOD at GMCH Udaipur & former Consultant at NICE Hospital Hyderabad.',
       badge: 'Clinical Director',
       badgeBg: 'bg-teal-500/90 text-white'
-    },
-    {
-      id: 'doc-poster-1',
-      title: 'Dr. Dheeraj Diwaakar & Clinical Nursing Team',
-      category: 'Doctor',
-      image: drDheerajCredentialsPoster,
-      subtitle: 'DM Neonatology JIPMER & NICU Staff',
-      description: 'Official medical poster detailing Dr. Dheeraj Diwaakar (MBBS, MD, DM JIPMER Pondicherry) alongside the dedicated pediatric critical care nursing team.',
-      badge: 'Doctor & Team',
-      badgeBg: 'bg-teal-600/90 text-white'
-    },
-    {
-      id: 'fac-brochure-1',
-      title: 'Official Children Facilities & Care Overview',
-      category: 'Facilities',
-      image: childrenFacilitiesBrochure,
-      subtitle: 'General, Semi-Deluxe, Deluxe & Diagnostic Care',
-      description: 'Official infographic chart detailing central oxygen, in-house pharmacy, ABG analyzer, 2D echo, lactation support, neurodevelopment & CCTV security.',
-      badge: 'Facilities Overview',
-      badgeBg: 'bg-emerald-600/90 text-white'
     },
     {
       id: 'fac-1',
@@ -163,46 +104,6 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
       description: 'Inpatient rooms equipped with central oxygen lines, compressed air, high vacuum suction & 100% DG auto backup generator power.',
       badge: 'Inpatient Suite',
       badgeBg: 'bg-blue-500/90 text-white'
-    },
-    {
-      id: 'collage-1',
-      title: '10-Unit Hospital Facility & ICU Photo Collage',
-      category: 'Facilities',
-      image: photoUnitCollage,
-      subtitle: 'NICU, Wards, Lab & Operation Theatre',
-      description: 'Comprehensive 10-picture collage displaying radiant incubators, operation theatre, emergency triage, lab counters, and medical nursing staff.',
-      badge: 'Photo Collage',
-      badgeBg: 'bg-purple-600/90 text-white'
-    },
-    {
-      id: 'map-poster',
-      title: '40 Bedded Infrastructure & Regional Location Map',
-      category: 'Exterior',
-      image: infrastructureMapPoster,
-      subtitle: 'Shobhagpura Circle, 100 Ft Rd, Udaipur',
-      description: 'Official hospital infrastructure layout poster featuring detailed location map, NICU equipment list, transport hotline & contact information.',
-      badge: 'Map & Poster',
-      badgeBg: 'bg-indigo-600/90 text-white'
-    },
-    {
-      id: 'hindi-brochure-1',
-      title: 'Super Specialty Child Care & Premature Survival Overview',
-      category: 'Doctor',
-      image: hindiSuperSpecialtyBrochure,
-      subtitle: 'Southern Rajasthan Lead Pediatric Care',
-      description: 'Official super specialty medical poster highlighting 500-600gm premature baby survival success (97-99%), 24x7 intensivist availability, and Dr. Dheeraj Diwaakar.',
-      badge: 'Super Specialty',
-      badgeBg: 'bg-amber-600/90 text-white'
-    },
-    {
-      id: 'hindi-banner-1',
-      title: 'Super Specialty Hospital & 5-Unit Facility Banner',
-      category: 'Facilities',
-      image: hindiFacilityBanner,
-      subtitle: 'Advanced NICU, Modular OT & ICU Staff',
-      description: 'Official banner showcasing Level III NICU incubators, modular operation theatre, bedside ultrasound, and senior pediatric ICU team in Udaipur.',
-      badge: 'Facility Banner',
-      badgeBg: 'bg-emerald-600/90 text-white'
     }
   ];
 

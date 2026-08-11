@@ -665,7 +665,7 @@ export const DOCTORS: DoctorItem[] = [
       'Emergency Pediatric Surgical Care'
     ],
     bio: 'Specialized in life-saving surgical interventions for premature babies, congenital intestinal malformations, pediatric urology, and emergency trauma surgery with gentle pediatric anesthesia support.',
-    image: '/src/assets/hospital-facilities-photo-showcase.jpg'
+    image: '/src/assets/hospital-exterior-building-front.jpg'
   },
   {
     id: 'dr-rop-retina-specialist',
@@ -680,7 +680,7 @@ export const DOCTORS: DoctorItem[] = [
       'Pediatric Vision & Strabismus Care'
     ],
     bio: 'Conducts protocol-driven bedside ROP retina screening for every premature baby in our Level III NICU to prevent retinopathy-related vision loss and ensure intact 20/20 eyesight.',
-    image: '/src/assets/hospital-icu-care.jpg'
+    image: '/src/assets/hospital-nicu.png'
   },
   {
     id: 'dr-pediatric-audiologist',
@@ -695,7 +695,7 @@ export const DOCTORS: DoctorItem[] = [
       'Kangaroo Mother Care (KMC) Guidance'
     ],
     bio: 'Dedicated to early identification of infant hearing loss via OAE screening before hospital discharge, along with follow-up neuro-developmental therapy for high-risk NICU graduates.',
-    image: '/src/assets/hospital-children-facilities-brochure.jpg'
+    image: '/src/assets/WhatsApp Image 2026-08-07 at 2.34.25 PM.jpeg'
   },
   {
     id: 'head-nicu-nursing',
@@ -710,7 +710,7 @@ export const DOCTORS: DoctorItem[] = [
       'Zero-Delay Emergency Triage'
     ],
     bio: 'Compassionate 24x7 specialized nursing staff trained in 1:1 critical care, cluster care approach, minimal handling of 500g preterm babies, and supportive parental guidance.',
-    image: '/src/assets/dr-dheeraj-credentials-team-poster.jpg'
+    image: '/src/assets/dr-dheeraj-diwaakar.jpg'
   }
 ];
 
@@ -777,7 +777,7 @@ export const NEWS_AND_ACHIEVEMENTS: NewsItem[] = [
     ],
     badge: 'Infection Control Award',
     badgeBg: 'bg-teal-600/90 text-white',
-    image: '/src/assets/hospital-facilities-photo-showcase.jpg'
+    image: '/src/assets/hospital-exterior.png'
   },
   {
     id: 'free-rop-oae-screening-drive',
@@ -793,6 +793,6 @@ export const NEWS_AND_ACHIEVEMENTS: NewsItem[] = [
     ],
     badge: 'Community Health Drive',
     badgeBg: 'bg-amber-600/90 text-white',
-    image: '/src/assets/hospital-10-photo-unit-collage.jpg'
+    image: '/src/assets/hospital-night.png'
   }
 ];
