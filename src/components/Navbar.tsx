@@ -37,6 +37,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     { name: 'About Us', path: '/about' },
     { name: 'Key Specialities & Care', path: '/key-specialities-and-care' },
     { name: 'Services', path: '/services' },
+    { name: 'Our Team', path: '/our-team' },
+    { name: 'News & Achievements', path: '/news-and-achievements' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Testimonials', path: '/testimonials' },
     { name: 'Contact Us', path: '/contact' }

@@ -71,6 +71,8 @@ export const Footer: React.FC = () => {
                 { name: 'About Us', path: '/about' },
                 { name: 'Key Specialities & Care', path: '/key-specialities-and-care' },
                 { name: 'Pediatric Services', path: '/services' },
+                { name: 'Our Team & Doctors', path: '/our-team' },
+                { name: 'News & Achievements', path: '/news-and-achievements' },
                 { name: 'Photo Gallery', path: '/gallery' },
                 { name: 'Parent Reviews & Ratings', path: '/testimonials' },
                 { name: 'Contact & Location', path: '/contact' }

@@ -79,3 +79,16 @@ export interface WhyChooseUsItem {
   highlights: string[];
 }
 
+export interface NewsItem {
+  id: string;
+  title: string;
+  category: 'Clinical Milestones' | 'Awards & Recognition' | 'Community Drives' | 'Hospital News';
+  date: string;
+  summary: string;
+  fullStory: string;
+  highlights: string[];
+  badge: string;
+  badgeBg: string;
+  image: string;
+}
+

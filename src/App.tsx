@@ -12,6 +12,8 @@ const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage').then(m =>
 const GalleryPage = lazy(() => import('./pages/GalleryPage').then(m => ({ default: m.GalleryPage })));
 const ContactUs = lazy(() => import('./pages/ContactUs').then(m => ({ default: m.ContactUs })));
 const KeySpecialitiesAndCare = lazy(() => import('./pages/KeySpecialitiesAndCare').then(m => ({ default: m.KeySpecialitiesAndCare })));
+const OurTeamPage = lazy(() => import('./pages/OurTeamPage').then(m => ({ default: m.OurTeamPage })));
+const NewsAndAchievementsPage = lazy(() => import('./pages/NewsAndAchievementsPage').then(m => ({ default: m.NewsAndAchievementsPage })));
 const AppointmentModal = lazy(() => import('./components/AppointmentModal').then(m => ({ default: m.AppointmentModal })));
 
 // Loading spinner fallback
@@ -99,6 +101,8 @@ export const AppContent: React.FC = () => {
             <Route path="/gallery" element={<PageScrollWrapper><GalleryPage onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
             <Route path="/testimonials" element={<PageScrollWrapper><TestimonialsPage onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
             <Route path="/key-specialities-and-care" element={<PageScrollWrapper><KeySpecialitiesAndCare onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
+            <Route path="/our-team" element={<PageScrollWrapper><OurTeamPage onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
+            <Route path="/news-and-achievements" element={<PageScrollWrapper><NewsAndAchievementsPage onOpenBooking={() => handleOpenBooking()} /></PageScrollWrapper>} />
             <Route path="/contact" element={<PageScrollWrapper><ContactUs /></PageScrollWrapper>} />
           </Routes>
         </Suspense>

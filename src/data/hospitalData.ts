@@ -1,4 +1,4 @@
-import type { ServiceItem, MetricItem, TestimonialItem, DoctorItem, FAQItem, CoreValueItem, WhyChooseUsItem } from '../types';
+import type { ServiceItem, MetricItem, TestimonialItem, DoctorItem, FAQItem, CoreValueItem, WhyChooseUsItem, NewsItem } from '../types';
 
 export const HOSPITAL_INFO = {
   name: "Radiant Children's Hospital",
@@ -651,5 +651,148 @@ export const DOCTORS: DoctorItem[] = [
     ],
     bio: 'Apex trained DM Neonatologist from JIPMER Pondicherry. Former HOD of Neonatology at GMCH Udaipur and former Consultant at NICE Hospital for Women, Children & Newborn Care, Hyderabad. Pioneer in Level III NICU, HFOV ventilation, surfactant therapy, and intact survival care.',
     image: '/src/assets/dr-dheeraj-diwaakar.jpg'
+  },
+  {
+    id: 'dr-pediatric-surgery-consultant',
+    name: 'Senior Pediatric Surgeon & Urologist',
+    role: 'Consultant Pediatric & Neonatal Surgeon',
+    qualifications: 'MS (General Surgery), MCh (Pediatric Surgery)',
+    experience: '10+ Years Advanced Pediatric Surgery',
+    specialties: [
+      'Neonatal Congenital Anomaly Repair',
+      'Pediatric Laparoscopic & Endoscopic Surgery',
+      'Pediatric Urology & Hernia Repair',
+      'Emergency Pediatric Surgical Care'
+    ],
+    bio: 'Specialized in life-saving surgical interventions for premature babies, congenital intestinal malformations, pediatric urology, and emergency trauma surgery with gentle pediatric anesthesia support.',
+    image: '/src/assets/hospital-facilities-photo-showcase.jpg'
+  },
+  {
+    id: 'dr-rop-retina-specialist',
+    name: 'Pediatric Ophthalmologist & ROP Specialist',
+    role: 'Consultant ROP Retina Specialist',
+    qualifications: 'MS (Ophthalmology), Fellowship in Pediatric Retina & ROP',
+    experience: '8+ Years Newborn Retina Screening',
+    specialties: [
+      'Retinopathy of Prematurity (ROP) Laser',
+      'Bedside Indirect Ophthalmoscopy',
+      'Anti-VEGF Injections for Preterm Babies',
+      'Pediatric Vision & Strabismus Care'
+    ],
+    bio: 'Conducts protocol-driven bedside ROP retina screening for every premature baby in our Level III NICU to prevent retinopathy-related vision loss and ensure intact 20/20 eyesight.',
+    image: '/src/assets/hospital-icu-care.jpg'
+  },
+  {
+    id: 'dr-pediatric-audiologist',
+    name: 'Pediatric Audiologist & Developmental Specialist',
+    role: 'Consultant Audiologist & Neuro-Developmentalist',
+    qualifications: 'BASLP, MASLP (Pediatric Audiology & Speech Pathology)',
+    experience: '7+ Years Newborn Hearing & Milestone Care',
+    specialties: [
+      'OAE Objective Hearing Screening',
+      'BERA / ABR Hearing Diagnostic Evaluation',
+      'NICU Graduate Milestone Development Tracking',
+      'Kangaroo Mother Care (KMC) Guidance'
+    ],
+    bio: 'Dedicated to early identification of infant hearing loss via OAE screening before hospital discharge, along with follow-up neuro-developmental therapy for high-risk NICU graduates.',
+    image: '/src/assets/hospital-children-facilities-brochure.jpg'
+  },
+  {
+    id: 'head-nicu-nursing',
+    name: 'Senior Pediatric Critical Care Nursing Team',
+    role: '24×7 Level III NICU & PICU Nursing Faculty',
+    qualifications: 'B.Sc / M.Sc Nursing (Pediatric Critical Care Certified)',
+    experience: 'Round-the-Clock 1:1 ICU Nursing',
+    specialties: [
+      'Level III Incubator & Ventilator Nursing Care',
+      'Surfactant & Parenteral Nutrition (TPN) Administration',
+      'Micro Defogger Sterilization & Hand Hygiene',
+      'Zero-Delay Emergency Triage'
+    ],
+    bio: 'Compassionate 24x7 specialized nursing staff trained in 1:1 critical care, cluster care approach, minimal handling of 500g preterm babies, and supportive parental guidance.',
+    image: '/src/assets/dr-dheeraj-credentials-team-poster.jpg'
+  }
+];
+
+export const NEWS_AND_ACHIEVEMENTS: NewsItem[] = [
+  {
+    id: '12000-patients-milestone',
+    title: 'Radiant Children’s Hospital Crosses Milestone of 12,000+ Happy Patients Treated',
+    category: 'Clinical Milestones',
+    date: 'August 2026',
+    summary: 'A landmark achievement in southern Rajasthan as Radiant Children’s Hospital completes over 12,000 successful infant and pediatric treatments.',
+    fullStory: 'Radiant Children’s Hospital in Udaipur has officially surpassed the milestone of treating over 12,000 children from newborn infants to 18-year-old adolescents. Led by Lead Neonatologist Dr. Dheeraj Diwaakar, the hospital has achieved an exceptional 97-99% intact survival rate for premature babies weighed between 500g and 1000g in Level III NICU.',
+    highlights: [
+      'Over 12,000+ Children Successfully Discharged',
+      '97-99% Intact Preterm Survival Protocol Success',
+      'Trusted Pediatric Center Across Udaipur Region'
+    ],
+    badge: '12,000+ Patient Milestone',
+    badgeBg: 'bg-emerald-500/90 text-white',
+    image: '/src/assets/hospital-exterior.png'
+  },
+  {
+    id: 'level-3-hfov-mira-cradle',
+    title: 'Pioneering Level III NICU HFOV & Mira Cradle Therapeutic Hypothermia in Udaipur',
+    category: 'Clinical Milestones',
+    date: 'June 2026',
+    summary: 'Advanced High Frequency Oscillatory Ventilation (HFOV) and Mira Cradle cooling system setting the highest standards for neonatal resuscitation.',
+    fullStory: 'Our Level III NICU nursery continues to lead Rajasthan in state-of-the-art neonatal life support technology. Equipped with Mira Cradle therapeutic hypothermia for birth asphyxia, HFOV ventilators, and non-invasive Bubble CPAP, Radiant Children’s Hospital protects brain health and organ function during critical newborn resuscitations.',
+    highlights: [
+      'Mira Cradle Hypothermia for Birth Asphyxia Care',
+      'HFOV High-Frequency Oscillatory Ventilation',
+      'Bedside ABG & 2D Echo Heart Diagnostic Support'
+    ],
+    badge: 'Apex NICU Tech',
+    badgeBg: 'bg-purple-600/90 text-white',
+    image: '/src/assets/hospital-nicu.png'
+  },
+  {
+    id: 'mobile-icu-ambulance-dispatch',
+    title: '24×7 Dedicated Mobile NICU Transport Ambulance Saves Newborns Across Rural Districts',
+    category: 'Hospital News',
+    date: 'April 2026',
+    summary: 'Equipped with Neopuff resuscitator, Embrace Nest thermal care, and on-board intensivist doctor for rapid regional emergency pickups.',
+    fullStory: 'Our 24x7 Neonatal & Paediatric Mobile ICU Ambulance transport system has safely retrieved critically ill neonates from districts across southern Rajasthan. Featuring Neopuff positive-pressure resuscitators, Embrace Nest thermal warmers, and pulse oximetry, each transport is personally accompanied by an intensivist doctor.',
+    highlights: [
+      'Accompanied by On-Board Neonatal Intensivist',
+      'Neopuff & Embrace Nest Mobile Thermal Unit',
+      'Rapid Pickups Across Udaipur & Surrounding Districts'
+    ],
+    badge: '24×7 Transport Launch',
+    badgeBg: 'bg-rose-600/90 text-white',
+    image: '/src/assets/hospital-night.png'
+  },
+  {
+    id: 'zero-infection-certification',
+    title: 'Zero Hospital-Acquired Infection Benchmark Achieved via Micro Defogger Fumigation',
+    category: 'Awards & Recognition',
+    date: 'February 2026',
+    summary: 'Multi-tier sterilization protocols including ETO sterilization and smart access control ensure pristine sterile standards.',
+    fullStory: 'Radiant Children’s Hospital has been recognized for maintaining strict infection control standards in pediatric and neonatal intensive care. Utilizing micro defogger total area fumigation, clean air sterilizers, smart access control, and evidence-based antibiotic stewardship, the hospital ensures zero cross-infections for fragile NICU babies.',
+    highlights: [
+      'Micro Defogger Area Fumigation System',
+      'Restricted Smart Access Sterile NICU Zone',
+      'Strict 6-Step Hand Hygiene Compliance'
+    ],
+    badge: 'Infection Control Award',
+    badgeBg: 'bg-teal-600/90 text-white',
+    image: '/src/assets/hospital-facilities-photo-showcase.jpg'
+  },
+  {
+    id: 'free-rop-oae-screening-drive',
+    title: 'Free Newborn ROP Retina & OAE Objective Hearing Screening Health Drive Conducted',
+    category: 'Community Drives',
+    date: 'January 2026',
+    summary: 'Over 250 newborns screened for vision and hearing health during our community intact survival awareness campaign.',
+    fullStory: 'As part of our commitment to intact survival, Radiant Children’s Hospital conducted a community screening drive offering free Retinopathy of Prematurity (ROP) retina checks and Oto-Acoustic Emission (OAE) hearing tests. Early screening ensures every child achieves healthy vision, hearing, and milestone development.',
+    highlights: [
+      '250+ Newborns Screened for Vision & Hearing',
+      'Retina Specialist & Pediatric Audiologist On-Site',
+      'Community Awareness for Preterm Intact Survival'
+    ],
+    badge: 'Community Health Drive',
+    badgeBg: 'bg-amber-600/90 text-white',
+    image: '/src/assets/hospital-10-photo-unit-collage.jpg'
   }
 ];
