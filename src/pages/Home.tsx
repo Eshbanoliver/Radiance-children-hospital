@@ -13,11 +13,11 @@ import {
 import { SEO } from '../components/SEO';
 
 import hospitalExterior from '../assets/hospital-exterior.png';
-import hospitalNicu from '../assets/hospital-nicu.png';
-import hospitalNight from '../assets/hospital-night.png';
 import drDheerajImg from '../assets/dr-dheeraj-diwaakar.jpg';
-import waImage1 from '../assets/WhatsApp Image 2026-08-07 at 2.34.25 PM.jpeg';
-import waImage2 from '../assets/WhatsApp Image 2026-08-07 at 2.34.29 PM.jpeg';
+import img1873 from '../assets/IMG_1873.JPG';
+import img1893 from '../assets/IMG_1893.JPG';
+import img1903 from '../assets/IMG_1903.JPG';
+import img1911 from '../assets/IMG_1911.JPG';
 
 interface HomeProps {
   onOpenBooking: () => void;
@@ -36,25 +36,25 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
       highlight: "Super Specialty Pediatric & Neonatal Hospital"
     },
     {
-      image: hospitalNicu,
+      image: img1911,
       title: "Level III Advanced NICU Nursery Unit",
       badge: "HFOV Ventilators, CPAP & Mira Cradle",
       highlight: "97-99% Intact Preterm Survival Success"
     },
     {
-      image: hospitalNight,
+      image: img1903,
       title: "State-of-the-Art Modular Operation Theatre",
       badge: "24×7 Emergency Surgical Suite",
       highlight: "Advanced Pediatric & Neonatal Surgery"
     },
     {
-      image: waImage1,
+      image: img1873,
       title: "Inpatient Wards & 24×7 Patient Desk",
       badge: "General, Semi-Deluxe & Deluxe Suites",
       highlight: "24 Hours On-Duty Pediatric Intensivists"
     },
     {
-      image: waImage2,
+      image: img1893,
       title: "Sterile Pediatric Critical Care Wards",
       badge: "Central Oxygen & High Vacuum Suction",
       highlight: "100% Power Backup & Sterile Triage"
