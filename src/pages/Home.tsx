@@ -12,7 +12,7 @@ import {
 } from '../data/hospitalData';
 import { SEO } from '../components/SEO';
 
-import hospitalExterior from '../assets/hospital-exterior.png';
+import hospitalExteriorFront from '../assets/hospital-exterior-building-front.jpg';
 import drDheerajImg from '../assets/dr-dheeraj-diwaakar.jpg';
 import img1873 from '../assets/IMG_1873.JPG';
 import img1893 from '../assets/IMG_1893.JPG';
@@ -30,16 +30,16 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
 
   const heroSlides = [
     {
-      image: hospitalExterior,
-      title: "Radiant Children's Hospital Building Campus",
-      badge: "40 Bedded Hospital Center • Udaipur",
-      highlight: "Super Specialty Pediatric & Neonatal Hospital"
-    },
-    {
       image: img1911,
       title: "Level III Advanced NICU Nursery Unit",
       badge: "HFOV Ventilators, CPAP & Mira Cradle",
       highlight: "97-99% Intact Preterm Survival Success"
+    },
+    {
+      image: img1893,
+      title: "Sterile Pediatric Critical Care Wards",
+      badge: "Central Oxygen & High Vacuum Suction",
+      highlight: "100% Power Backup & Sterile Triage"
     },
     {
       image: img1903,
@@ -54,10 +54,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
       highlight: "24 Hours On-Duty Pediatric Intensivists"
     },
     {
-      image: img1893,
-      title: "Sterile Pediatric Critical Care Wards",
-      badge: "Central Oxygen & High Vacuum Suction",
-      highlight: "100% Power Backup & Sterile Triage"
+      image: hospitalExteriorFront,
+      title: "Radiant Children's Hospital Building",
+      badge: "40 Bedded Hospital Center • Udaipur",
+      highlight: "Super Specialty Pediatric & Neonatal Hospital"
     }
   ];
 
