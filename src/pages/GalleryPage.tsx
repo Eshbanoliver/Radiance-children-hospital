@@ -186,13 +186,6 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
-          {/* Photo count badge */}
-          <div className="flex items-center justify-center">
-            <span className="px-5 py-2.5 rounded-full bg-slate-900 text-white font-black text-xs shadow-xl border border-slate-700/60">
-              🖼️ {galleryItems.length} Hospital Photos
-            </span>
-          </div>
-
           {/* Photo Gallery Grid */}
           <motion.div 
             layout
