@@ -75,7 +75,7 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({ onOpenBookin
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400" />
             </span>
-            <span className="text-amber-300 uppercase tracking-wider font-black">⭐ 500+ VERIFIED PARENT REVIEWS • 4.9 GOOGLE RATING</span>
+            <span className="text-amber-300 uppercase tracking-wider font-black">⭐ 500+ VERIFIED PARENT REVIEWS • 4.6 GOOGLE RATING</span>
           </motion.div>
 
           <motion.h1
@@ -112,7 +112,7 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({ onOpenBookin
                 </div>
 
                 <div className="flex items-baseline justify-center lg:justify-start gap-3">
-                  <span className="text-5xl sm:text-7xl font-black text-slate-900 tracking-tight">4.9</span>
+                  <span className="text-5xl sm:text-7xl font-black text-slate-900 tracking-tight">4.6</span>
                   <span className="text-lg font-black text-slate-500">/ 5.0</span>
                 </div>
 
