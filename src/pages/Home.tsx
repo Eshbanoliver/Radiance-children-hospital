@@ -16,8 +16,8 @@ import hospitalExterior from '../assets/hospital-exterior.png';
 import hospitalNicu from '../assets/hospital-nicu.png';
 import hospitalNight from '../assets/hospital-night.png';
 import drDheerajImg from '../assets/dr-dheeraj-diwaakar.jpg';
-import exteriorBuildingFront from '../assets/hospital-exterior-building-front.jpg';
 import waImage1 from '../assets/WhatsApp Image 2026-08-07 at 2.34.25 PM.jpeg';
+import waImage2 from '../assets/WhatsApp Image 2026-08-07 at 2.34.29 PM.jpeg';
 
 interface HomeProps {
   onOpenBooking: () => void;
@@ -31,33 +31,33 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
   const heroSlides = [
     {
       image: hospitalExterior,
-      title: "Radiant Children's Hospital Exterior",
-      badge: "40 Bedded Care Centre • Udaipur",
-      highlight: "Advanced Pediatric & Neonatal Facility"
+      title: "Radiant Children's Hospital Building Campus",
+      badge: "40 Bedded Hospital Center • Udaipur",
+      highlight: "Super Specialty Pediatric & Neonatal Hospital"
     },
     {
       image: hospitalNicu,
-      title: "Level III NICU & PICU Critical Nursery",
-      badge: "HFOV Ventilator, CPAP & Mira Cradle",
-      highlight: "24×7 Intensivists Availability"
+      title: "Level III Advanced NICU Nursery Unit",
+      badge: "HFOV Ventilators, CPAP & Mira Cradle",
+      highlight: "97-99% Intact Preterm Survival Success"
     },
     {
       image: hospitalNight,
-      title: "24×7 Emergency Desk & Reception",
-      badge: "24×7 OPD & Emergency Desk",
-      highlight: "Round-the-Clock Emergency Triage"
-    },
-    {
-      image: exteriorBuildingFront,
-      title: "Hospital Front Elevation & Glass Facade",
-      badge: "40 Bedded Hospital Center",
-      highlight: "Modern Infrastructure in Udaipur"
+      title: "State-of-the-Art Modular Operation Theatre",
+      badge: "24×7 Emergency Surgical Suite",
+      highlight: "Advanced Pediatric & Neonatal Surgery"
     },
     {
       image: waImage1,
-      title: "Outpatient Consultation & Emergency OPD",
-      badge: "24x7 OPD Services",
-      highlight: "Round-the-Clock Pediatric Specialists"
+      title: "Inpatient Wards & 24×7 Patient Desk",
+      badge: "General, Semi-Deluxe & Deluxe Suites",
+      highlight: "24 Hours On-Duty Pediatric Intensivists"
+    },
+    {
+      image: waImage2,
+      title: "Sterile Pediatric Critical Care Wards",
+      badge: "Central Oxygen & High Vacuum Suction",
+      highlight: "100% Power Backup & Sterile Triage"
     }
   ];
 
