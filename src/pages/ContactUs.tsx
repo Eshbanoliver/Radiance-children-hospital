@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FaPhoneAlt, FaMapMarkerAlt, FaClock, FaFacebookF, FaInstagram, 
+  FaPhoneAlt, FaMapMarkerAlt, FaClock, FaFacebookF, FaInstagram, FaLinkedin,
   FaPaperPlane, FaCheckCircle, FaHospitalUser, FaAmbulance, FaWhatsapp, 
   FaDirections, FaEnvelope, FaCalendarCheck 
 } from 'react-icons/fa';
@@ -251,6 +251,15 @@ export const ContactUs: React.FC = () => {
                       aria-label="Instagram"
                     >
                       <FaInstagram />
+                    </a>
+                    <a
+                      href={HOSPITAL_INFO.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-xl bg-[#0A66C2] text-white flex items-center justify-center shadow-md hover:scale-110 transition-transform"
+                      aria-label="LinkedIn"
+                    >
+                      <FaLinkedin />
                     </a>
                     <a
                       href={`https://wa.me/${HOSPITAL_INFO.whatsappPhone}`}

@@ -69,7 +69,8 @@ export const SEO: React.FC<SEOProps> = ({
       ],
       "sameAs": [
         HOSPITAL_INFO.facebookUrl,
-        HOSPITAL_INFO.instagramUrl
+        HOSPITAL_INFO.instagramUrl,
+        HOSPITAL_INFO.linkedinUrl
       ]
     };
 

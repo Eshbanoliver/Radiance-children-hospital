@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaPhoneAlt, FaMapMarkerAlt, FaClock, FaFacebookF, FaInstagram, FaChevronRight, FaShieldAlt } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt, FaClock, FaFacebookF, FaInstagram, FaLinkedin, FaChevronRight, FaShieldAlt } from 'react-icons/fa';
 import { HOSPITAL_INFO, SERVICES_DATA } from '../data/hospitalData';
 import logoImg from '../assets/logo.jpg';
 
@@ -47,6 +47,15 @@ export const Footer: React.FC = () => {
                 aria-label="Instagram"
               >
                 <FaInstagram />
+              </a>
+              <a
+                href={HOSPITAL_INFO.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-[#0A66C2] text-white flex items-center justify-center transition-all duration-300 shadow-md"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin />
               </a>
             </div>
           </div>
