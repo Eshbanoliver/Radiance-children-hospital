@@ -35,7 +35,7 @@ export const HOSPITAL_INFO = {
 export const KEY_METRICS: MetricItem[] = [
   {
     id: '1',
-    value: '5000+',
+    value: '12,000+',
     label: 'Happy Children Treated',
     icon: 'FaChild',
     description: 'Successful outcomes with loving pediatric care'

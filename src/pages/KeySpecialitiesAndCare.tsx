@@ -1347,7 +1347,7 @@ export const KeySpecialitiesAndCare: React.FC<KeySpecialitiesAndCareProps> = ({ 
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
             {[
-              { label: 'Children Cared For', val: '5,000+', icon: FaChild, color: 'from-blue-600 to-cyan-500', badge: 'Verified Care' },
+              { label: 'Children Cared For', val: '12,000+', icon: FaChild, color: 'from-blue-600 to-cyan-500', badge: 'Verified Care' },
               { label: 'Hospital Beds', val: '40 Beds', icon: FaBed, color: 'from-purple-600 to-indigo-600', badge: 'Deluxe & Wards' },
               { label: 'Intensivists Availability', val: '24×7 On-Site', icon: FaUserMd, color: 'from-rose-500 to-amber-500', badge: 'Zero Wait Time' },
               { label: 'Intact Survival Focus', val: 'Level III NICU', icon: FaMicroscope, color: 'from-emerald-500 to-teal-600', badge: 'HFOV & CPAP' }
