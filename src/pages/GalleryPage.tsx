@@ -13,10 +13,8 @@ import img1877 from '../assets/Hospital/IMG_1877.JPG';
 import img1878 from '../assets/Hospital/IMG_1878.JPG';
 import img1879 from '../assets/Hospital/IMG_1879.JPG';
 import img1880 from '../assets/Hospital/IMG_1880.JPG';
-import img1881 from '../assets/Hospital/IMG_1881.JPG';
 import img1882 from '../assets/Hospital/IMG_1882.JPG';
 import img1886 from '../assets/Hospital/IMG_1886.JPG';
-import img1887 from '../assets/Hospital/IMG_1887.JPG';
 import img1889 from '../assets/Hospital/IMG_1889.JPG';
 import img1893 from '../assets/Hospital/IMG_1893.JPG';
 import img1894 from '../assets/Hospital/IMG_1894.JPG';
@@ -63,10 +61,8 @@ const galleryItems: GalleryItem[] = [
   { id: 'img-1878', image: img1878, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Detailed view of hospital rooms and infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-indigo-600/90 text-white' },
   { id: 'img-1879', image: img1879, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital interior showing patient care areas and facilities at Radiant Children\'s Hospital.', badge: 'Facility', badgeBg: 'bg-violet-600/90 text-white' },
   { id: 'img-1880', image: img1880, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-purple-600/90 text-white' },
-  { id: 'img-1881', image: img1881, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Interior hospital photo of Radiant Children\'s Hospital infrastructure and patient care areas.', badge: 'Facility', badgeBg: 'bg-fuchsia-600/90 text-white' },
   { id: 'img-1882', image: img1882, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital rooms and care infrastructure view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-pink-600/90 text-white' },
   { id: 'img-1886', image: img1886, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility photo at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-rose-600/90 text-white' },
-  { id: 'img-1887', image: img1887, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Inpatient facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-orange-600/90 text-white' },
   { id: 'img-1889', image: img1889, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility and patient care area at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-amber-600/90 text-white' },
   { id: 'img-1893', image: img1893, title: 'Sterile Critical Care Wards', subtitle: 'Blue Divider Curtain Beds', description: 'Sterile pediatric critical care ward with blue divider curtains, hospital beds, and central oxygen supply at Radiant Children\'s Hospital.', badge: 'Critical Care Ward', badgeBg: 'bg-sky-600/90 text-white' },
   { id: 'img-1894', image: img1894, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital infrastructure and facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-cyan-500/90 text-white' },
