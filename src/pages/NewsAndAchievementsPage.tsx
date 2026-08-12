@@ -35,7 +35,7 @@ export const NewsAndAchievementsPage: React.FC<NewsAndAchievementsPageProps> = (
 
       {/* 1. HERO HEADER BANNER */}
       <section className="relative pt-6 pb-6 text-center overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-purple-500/10 via-amber-500/10 to-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-purple-500/10 via-amber-500/10 to-emerald-500/10 rounded-full blur-3xl pointer-events-none transform-gpu" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-6 relative z-10">
           <motion.div
@@ -93,14 +93,15 @@ export const NewsAndAchievementsPage: React.FC<NewsAndAchievementsPageProps> = (
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="rounded-[2.5rem] bg-white border border-slate-200 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 overflow-hidden group transition-all duration-300 flex flex-col"
+              className="rounded-[2.5rem] bg-white border border-slate-200 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 overflow-hidden group transition-shadow duration-300 flex flex-col transform-gpu"
             >
               <div className="relative h-72 overflow-hidden bg-slate-950">
                 <img
                   src={sammanPatra}
                   alt="Samman Patra — Dr. Dheeraj Ji Diwaakar"
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 transform-gpu"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                 <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-amber-500/90 text-white font-black text-[10px] uppercase tracking-wider shadow">
@@ -126,14 +127,15 @@ export const NewsAndAchievementsPage: React.FC<NewsAndAchievementsPageProps> = (
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="rounded-[2.5rem] bg-white border border-slate-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 overflow-hidden group transition-all duration-300 flex flex-col"
+              className="rounded-[2.5rem] bg-white border border-slate-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 overflow-hidden group transition-shadow duration-300 flex flex-col transform-gpu"
             >
               <div className="relative h-72 overflow-hidden bg-slate-950">
                 <img
                   src={newsCovid}
                   alt="Newspaper: Corona mein Jaan Ganwane Wali Yogita ke Putra Garv ko Mila Jeevandam"
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 transform-gpu"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                 <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-emerald-500/90 text-white font-black text-[10px] uppercase tracking-wider shadow">
@@ -159,14 +161,15 @@ export const NewsAndAchievementsPage: React.FC<NewsAndAchievementsPageProps> = (
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="rounded-[2.5rem] bg-white border border-slate-200 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/10 overflow-hidden group transition-all duration-300 flex flex-col"
+              className="rounded-[2.5rem] bg-white border border-slate-200 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/10 overflow-hidden group transition-shadow duration-300 flex flex-col transform-gpu"
             >
               <div className="relative h-72 overflow-hidden bg-slate-950">
                 <img
                   src={noticeBoard}
                   alt="Achievement Notice Board at Radiant Children's Hospital"
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 transform-gpu"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                 <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-cyan-500/90 text-white font-black text-[10px] uppercase tracking-wider shadow">
@@ -288,7 +291,7 @@ export const NewsAndAchievementsPage: React.FC<NewsAndAchievementsPageProps> = (
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
                 whileHover={{ y: -8 }}
-                className="rounded-[2.2rem] bg-white border border-slate-200/90 shadow-xl overflow-hidden flex flex-col justify-between group hover:border-primary/50 transition-all duration-300"
+                className="rounded-[2.2rem] bg-white border border-slate-200/90 shadow-xl overflow-hidden flex flex-col justify-between group hover:border-primary/50 transition-colors duration-300 transform-gpu"
               >
                 <div>
                   {/* Card Header Media Container */}
@@ -298,7 +301,7 @@ export const NewsAndAchievementsPage: React.FC<NewsAndAchievementsPageProps> = (
                       alt={article.title}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 transform-gpu"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                     
