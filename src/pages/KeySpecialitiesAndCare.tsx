@@ -121,13 +121,6 @@ export const KeySpecialitiesAndCare: React.FC<KeySpecialitiesAndCareProps> = ({ 
                 tagBg: "bg-emerald-500/90 text-white"
               },
               {
-                title: "Hospital Building Front Facade",
-                subtitle: "Radiant Children's Hospital Udaipur",
-                image: exteriorBuildingFront,
-                tag: "Building Elevation",
-                tagBg: "bg-purple-600/90 text-white"
-              },
-              {
                 title: "Outpatient Consultation Desk",
                 subtitle: "24x7 Pediatric OPD Services",
                 image: waImage1,
