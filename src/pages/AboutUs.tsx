@@ -46,7 +46,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
             </span>
-            <span className="text-amber-300 uppercase tracking-wider font-black">🏥 40 BEDDED NEONATAL & PEDIATRIC CARE CENTRE • UDAIPUR</span>
+            <span className="text-amber-300 uppercase tracking-wider font-black">🏥 40 BEDDED NEONATAL & PEDIATRIC HOSPITAL • UDAIPUR</span>
           </motion.div>
 
           <motion.h1

@@ -195,7 +195,7 @@ export const OurTeamPage: React.FC<OurTeamPageProps> = ({ onOpenBooking }) => {
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-blue-900 font-extrabold text-xs shadow-sm">
-              <FaStethoscope className="text-blue-600" /> Multidisciplinary Pediatric Care
+              <FaStethoscope className="text-blue-600" /> Multidisciplinary Pediatric Hospital
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
               Consultants & <span className="gradient-text">Specialist Team</span>

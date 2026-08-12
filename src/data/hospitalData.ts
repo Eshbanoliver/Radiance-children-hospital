@@ -3,11 +3,11 @@ import type { ServiceItem, MetricItem, TestimonialItem, DoctorItem, FAQItem, Cor
 export const HOSPITAL_INFO = {
   name: "Radiant Children's Hospital",
   tagline: "Caring for Every Child, Every Step of the Way",
-  subheading: "Trusted Pediatric Care, Neonatal Care & 24x7 Emergency Services in Udaipur",
+  subheading: "Trusted Pediatric Hospital, Neonatal Care & 24x7 Emergency Services in Udaipur",
   phone: "07424937788",
   whatsappPhone: "917424937788",
   email: "radiantchildrenhospital@gmail.com",
-  capacity: "40 Bedded Neonatal & Paediatric Care Centre",
+  capacity: "40 Bedded Neonatal & Paediatric Hospital",
   address: "9 Kamla Nagar, 100 Feet Road, Behind Ashoka Palace, New Bhupalpura, Shobhagpura, Udaipur, Rajasthan 313001",
   city: "Udaipur",
   state: "Rajasthan",
@@ -16,12 +16,12 @@ export const HOSPITAL_INFO = {
   instagramUrl: "https://www.instagram.com/radiantchildrenhospitals?igsh=cTR0cmMwOGRuMmEw",
   linkedinUrl: "https://www.linkedin.com/company/radiant-children-hospital/",
   googleMapsIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d922350.4716782165!2d72.6897553765913!3d25.440552555194934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5fb71a80425%3A0x3965db8c2851267f!2sRadiant%20Children%E2%80%99s%20Hospital!5e0!3m2!1sen!2sin!4v1786074857847!5m2!1sen!2sin",
-  description: "Radiant Children's Hospital is a 40-bedded advanced Neonatal & Paediatric Care Centre in Udaipur providing 24x7 emergency & availability of Neonatal & Paediatric Intensivists. Fully equipped with Level III NICU (HFOV, CPAP, Mira Cradle), PICU (Ventilators, Volumetric Pumps), In-house ABG Analyzer, 2D Echo, X-Ray, Pharmacy, and Neonatal Ambulance Transport.",
+  description: "Radiant Children's Hospital is a 40-bedded advanced Neonatal & Paediatric Hospital in Udaipur providing 24x7 emergency & availability of Neonatal & Paediatric Intensivists. Fully equipped with Level III NICU (HFOV, CPAP, Mira Cradle), PICU (Ventilators, Volumetric Pumps), In-house ABG Analyzer, 2D Echo, X-Ray, Pharmacy, and Neonatal Ambulance Transport.",
   opdHours: "24×7 Hours Open (365 Days a Year)",
   emergencyHours: "24×7 Emergency & OPD Services (365 Days)",
   emergencyHotline: "07424937788",
   specialties: [
-    "40 Bedded Neonatal & Paediatric Care Centre",
+    "40 Bedded Neonatal & Paediatric Hospital",
     "24x7 Emergency & OPD Services",
     "24x7 Availability of Neonatal & Paediatric Intensivist",
     "Level III Advanced NICU (HFOV, CPAP, Mira Cradle)",
@@ -38,7 +38,7 @@ export const KEY_METRICS: MetricItem[] = [
     value: '12,000+',
     label: 'Happy Children Treated',
     icon: 'FaChild',
-    description: 'Successful outcomes with loving pediatric care'
+    description: 'Successful outcomes with loving hospital care'
   },
   {
     id: '2',

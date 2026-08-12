@@ -176,7 +176,7 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-4 text-slate-500">
             <span className="flex items-center gap-1"><FaShieldAlt className="text-emerald-500" /> ISO Certified Hygiene</span>
             <span>•</span>
-            <span>Udaipur Pediatric Care</span>
+            <span>Udaipur Children's Hospital</span>
           </div>
         </div>
       </div>

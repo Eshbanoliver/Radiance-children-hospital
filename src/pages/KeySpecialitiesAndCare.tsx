@@ -1464,7 +1464,7 @@ export const KeySpecialitiesAndCare: React.FC<KeySpecialitiesAndCareProps> = ({ 
                 24×7 Emergency Response Ready
               </span>
               <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
-                Need Immediate Pediatric Care or Emergency Doctor?
+                Need Immediate Hospital Care or Emergency Doctor?
               </h2>
               <p className="text-white/90 text-base sm:text-lg font-medium">
                 Our 40-bedded hospital, emergency desk, pediatricians, and Level III NICU/PICU units are operational 24 hours a day in Udaipur.

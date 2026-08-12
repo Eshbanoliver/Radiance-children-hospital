@@ -208,7 +208,7 @@ export const NewsAndAchievementsPage: React.FC<NewsAndAchievementsPageProps> = (
               <span className="text-3xl font-black text-emerald-300 block">12,000+</span>
               <h3 className="text-sm font-black text-white">Children Treated</h3>
               <p className="text-slate-400 text-xs font-semibold leading-relaxed">
-                Successful recoveries across infant, toddler, and adolescent pediatric care in Udaipur.
+                Successful recoveries across infant, toddler, and adolescent hospital care in Udaipur.
               </p>
             </motion.div>
 

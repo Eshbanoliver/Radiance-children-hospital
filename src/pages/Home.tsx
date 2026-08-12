@@ -151,7 +151,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/60 backdrop-blur-md border border-white/30 text-white font-bold text-xs sm:text-sm shadow-md">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-                40 Bedded Neonatal & Paediatric Care Centre • Udaipur
+                40 Bedded Neonatal & Paediatric Hospital • Udaipur
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] drop-shadow-md">
