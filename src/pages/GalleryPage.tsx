@@ -37,7 +37,6 @@ import img1929 from '../assets/Hospital/IMG_1929.JPG';
 import img1930 from '../assets/Hospital/IMG_1930.JPG';
 import img1932 from '../assets/Hospital/IMG_1932.JPG';
 import img1934 from '../assets/Hospital/IMG_1934.JPG';
-import img1935 from '../assets/Hospital/IMG_1935.JPG';
 import img1936 from '../assets/Hospital/IMG_1936.JPG';
 
 interface GalleryPageProps {
@@ -85,7 +84,6 @@ const galleryItems: GalleryItem[] = [
   { id: 'img-1930', image: img1930, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility interior at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-green-700/90 text-white' },
   { id: 'img-1932', image: img1932, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-emerald-700/90 text-white' },
   { id: 'img-1934', image: img1934, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital infrastructure and care area at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-teal-700/90 text-white' },
-  { id: 'img-1935', image: img1935, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care facility photo at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-cyan-800/90 text-white' },
   { id: 'img-1936', image: img1936, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility and infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-sky-700/90 text-white' },
 ];
 
