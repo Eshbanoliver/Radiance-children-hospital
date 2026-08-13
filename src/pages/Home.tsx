@@ -56,9 +56,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
     },
     {
       image: img1893,
-      title: "Sterile Pediatric Critical Care Wards",
-      badge: "Central Oxygen & High Vacuum Suction",
-      highlight: "100% Power Backup & Sterile Triage"
+      title: "Pediatric Intensive Care Unit (PICU)",
+      badge: "Advanced Ventilators & Volumetric Pumps",
+      highlight: "24×7 On-Duty Pediatric Intensivists"
     },
     {
       image: img1903,
@@ -68,9 +68,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
     },
     {
       image: img1873,
-      title: "Inpatient Wards & 24×7 Patient Desk",
+      title: "General Wards & Inpatient Suites",
       badge: "NICU & PICU, Deluxe Rooms, General Wards & Semi-Deluxe Rooms",
-      highlight: "24 Hours On-Duty Pediatric Intensivists"
+      highlight: "Central Oxygen & 100% DG Power Backup"
     }
   ];
 
