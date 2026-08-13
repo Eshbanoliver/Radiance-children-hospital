@@ -78,10 +78,10 @@ const galleryItems: GalleryItem[] = [
   { id: 'img-1916', image: img1916, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital infrastructure view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-blue-700/90 text-white' },
   { id: 'img-1917', image: img1917, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Facility interior at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-indigo-700/90 text-white' },
   { id: 'img-1924', image: img1924, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Facility interior photo at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-pink-700/90 text-white' },
-  { id: 'img-1925', image: img1925, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care area and infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-rose-700/90 text-white' },
-  { id: 'img-1928', image: img1928, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital infrastructure photo at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-yellow-700/90 text-white' },
-  { id: 'img-1929', image: img1929, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital care area and facility at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-lime-700/90 text-white' },
-  { id: 'img-1930', image: img1930, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility interior at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-green-700/90 text-white' },
+  { id: 'img-1925', image: img1925, title: 'Achievements Board & Wall of Recognition', subtitle: 'Certificates, Letters & Press Clippings', description: 'Hospital notice board displaying medical registration certificates, news coverage, patient appreciation letters, and clinical achievements.', badge: 'Achievements', badgeBg: 'bg-amber-600/90 text-white' },
+  { id: 'img-1928', image: img1928, title: 'Certificate of Appreciation & Honour', subtitle: 'Samman Patra for Dr. Dheeraj Diwaakar', description: 'Framed certificate of honour and appreciation presented to Dr. Dheeraj Diwaakar by grateful parents for exceptional care.', badge: 'Achievements', badgeBg: 'bg-amber-600/90 text-white' },
+  { id: 'img-1929', image: img1929, title: 'Patient Gratitude & Thank-You Letter', subtitle: 'Heartfelt Appreciation Artwork', description: 'Framed thank-you letter and artwork from a cured patient\'s family honoring Dr. Dheeraj Diwaakar and the clinical team.', badge: 'Achievements', badgeBg: 'bg-amber-600/90 text-white' },
+  { id: 'img-1930', image: img1930, title: '61-Day COVID Baby Survival Coverage', subtitle: 'Featured Regional Press Release', description: 'Newspaper clipping covering the successful 61-day NICU recovery of baby Garv at Radiant Children\'s Hospital.', badge: 'Achievements', badgeBg: 'bg-amber-600/90 text-white' },
   { id: 'img-1932', image: img1932, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Facility view at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-emerald-700/90 text-white' },
   { id: 'img-1934', image: img1934, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital infrastructure and care area at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-teal-700/90 text-white' },
   { id: 'img-1936', image: img1936, title: 'Hospital Facility View', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility and infrastructure at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-sky-700/90 text-white' },
@@ -89,9 +89,26 @@ const galleryItems: GalleryItem[] = [
 
 export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>('All Photos');
 
-  const openLightbox = (index: number) => {
-    setLightboxIndex(index);
+  const filterCategories = [
+    { id: 'All Photos', label: '✨ All Photos' },
+    { id: 'Achievements', label: '🏆 Achievements & Recognition' },
+    { id: 'Facility', label: '🏥 Hospital Facilities' },
+    { id: 'Wards', label: '🚨 Wards & Pharmacy' }
+  ];
+
+  const filteredItems = galleryItems.filter((item) => {
+    if (selectedCategory === 'All Photos') return true;
+    if (selectedCategory === 'Achievements') return item.badge === 'Achievements';
+    if (selectedCategory === 'Facility') return item.badge === 'Facility';
+    if (selectedCategory === 'Wards') return item.badge !== 'Achievements' && item.badge !== 'Facility';
+    return true;
+  });
+
+  const openLightbox = (itemIndex: number) => {
+    const originalIndex = galleryItems.findIndex((g) => g.id === filteredItems[itemIndex].id);
+    setLightboxIndex(originalIndex !== -1 ? originalIndex : itemIndex);
   };
 
   const closeLightbox = () => {
@@ -129,7 +146,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
             </span>
-            <span className="text-amber-300 uppercase tracking-wider font-black">🏥 INFRASTRUCTURE & FACILITY PHOTO GALLERY</span>
+            <span className="text-amber-300 uppercase tracking-wider font-black">🏥 INFRASTRUCTURE, FACILITIES & ACHIEVEMENTS PHOTO GALLERY</span>
           </motion.div>
 
           <motion.h1
@@ -147,7 +164,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
             transition={{ delay: 0.2 }}
             className="text-slate-600 text-base sm:text-xl leading-relaxed font-medium max-w-3xl mx-auto"
           >
-            Inspect our 40-bedded hospital building, Level III NICU nursery, PICU units, 24x7 emergency desk, bedside diagnostics, and clinical leadership in Udaipur.
+            Inspect our 40-bedded hospital building, Level III NICU nursery, PICU units, achievements board, appreciation certificates, and clinical leadership in Udaipur.
           </motion.p>
         </div>
       </section>
@@ -156,13 +173,33 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
+          {/* Category Filter Tabs */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5">
+            {filterCategories.map((cat) => {
+              const isActive = selectedCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
+                  className={`px-5 py-2.5 rounded-full font-extrabold text-xs sm:text-sm transition-all duration-300 ${
+                    isActive
+                      ? 'bg-slate-900 text-white shadow-xl shadow-slate-900/20 border border-slate-700 scale-105'
+                      : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 shadow-sm'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              );
+            })}
+          </div>
+
           {/* Photo Gallery Grid */}
           <motion.div 
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             <AnimatePresence>
-              {galleryItems.map((item, idx) => (
+              {filteredItems.map((item, idx) => (
                 <motion.div
                   key={item.id}
                   layout
