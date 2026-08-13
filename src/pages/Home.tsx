@@ -41,36 +41,47 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
     FaClock: FaHospital
   };
 
-  const heroSlides = [
+  const heroSlides: {
+    image: string;
+    title: string;
+    badge: string;
+    highlight: string;
+    objectPosition?: string;
+  }[] = [
     {
       image: hospitalExteriorFront,
       title: "Radiant Children's Hospital Building",
       badge: "40 Bedded Hospital Center • Udaipur",
-      highlight: "Super Specialty Pediatric & Neonatal Hospital"
+      highlight: "Super Specialty Pediatric & Neonatal Hospital",
+      objectPosition: "center 18%"
     },
     {
       image: img1873,
       title: "Level III Advanced NICU Nursery Unit",
       badge: "HFOV Ventilators, CPAP & Mira Cradle",
-      highlight: "97-99% Intact Preterm Survival Success"
+      highlight: "97-99% Intact Preterm Survival Success",
+      objectPosition: "center center"
     },
     {
       image: img1893,
       title: "Pediatric Intensive Care Unit (PICU)",
       badge: "Advanced Ventilators & Volumetric Pumps",
-      highlight: "24×7 On-Duty Pediatric Intensivists"
+      highlight: "24×7 On-Duty Pediatric Intensivists",
+      objectPosition: "center center"
     },
     {
       image: img1903,
       title: "State-of-the-Art Modular Operation Theatre",
       badge: "24×7 Emergency Surgical Suite",
-      highlight: "Advanced Pediatric & Neonatal Surgery"
+      highlight: "Advanced Pediatric & Neonatal Surgery",
+      objectPosition: "center center"
     },
     {
       image: img1911,
       title: "General Wards & Inpatient Suites",
       badge: "NICU & PICU, Deluxe Rooms, General Wards & Semi-Deluxe Rooms",
-      highlight: "Central Oxygen & 100% DG Power Backup"
+      highlight: "Central Oxygen & 100% DG Power Backup",
+      objectPosition: "center center"
     }
   ];
 
@@ -130,6 +141,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
             exit={{ opacity: 0, scale: 0.98 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+            style={{ objectPosition: heroSlides[heroSlideIndex].objectPosition || 'center center' }}
             loading="eager"
             decoding="async"
           />
