@@ -43,6 +43,12 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
 
   const heroSlides = [
     {
+      image: hospitalExteriorFront,
+      title: "Radiant Children's Hospital Building",
+      badge: "40 Bedded Hospital Center • Udaipur",
+      highlight: "Super Specialty Pediatric & Neonatal Hospital"
+    },
+    {
       image: img1911,
       title: "Level III Advanced NICU Nursery Unit",
       badge: "HFOV Ventilators, CPAP & Mira Cradle",
@@ -65,12 +71,6 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
       title: "Inpatient Wards & 24×7 Patient Desk",
       badge: "NICU & PICU, Deluxe Rooms, General Wards & Semi-Deluxe Rooms",
       highlight: "24 Hours On-Duty Pediatric Intensivists"
-    },
-    {
-      image: hospitalExteriorFront,
-      title: "Radiant Children's Hospital Building",
-      badge: "40 Bedded Hospital Center • Udaipur",
-      highlight: "Super Specialty Pediatric & Neonatal Hospital"
     }
   ];
 
