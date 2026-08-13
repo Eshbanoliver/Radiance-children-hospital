@@ -13,11 +13,11 @@ import {
 import { SEO } from '../components/SEO';
 
 import hospitalExteriorFront from '../assets/hospital-exterior-building-front.jpg';
-import hospitalNicu from '../assets/hospital-nicu.png';
 import drDheerajImg from '../assets/dr-dheeraj-diwaakar.jpg';
 import img1873 from '../assets/IMG_1873.JPG';
 import img1893 from '../assets/IMG_1893.JPG';
 import img1903 from '../assets/IMG_1903.JPG';
+import img1911 from '../assets/IMG_1911.JPG';
 
 interface HomeProps {
   onOpenBooking: () => void;
@@ -49,10 +49,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
       highlight: "Super Specialty Pediatric & Neonatal Hospital"
     },
     {
-      image: hospitalNicu,
-      title: "Level III Advanced NICU Nursery Unit",
-      badge: "HFOV Ventilators, CPAP & Mira Cradle",
-      highlight: "97-99% Intact Preterm Survival Success"
+      image: img1873,
+      title: "General Wards & Inpatient Suites",
+      badge: "NICU & PICU, Deluxe Rooms, General Wards & Semi-Deluxe Rooms",
+      highlight: "Central Oxygen & 100% DG Power Backup"
     },
     {
       image: img1893,
@@ -67,10 +67,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
       highlight: "Advanced Pediatric & Neonatal Surgery"
     },
     {
-      image: img1873,
-      title: "General Wards & Inpatient Suites",
-      badge: "NICU & PICU, Deluxe Rooms, General Wards & Semi-Deluxe Rooms",
-      highlight: "Central Oxygen & 100% DG Power Backup"
+      image: img1911,
+      title: "Level III Advanced NICU Nursery Unit",
+      badge: "HFOV Ventilators, CPAP & Mira Cradle",
+      highlight: "97-99% Intact Preterm Survival Success"
     }
   ];
 
