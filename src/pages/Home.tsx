@@ -5,10 +5,10 @@ import {
   FaCalendarCheck, FaPhoneAlt, FaUserMd, FaMicroscope, 
   FaProcedures, FaStar, FaQuoteLeft, FaAward, FaHeart, FaChevronLeft, 
   FaChevronRight, FaHospital, FaChild, FaPause, FaPlay, FaFlask,
-  FaAmbulance, FaCheckCircle
+  FaAmbulance, FaCheckCircle, FaBed, FaShieldAlt
 } from 'react-icons/fa';
 import { 
-  HOSPITAL_INFO, KEY_METRICS, TESTIMONIALS 
+  HOSPITAL_INFO, KEY_METRICS, TESTIMONIALS, WHY_CHOOSE_US
 } from '../data/hospitalData';
 import { SEO } from '../components/SEO';
 
@@ -27,6 +27,19 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [heroSlideIndex, setHeroSlideIndex] = useState(0);
   const [isTestimonialAutoPlaying, setIsTestimonialAutoPlaying] = useState(true);
+  const [activePillarTab, setActivePillarTab] = useState<'all' | 'critical' | 'facility' | 'safety' | 'convenience'>('all');
+
+  const chooseUsIconMap: Record<string, React.ElementType> = {
+    FaBed,
+    FaUserMd,
+    FaMicroscope,
+    FaProcedures: FaBed,
+    FaFlask,
+    FaAmbulance,
+    FaHeart,
+    FaShieldAlt,
+    FaClock: FaHospital
+  };
 
   const heroSlides = [
     {
@@ -50,7 +63,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
     {
       image: img1873,
       title: "Inpatient Wards & 24×7 Patient Desk",
-      badge: "General, Semi-Deluxe & Deluxe Suites",
+      badge: "NICU & PICU, Deluxe Rooms, General Wards & Semi-Deluxe Rooms",
       highlight: "24 Hours On-Duty Pediatric Intensivists"
     },
     {
@@ -590,6 +603,173 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
             </div>
 
           </motion.div>
+
+        </div>
+      </section>
+
+      {/* WHY PARENTS CHOOSE US */}
+      <section className="relative py-12 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-cyan-500/10 via-purple-500/10 to-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
+          
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <motion.div
+              initial={{ opacity: 0, y: -15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 text-white font-extrabold text-xs shadow-xl backdrop-blur-md"
+            >
+              <span className="flex h-2.5 w-2.5 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+              </span>
+              <span className="text-amber-300 font-black uppercase tracking-wider">🏆 UNMATCHED PEDIATRIC STANDARDS IN UDAIPUR</span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight"
+            >
+              Why Parents Choose <span className="gradient-text">Radiant Children's Hospital</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium"
+            >
+              Combining 24×7 Neonatal Intensive Care expertise, 40-bedded modern hospital infrastructure, zero-compromise sterilization protocols, and family-first compassionate care under one roof.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+            {[
+              { label: 'Children Cared For', val: '12,000+', icon: FaChild, color: 'from-blue-600 to-cyan-500', badge: 'Verified Care' },
+              { label: 'Hospital Beds', val: '40 Beds', icon: FaBed, color: 'from-purple-600 to-indigo-600', badge: 'Deluxe & Wards' },
+              { label: 'Intensivists Availability', val: '24×7 On-Site', icon: FaUserMd, color: 'from-rose-500 to-amber-500', badge: 'Zero Wait Time' },
+              { label: 'Intact Survival Focus', val: 'Level III NICU', icon: FaMicroscope, color: 'from-emerald-500 to-teal-600', badge: 'HFOV & CPAP' }
+            ].map((metric, idx) => {
+              const MetricIcon = metric.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.08 }}
+                  whileHover={{ y: -4, scale: 1.03 }}
+                  className="rounded-2xl bg-white/90 border border-slate-200/90 p-4 shadow-lg flex items-center gap-3.5 backdrop-blur-sm hover:border-primary/40 transition-all group"
+                >
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-tr ${metric.color} text-white flex items-center justify-center text-xl shrink-0 font-black shadow-md group-hover:scale-110 transition-transform`}>
+                    <MetricIcon />
+                  </div>
+                  <div>
+                    <span className="text-lg sm:text-xl font-black text-slate-900 block leading-tight">{metric.val}</span>
+                    <span className="text-[11px] font-bold text-slate-600 block">{metric.label}</span>
+                    <span className="text-[9px] font-black text-emerald-600 uppercase tracking-wider block mt-0.5">{metric.badge}</span>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-2">
+            {[
+              { id: 'all', label: '✨ All 9 Pillars' },
+              { id: 'critical', label: '🚨 24×7 Critical Care & NICU' },
+              { id: 'facility', label: '🏥 40-Bed Infrastructure & ABG' },
+              { id: 'safety', label: '🛡️ Sterile & Intact Survival' },
+              { id: 'convenience', label: '⏰ Flexible OPD Timings' }
+            ].map((tab) => {
+              const isActive = activePillarTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActivePillarTab(tab.id as any)}
+                  className={`relative px-4 py-2.5 rounded-full font-extrabold text-xs sm:text-sm transition-all duration-300 ${
+                    isActive
+                      ? 'bg-slate-900 text-white shadow-xl shadow-slate-900/20 border border-slate-700'
+                      : 'bg-white/80 hover:bg-slate-100 text-slate-700 border border-slate-200 shadow-sm'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activePillarTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {WHY_CHOOSE_US.filter(item => activePillarTab === 'all' || item.category === activePillarTab).map((item, idx) => {
+                const IconComp = chooseUsIconMap[item.iconName] || FaCheckCircle;
+                return (
+                  <motion.div
+                    key={item.id}
+                    layout
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    className={`rounded-3xl bg-white/95 backdrop-blur-md p-6 border shadow-xl flex flex-col justify-between space-y-5 transition-all duration-300 group ${item.shadow}`}
+                  >
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${item.gradient} text-white flex items-center justify-center text-2xl font-black shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border-2 border-white`}>
+                          <IconComp />
+                        </div>
+                        <span className={`px-3 py-1 rounded-full font-black text-[10px] uppercase tracking-wider border ${item.badgeBg}`}>
+                          {item.badge}
+                        </span>
+                      </div>
+
+                      <div>
+                        <h3 className="text-xl font-black text-slate-900 group-hover:text-primary transition-colors leading-snug">
+                          {item.title}
+                        </h3>
+                        <p className="text-slate-600 text-xs sm:text-sm font-semibold leading-relaxed mt-2">
+                          {item.desc}
+                        </p>
+                      </div>
+
+                      <div className="pt-2 space-y-1.5">
+                        {item.highlights.map((highlight, hIdx) => (
+                          <div key={hIdx} className="flex items-center gap-2 p-2 rounded-xl bg-slate-50 border border-slate-200/80 text-[11px] font-bold text-slate-800 shadow-xs group-hover:border-slate-300 transition-colors">
+                            <FaCheckCircle className="text-emerald-500 text-xs shrink-0" />
+                            <span>{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="pt-3 border-t border-slate-200/80 flex items-center justify-between text-[11px] font-extrabold text-slate-700">
+                      <span className="flex items-center gap-1.5 text-emerald-600">
+                        <FaCheckCircle className="text-xs text-emerald-500" /> Clinical Benchmark
+                      </span>
+                      <button
+                        onClick={onOpenBooking}
+                        className="px-3 py-1.5 rounded-xl bg-slate-100 group-hover:bg-primary group-hover:text-white font-extrabold text-[11px] transition-colors"
+                      >
+                        Book Consult
+                      </button>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </AnimatePresence>
 
         </div>
       </section>

@@ -45,7 +45,7 @@ export const KEY_METRICS: MetricItem[] = [
     value: '40 Beds',
     label: 'Neonatal & Pediatric Center',
     icon: 'FaHospital',
-    description: 'General, Semi-Deluxe & Deluxe patient rooms'
+    description: 'NICU & PICU, Deluxe Rooms, General Wards & Semi-Deluxe Rooms'
   },
   {
     id: '3',
@@ -141,7 +141,7 @@ export const INFECTION_CONTROL_PROTOCOLS = [
 ];
 
 export const CHILDREN_FACILITIES_LIST = [
-  { name: "General, Semi-Deluxe & Deluxe Rooms", icon: "FaBed" },
+  { name: "NICU & PICU, Deluxe Rooms, General Wards & Semi-Deluxe Rooms", icon: "FaBed" },
   { name: "Central Oxygen, Compressed Air & Suction", icon: "FaWind" },
   { name: "In-House Pharmacy & Medical Store", icon: "FaPills" },
   { name: "In-House X-Ray, Ultrasonography & 2D Echo", icon: "FaXRay" },
@@ -345,7 +345,7 @@ export const WHY_CHOOSE_US: WhyChooseUsItem[] = [
   {
     id: "40-bed-center",
     title: "40 Bedded Care Center",
-    desc: "General Wards, Semi-Deluxe, and Deluxe private patient rooms equipped with central oxygen, compressed air & suction lines.",
+    desc: "NICU & PICU, Deluxe Rooms, General Wards, and Semi-Deluxe Rooms equipped with central oxygen, compressed air & suction lines.",
     iconName: "FaBed",
     category: "facility",
     badge: "40 Beds Facility",
@@ -353,7 +353,7 @@ export const WHY_CHOOSE_US: WhyChooseUsItem[] = [
     shadow: "shadow-blue-500/20 hover:shadow-blue-500/40 border-blue-200/90",
     badgeBg: "bg-blue-500/15 border-blue-300 text-blue-900",
     highlights: [
-      "General, Semi-Deluxe & Deluxe Wards",
+      "NICU & PICU, Deluxe Rooms, General Wards & Semi-Deluxe Rooms",
       "Central Medical Gas & Suction Lines",
       "100% DG Auto Backup (Power & Air)"
     ]
@@ -607,7 +607,7 @@ export const FAQS: FAQItem[] = [
   {
     id: '5',
     question: 'What patient room categories and hospital amenities do you offer?',
-    answer: 'We offer General Wards, Semi-Deluxe Private Rooms, and Deluxe Air-Conditioned Private Rooms. Every room features Central Oxygen, Compressed Air, and Suction lines, along with 100% DG Auto Backup for uninterrupted power supply.',
+    answer: 'We offer Level III NICU & PICU, Deluxe Private Rooms, General Wards, and Semi-Deluxe Private Rooms. Every room features Central Oxygen, Compressed Air, and Suction lines, along with 100% DG Auto Backup for uninterrupted power supply.',
     category: 'Facilities'
   },
   {

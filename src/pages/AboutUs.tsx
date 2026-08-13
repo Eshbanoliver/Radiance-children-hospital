@@ -355,10 +355,18 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                     </span>
                     <h3 className="text-2xl sm:text-4xl font-black text-slate-900">40 Bedded Patient Wards & Private Suites</h3>
                     <p className="text-slate-600 text-sm font-semibold leading-relaxed">
-                      Equipped with General Wards, Semi-Deluxe AC Rooms, and Deluxe Private Suites. Every bed is backed by Central Oxygen, Compressed Air, Vacuum Suction, and 100% DG Auto Power Generators for uninterrupted care.
+                      Equipped with Level III NICU & PICU, Deluxe Private Suites, General Wards, and Semi-Deluxe AC Rooms. Every bed is backed by Central Oxygen, Compressed Air, Vacuum Suction, and 100% DG Auto Power Generators for uninterrupted care.
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                      <div className="p-3.5 rounded-2xl bg-purple-50 border border-purple-200 text-center space-y-1">
+                        <span className="text-xs font-black text-purple-800 block">NICU & PICU</span>
+                        <span className="text-[10px] text-slate-600 font-bold block">Level III Nursery & ICU</span>
+                      </div>
+                      <div className="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200 text-center space-y-1">
+                        <span className="text-xs font-black text-indigo-800 block">Deluxe Rooms</span>
+                        <span className="text-[10px] text-slate-600 font-bold block">Private Living Amenities</span>
+                      </div>
                       <div className="p-3.5 rounded-2xl bg-cyan-50 border border-cyan-200 text-center space-y-1">
                         <span className="text-xs font-black text-cyan-800 block">General Wards</span>
                         <span className="text-[10px] text-slate-600 font-bold block">Spacious & Sterile</span>
@@ -366,10 +374,6 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onOpenBooking }) => {
                       <div className="p-3.5 rounded-2xl bg-blue-50 border border-blue-200 text-center space-y-1">
                         <span className="text-xs font-black text-blue-800 block">Semi-Deluxe Rooms</span>
                         <span className="text-[10px] text-slate-600 font-bold block">AC & Parent Privacy</span>
-                      </div>
-                      <div className="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200 text-center space-y-1">
-                        <span className="text-xs font-black text-indigo-800 block">Deluxe Suites</span>
-                        <span className="text-[10px] text-slate-600 font-bold block">Private Living Amenities</span>
                       </div>
                     </div>
                   </div>
