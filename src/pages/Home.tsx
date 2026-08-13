@@ -50,9 +50,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
     },
     {
       image: img1873,
-      title: "General Wards & Inpatient Suites",
-      badge: "NICU & PICU, Deluxe Rooms, General Wards & Semi-Deluxe Rooms",
-      highlight: "Central Oxygen & 100% DG Power Backup"
+      title: "Level III Advanced NICU Nursery Unit",
+      badge: "HFOV Ventilators, CPAP & Mira Cradle",
+      highlight: "97-99% Intact Preterm Survival Success"
     },
     {
       image: img1893,
@@ -68,9 +68,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
     },
     {
       image: img1911,
-      title: "Level III Advanced NICU Nursery Unit",
-      badge: "HFOV Ventilators, CPAP & Mira Cradle",
-      highlight: "97-99% Intact Preterm Survival Success"
+      title: "General Wards & Inpatient Suites",
+      badge: "NICU & PICU, Deluxe Rooms, General Wards & Semi-Deluxe Rooms",
+      highlight: "Central Oxygen & 100% DG Power Backup"
     }
   ];
 
