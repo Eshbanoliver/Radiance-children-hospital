@@ -711,6 +711,26 @@ export const DOCTORS: DoctorItem[] = [
     ],
     bio: 'Compassionate 24x7 specialized nursing staff trained in 1:1 critical care, cluster care approach, minimal handling of 500g preterm babies, and supportive parental guidance.',
     image: '/src/assets/dr-dheeraj-diwaakar.jpg'
+  },
+  {
+    id: 'rashmi-vaishnav',
+    name: 'Rashmi Vaishnav',
+    role: 'Content Specialist & Healthcare Writer',
+    qualifications: 'MA, Content & Communications Specialist',
+    experience: '5+ Years Healthcare Writing & Public Relations',
+    specialties: [
+      'Child Health Awareness & Education',
+      'Medical Communications & Writing',
+      'Hospital Media & Public Relations',
+      'Parent Guidance & Digital Content'
+    ],
+    bio: 'Dedicated content strategist and healthcare writer at Radiant Children’s Hospital, specializing in communicating complex pediatric healthcare information into accessible, compassionate guidance for parents and families.',
+    image: '/src/assets/rashmi-vaishnav.png',
+    socialLinks: {
+      instagram: 'https://www.instagram.com/rashmi.writer26?igsh=dW0zOGVvems3djBv',
+      facebook: 'https://www.facebook.com/share/1947MafqJK/',
+      linkedin: 'https://www.linkedin.com/in/rashmi-vaishnav-45a191205?utm_source=share_via&utm_content=profile&utm_medium=member_android'
+    }
   }
 ];
 

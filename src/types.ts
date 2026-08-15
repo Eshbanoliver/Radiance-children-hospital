@@ -38,6 +38,11 @@ export interface DoctorItem {
   specialties: string[];
   bio: string;
   image: string;
+  socialLinks?: {
+    instagram?: string;
+    facebook?: string;
+    linkedin?: string;
+  };
 }
 
 export interface FAQItem {
