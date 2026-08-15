@@ -655,16 +655,16 @@ export const DOCTORS: DoctorItem[] = [
   {
     id: 'rashmi-vaishnav',
     name: 'Rashmi Vaishnav',
-    role: 'Content Specialist & Healthcare Writer',
-    qualifications: 'MA, Content & Communications Specialist',
-    experience: '5+ Years Healthcare Writing & Public Relations',
+    role: 'Managing Director (MD)',
+    qualifications: 'Managing Director & Hospital Executive Leadership',
+    experience: 'Executive Hospital Leadership & Management',
     specialties: [
-      'Child Health Awareness & Education',
-      'Medical Communications & Writing',
-      'Hospital Media & Public Relations',
-      'Parent Guidance & Digital Content'
+      'Strategic Hospital Management',
+      'Healthcare Operations & Administration',
+      'Patient Welfare & Service Quality',
+      'Public Relations & Brand Leadership'
     ],
-    bio: 'Dedicated content strategist and healthcare writer at Radiant Children’s Hospital, specializing in communicating complex pediatric healthcare information into accessible, compassionate guidance for parents and families.',
+    bio: 'Managing Director at Radiant Children’s Hospital, leading hospital strategy, administrative operations, patient experience, and organizational development to deliver world-class pediatric care.',
     image: '/src/assets/rashmi-vaishnav.png',
     socialLinks: {
       instagram: 'https://www.instagram.com/rashmi.writer26?igsh=dW0zOGVvems3djBv',
