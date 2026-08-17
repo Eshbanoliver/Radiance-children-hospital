@@ -43,6 +43,11 @@ import newImgIndependence from '../assets/IMG-20260811-WA0008.jpg.jpeg';
 import newImgPatrioticTeam from '../assets/IMG-20260811-WA0009.jpg.jpeg';
 import newImgPressGarv from '../assets/IMG-20230317-WA0004.jpg.jpeg';
 import newImgNicuTeam from '../assets/WhatsApp Image 2026-08-17 at 10.18.53 AM.jpeg';
+import newImgAwardStaff1 from '../assets/WhatsApp Image 2026-08-17 at 10.27.51 AM.jpeg';
+import newImgFlagHoisting from '../assets/WhatsApp Image 2026-08-17 at 10.27.51 AM (1).jpeg';
+import newImgStaffGroupAward from '../assets/WhatsApp Image 2026-08-17 at 10.27.51 AM (2).jpeg';
+import newImgDoctorAward from '../assets/WhatsApp Image 2026-08-17 at 10.27.53 AM (1).jpeg';
+import newImgStaffAward2 from '../assets/WhatsApp Image 2026-08-17 at 10.27.53 AM (2).jpeg';
 
 interface GalleryPageProps {
   onOpenBooking: () => void;
@@ -59,6 +64,51 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
+  { 
+    id: 'new-img-staff-group-award', 
+    image: newImgStaffGroupAward, 
+    title: 'Hospital Staff & Medical Excellence Awards', 
+    subtitle: 'Dr. Dheeraj Diwaakar & Staff Ceremony', 
+    description: 'Dr. Dheeraj Diwaakar and Managing Director Rashmi Vaishnav presenting Certificates of Excellence to hospital staff and critical care team on the terrace.', 
+    badge: 'Hospital Team', 
+    badgeBg: 'bg-emerald-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-flag-hoisting', 
+    image: newImgFlagHoisting, 
+    title: 'Tricolor Flag Hoisting Ceremony', 
+    subtitle: 'Dr. Dheeraj Diwaakar & Rashmi Vaishnav', 
+    description: 'Dr. Dheeraj Diwaakar hoisting the Indian Tricolor flag alongside Managing Director Rashmi Vaishnav during the hospital national day celebration.', 
+    badge: 'Events & Culture', 
+    badgeBg: 'bg-teal-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-doctor-award', 
+    image: newImgDoctorAward, 
+    title: 'Clinical Excellence Award Presentation', 
+    subtitle: 'Dr. Dheeraj Diwaakar Honoring Consultant', 
+    description: 'Dr. Dheeraj Diwaakar presenting Certificate of Appreciation for outstanding pediatric clinical care and service quality at Radiant Children\'s Hospital.', 
+    badge: 'Achievements', 
+    badgeBg: 'bg-amber-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-award-staff-1', 
+    image: newImgAwardStaff1, 
+    title: 'Staff Appreciation & Service Award', 
+    subtitle: 'Hospital Leadership Recognition', 
+    description: 'Dr. Dheeraj Diwaakar presenting Certificate of Appreciation to dedicated hospital support and nursing staff member.', 
+    badge: 'Hospital Team', 
+    badgeBg: 'bg-blue-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-staff-award-2', 
+    image: newImgStaffAward2, 
+    title: 'Nursing & Medical Staff Honor Ceremony', 
+    subtitle: 'Radiant Children\'s Hospital Awards', 
+    description: 'Recognition ceremony honoring pediatric critical care nursing staff for 24x7 dedication and sterile patient care excellence.', 
+    badge: 'Hospital Team', 
+    badgeBg: 'bg-indigo-600/90 text-white' 
+  },
   { 
     id: 'new-img-nicu-team', 
     image: newImgNicuTeam, 
