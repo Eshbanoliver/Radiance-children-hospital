@@ -161,7 +161,11 @@ export const Footer: React.FC = () => {
         {/* Mandatory Copyright Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400 text-center md:text-left">
           <div>
-            ©️ Copyright 2026 | Radiant Children's Hospital | All Rights Reserved | Powered by{' '}
+            ©️ Copyright 2026 |{' '}
+            <Link to="/" className="hover:text-white font-bold transition-colors">
+              Radiant Children's Hospital
+            </Link>{' '}
+            | All Rights Reserved | Powered by{' '}
             <a
               href="https://www.futurexdigitalmarketing.com/"
               target="_blank"
