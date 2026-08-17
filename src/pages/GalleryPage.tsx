@@ -48,6 +48,11 @@ import newImgFlagHoisting from '../assets/WhatsApp Image 2026-08-17 at 10.27.51 
 import newImgStaffGroupAward from '../assets/WhatsApp Image 2026-08-17 at 10.27.51 AM (2).jpeg';
 import newImgDoctorAward from '../assets/WhatsApp Image 2026-08-17 at 10.27.53 AM (1).jpeg';
 import newImgStaffAward2 from '../assets/WhatsApp Image 2026-08-17 at 10.27.53 AM (2).jpeg';
+import newImgAdminTeam from '../assets/WhatsApp Image 2026-08-17 at 10.27.55 AM (1).jpeg';
+import newImgAdminAward from '../assets/WhatsApp Image 2026-08-17 at 10.27.55 AM (2).jpeg';
+import newImgStaffNurseAward from '../assets/WhatsApp Image 2026-08-17 at 10.27.56 AM.jpeg';
+import newImgWideTeamPhoto from '../assets/WhatsApp Image 2026-08-17 at 10.27.56 AM (1).jpeg';
+import newImgLeadershipAddress from '../assets/WhatsApp Image 2026-08-17 at 10.27.56 AM (2).jpeg';
 
 interface GalleryPageProps {
   onOpenBooking: () => void;
@@ -64,6 +69,51 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
+  { 
+    id: 'new-img-wide-team-photo', 
+    image: newImgWideTeamPhoto, 
+    title: 'Hospital Medical & Nursing Faculty', 
+    subtitle: 'Radiant Children\'s Hospital Team Photo', 
+    description: 'Dr. Dheeraj Diwaakar, MD Rashmi Vaishnav, consultant doctors, and 24x7 critical care nursing staff on the hospital terrace.', 
+    badge: 'Hospital Team', 
+    badgeBg: 'bg-emerald-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-leadership-address', 
+    image: newImgLeadershipAddress, 
+    title: 'Hospital Executive Leadership Address', 
+    subtitle: 'Dr. Dheeraj Diwaakar & Rashmi Vaishnav', 
+    description: 'Dr. Dheeraj Diwaakar and Managing Director Rashmi Vaishnav addressing hospital staff during the annual recognition gathering.', 
+    badge: 'Events & Culture', 
+    badgeBg: 'bg-teal-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-admin-team', 
+    image: newImgAdminTeam, 
+    title: 'Hospital Operations & Administrative Staff', 
+    subtitle: 'Management & Front Office Team', 
+    description: 'Executive management team with front office, pharmacy, and hospital administrative staff during national celebrations.', 
+    badge: 'Hospital Team', 
+    badgeBg: 'bg-blue-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-admin-award', 
+    image: newImgAdminAward, 
+    title: 'Administrative Excellence Certificate Honor', 
+    subtitle: 'Leadership Service Award', 
+    description: 'Dr. Dheeraj Diwaakar and MD Rashmi Vaishnav presenting Certificate of Appreciation for administrative operations excellence.', 
+    badge: 'Achievements', 
+    badgeBg: 'bg-amber-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-staff-nurse-award', 
+    image: newImgStaffNurseAward, 
+    title: 'Pediatric Care Staff Honor Presentation', 
+    subtitle: 'Clinical Nursing Recognition', 
+    description: 'Dr. Dheeraj Diwaakar presenting Certificate of Appreciation to clinical support staff member for dedicated bedside patient care.', 
+    badge: 'Hospital Team', 
+    badgeBg: 'bg-indigo-600/90 text-white' 
+  },
   { 
     id: 'new-img-staff-group-award', 
     image: newImgStaffGroupAward, 
