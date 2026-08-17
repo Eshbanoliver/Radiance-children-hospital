@@ -37,7 +37,7 @@ export interface DoctorItem {
   experience: string;
   specialties: string[];
   bio: string;
-  image: string;
+  image?: string;
   socialLinks?: {
     instagram?: string;
     facebook?: string;

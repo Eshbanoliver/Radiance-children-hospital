@@ -223,9 +223,9 @@ export const OurTeamPage: React.FC<OurTeamPageProps> = ({ onOpenBooking }) => {
                   className="rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-xl p-4 sm:p-5 flex flex-col justify-between group transition-all duration-300"
                 >
                   <div className="space-y-4">
-                    {/* Top Portrait Image Frame */}
-                    <div className="w-full h-72 sm:h-84 rounded-xl overflow-hidden bg-slate-100 border border-slate-100 shadow-sm relative group/img shrink-0">
-                      {memberImg ? (
+                    {/* Top Portrait Image Frame (Rendered only if memberImg exists) */}
+                    {memberImg ? (
+                      <div className="w-full h-72 sm:h-84 rounded-xl overflow-hidden bg-slate-100 border border-slate-100 shadow-sm relative group/img shrink-0">
                         <img
                           src={memberImg}
                           alt={doc.name}
@@ -233,24 +233,27 @@ export const OurTeamPage: React.FC<OurTeamPageProps> = ({ onOpenBooking }) => {
                           decoding="async"
                           className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500"
                         />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-tr from-cyan-600 via-teal-600 to-slate-900 flex flex-col items-center justify-center text-white p-6 text-center">
-                          <FaUserMd className="text-6xl mb-3 opacity-90" />
-                          <span className="text-sm font-bold opacity-80">{doc.qualifications}</span>
-                        </div>
-                      )}
-                      
-                      {/* Qualifications Badge Overlay */}
-                      {doc.qualifications && (
-                        <div className="absolute top-3 left-3">
-                          <span className="px-3 py-1 rounded-full bg-slate-900/85 backdrop-blur-md text-white font-extrabold text-[10px] uppercase tracking-wider shadow-md border border-white/20">
+                        
+                        {/* Qualifications Badge Overlay */}
+                        {doc.qualifications && (
+                          <div className="absolute top-3 left-3">
+                            <span className="px-3 py-1 rounded-full bg-slate-900/85 backdrop-blur-md text-white font-extrabold text-[10px] uppercase tracking-wider shadow-md border border-white/20">
+                              {doc.qualifications}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      doc.qualifications && (
+                        <div>
+                          <span className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-900 font-extrabold text-[10px] uppercase tracking-wider shadow-sm border border-cyan-200 inline-block">
                             {doc.qualifications}
                           </span>
                         </div>
-                      )}
-                    </div>
+                      )
+                    )}
 
-                    {/* Content Section below image */}
+                    {/* Content Section */}
                     <div className="px-1 pt-1 space-y-3">
                       <div>
                         <h3 className="text-2xl sm:text-3xl font-extrabold text-[#083b4c] tracking-tight group-hover:text-primary transition-colors">
