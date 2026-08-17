@@ -39,6 +39,11 @@ import img1932 from '../assets/Hospital/IMG_1932.JPG';
 import img1934 from '../assets/Hospital/IMG_1934.JPG';
 import img1936 from '../assets/Hospital/IMG_1936.JPG';
 
+import newImgIndependence from '../assets/IMG-20260811-WA0008.jpg.jpeg';
+import newImgPatrioticTeam from '../assets/IMG-20260811-WA0009.jpg.jpeg';
+import newImgPressGarv from '../assets/IMG-20230317-WA0004.jpg.jpeg';
+import newImgNicuTeam from '../assets/WhatsApp Image 2026-08-17 at 10.18.53 AM.jpeg';
+
 interface GalleryPageProps {
   onOpenBooking: () => void;
 }
@@ -54,6 +59,42 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
+  { 
+    id: 'new-img-nicu-team', 
+    image: newImgNicuTeam, 
+    title: 'Level III NICU Clinical Medical Team', 
+    subtitle: 'Dr. Dheeraj Diwaakar & NICU Team', 
+    description: 'Dr. Dheeraj Diwaakar with the specialized NICU pediatric medical team caring for a newborn baby inside Level III NICU nursery at Radiant Children\'s Hospital.', 
+    badge: 'Level III NICU', 
+    badgeBg: 'bg-purple-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-independence', 
+    image: newImgIndependence, 
+    title: 'Independence Day Flag Hoisting', 
+    subtitle: 'Hospital Leadership & Staff Celebration', 
+    description: 'Dr. Dheeraj Diwaakar, Managing Director Rashmi Vaishnav, and the full medical & hospital staff celebrating Independence Day on the hospital terrace.', 
+    badge: 'Events & Culture', 
+    badgeBg: 'bg-emerald-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-patriotic-team', 
+    image: newImgPatrioticTeam, 
+    title: 'Hospital Staff Cultural Celebration', 
+    subtitle: 'Radiant Children\'s Hospital Team', 
+    description: 'Managing Director Rashmi Vaishnav with hospital staff and critical care nursing team during the patriotic Independence Day gathering.', 
+    badge: 'Hospital Team', 
+    badgeBg: 'bg-blue-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-press-garv', 
+    image: newImgPressGarv, 
+    title: '61-Day Miraculous NICU Survival Press Story', 
+    subtitle: 'Navjyoti Dainik Newspaper Coverage', 
+    description: 'Official newspaper coverage of the 61-day intensive NICU care provided to baby Garv by Dr. Dheeraj Diwaakar and the clinical team.', 
+    badge: 'Achievements', 
+    badgeBg: 'bg-amber-600/90 text-white' 
+  },
   { id: 'img-1873', image: img1873, title: 'Inpatient Ward & Nursing Desk', subtitle: 'Patient Beds & Reception Counter', description: 'General inpatient ward with patient beds and nursing station at Radiant Children\'s Hospital, Udaipur.', badge: 'Inpatient Ward', badgeBg: 'bg-cyan-600/90 text-white' },
   { id: 'img-1876', image: img1876, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Interior view of hospital infrastructure and facilities at Radiant Children\'s Hospital, Udaipur.', badge: 'Facility', badgeBg: 'bg-teal-600/90 text-white' },
   { id: 'img-1877', image: img1877, title: 'Hospital Facility Interior', subtitle: 'Radiant Children\'s Hospital', description: 'Hospital facility photo showcasing the inpatient and care infrastructure at Radiant Children\'s Hospital.', badge: 'Facility', badgeBg: 'bg-blue-600/90 text-white' },
@@ -93,16 +134,18 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenBooking }) => {
 
   const filterCategories = [
     { id: 'All Photos', label: '✨ All Photos' },
-    { id: 'Achievements', label: '🏆 Achievements & Recognition' },
+    { id: 'Events & Team', label: '🎉 Events & Team' },
+    { id: 'Achievements', label: '🏆 Achievements & Press' },
     { id: 'Facility', label: '🏥 Hospital Facilities' },
-    { id: 'Wards', label: '🚨 Wards & Pharmacy' }
+    { id: 'Wards', label: '🚨 NICU & Critical Wards' }
   ];
 
   const filteredItems = galleryItems.filter((item) => {
     if (selectedCategory === 'All Photos') return true;
+    if (selectedCategory === 'Events & Team') return item.badge === 'Events & Culture' || item.badge === 'Hospital Team';
     if (selectedCategory === 'Achievements') return item.badge === 'Achievements';
     if (selectedCategory === 'Facility') return item.badge === 'Facility';
-    if (selectedCategory === 'Wards') return item.badge !== 'Achievements' && item.badge !== 'Facility';
+    if (selectedCategory === 'Wards') return item.badge === 'Level III NICU' || item.badge === 'Critical Care Ward' || item.badge === 'Inpatient Ward';
     return true;
   });
 
