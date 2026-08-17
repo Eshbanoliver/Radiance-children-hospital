@@ -53,6 +53,9 @@ import newImgAdminAward from '../assets/WhatsApp Image 2026-08-17 at 10.27.55 AM
 import newImgStaffNurseAward from '../assets/WhatsApp Image 2026-08-17 at 10.27.56 AM.jpeg';
 import newImgWideTeamPhoto from '../assets/WhatsApp Image 2026-08-17 at 10.27.56 AM (1).jpeg';
 import newImgLeadershipAddress from '../assets/WhatsApp Image 2026-08-17 at 10.27.56 AM (2).jpeg';
+import newImgExecGroup from '../assets/WhatsApp Image 2026-08-17 at 10.27.57 AM (1).jpeg';
+import newImgConsultantAwardSpeech from '../assets/WhatsApp Image 2026-08-17 at 10.27.57 AM (2).jpeg';
+import newImgExecGroup2 from '../assets/WhatsApp Image 2026-08-17 at 10.27.58 AM.jpeg';
 
 interface GalleryPageProps {
   onOpenBooking: () => void;
@@ -69,6 +72,33 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
+  { 
+    id: 'new-img-exec-group', 
+    image: newImgExecGroup, 
+    title: 'Hospital Executive Directors & Leadership', 
+    subtitle: 'Dr. Dheeraj Diwaakar & Rashmi Vaishnav', 
+    description: 'Dr. Dheeraj Diwaakar, Managing Director Rashmi Vaishnav, and hospital executive board members during national celebration on the terrace.', 
+    badge: 'Hospital Team', 
+    badgeBg: 'bg-emerald-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-consultant-award-speech', 
+    image: newImgConsultantAwardSpeech, 
+    title: 'Senior Medical Consultant Recognition Honor', 
+    subtitle: 'Dr. Dheeraj Diwaakar Award Speech', 
+    description: 'Dr. Dheeraj Diwaakar addressing staff while presenting Certificate of Appreciation for medical excellence and clinical care quality.', 
+    badge: 'Achievements', 
+    badgeBg: 'bg-amber-600/90 text-white' 
+  },
+  { 
+    id: 'new-img-exec-group-2', 
+    image: newImgExecGroup2, 
+    title: 'Hospital Administrative Board & Directors', 
+    subtitle: 'Radiant Children\'s Hospital Executive Team', 
+    description: 'Executive leadership team standing under the Indian Flag during hospital celebrations.', 
+    badge: 'Events & Culture', 
+    badgeBg: 'bg-teal-600/90 text-white' 
+  },
   { 
     id: 'new-img-wide-team-photo', 
     image: newImgWideTeamPhoto, 
