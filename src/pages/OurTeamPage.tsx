@@ -210,7 +210,7 @@ export const OurTeamPage: React.FC<OurTeamPageProps> = ({ onOpenBooking }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {specialistTeam.map((doc: DoctorItem, idx) => {
-              const memberImg = doc.id === 'rashmi-vaishnav' ? rashmiImg : (doc.id === 'dr-dheeraj-diwaakar' ? drDheerajImg : null);
+              const memberImg = doc.id === 'rashmi-vaishnav' ? rashmiImg : (doc.id === 'dr-dheeraj-diwaakar' ? drDheerajImg : (doc.image || null));
 
               return (
                 <motion.div
@@ -220,104 +220,116 @@ export const OurTeamPage: React.FC<OurTeamPageProps> = ({ onOpenBooking }) => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.08 }}
                   whileHover={{ y: -6 }}
-                  className="rounded-[2.5rem] bg-white border border-slate-200/90 shadow-xl overflow-hidden flex flex-col justify-between group hover:border-primary/40 transition-all duration-300"
+                  className="rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-xl p-4 sm:p-5 flex flex-col justify-between group transition-all duration-300"
                 >
-                  <div className="p-8 space-y-5">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex items-center gap-4">
-                        {memberImg ? (
-                          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-teal-500/40 shadow-xl shrink-0 bg-slate-900 group-hover:border-teal-400 transition-colors">
-                            <img
-                              src={memberImg}
-                              alt={doc.name}
-                              loading="lazy"
-                              decoding="async"
-                              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                            />
-                          </div>
-                        ) : (
-                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-teal-500 text-white flex items-center justify-center text-2xl font-black shadow-lg shrink-0 border-2 border-white">
-                            <FaUserMd />
-                          </div>
-                        )}
-                        <div>
-                          <span className="px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-900 font-black text-[10px] uppercase tracking-wider">
+                  <div className="space-y-4">
+                    {/* Top Portrait Image Frame */}
+                    <div className="w-full h-72 sm:h-84 rounded-xl overflow-hidden bg-slate-100 border border-slate-100 shadow-sm relative group/img shrink-0">
+                      {memberImg ? (
+                        <img
+                          src={memberImg}
+                          alt={doc.name}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-tr from-cyan-600 via-teal-600 to-slate-900 flex flex-col items-center justify-center text-white p-6 text-center">
+                          <FaUserMd className="text-6xl mb-3 opacity-90" />
+                          <span className="text-sm font-bold opacity-80">{doc.qualifications}</span>
+                        </div>
+                      )}
+                      
+                      {/* Qualifications Badge Overlay */}
+                      {doc.qualifications && (
+                        <div className="absolute top-3 left-3">
+                          <span className="px-3 py-1 rounded-full bg-slate-900/85 backdrop-blur-md text-white font-extrabold text-[10px] uppercase tracking-wider shadow-md border border-white/20">
                             {doc.qualifications}
                           </span>
-                          <h3 className="text-2xl font-black text-slate-900 mt-1 group-hover:text-primary transition-colors">
-                            {doc.name}
-                          </h3>
-                          <p className="text-xs font-bold text-primary">{doc.role}</p>
-
-                          {/* Social Media Links */}
-                          {doc.socialLinks && (
-                            <div className="flex items-center gap-2 pt-2">
-                              {doc.socialLinks.instagram && (
-                                <a
-                                  href={doc.socialLinks.instagram}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  aria-label={`${doc.name}'s Instagram`}
-                                  className="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-xs shadow-md hover:scale-110 transition-transform"
-                                  title="Instagram Profile"
-                                >
-                                  <FaInstagram />
-                                </a>
-                              )}
-                              {doc.socialLinks.facebook && (
-                                <a
-                                  href={doc.socialLinks.facebook}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  aria-label={`${doc.name}'s Facebook`}
-                                  className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xs shadow-md hover:scale-110 transition-transform"
-                                  title="Facebook Profile"
-                                >
-                                  <FaFacebookF />
-                                </a>
-                              )}
-                              {doc.socialLinks.linkedin && (
-                                <a
-                                  href={doc.socialLinks.linkedin}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  aria-label={`${doc.name}'s LinkedIn`}
-                                  className="w-8 h-8 rounded-xl bg-sky-700 text-white flex items-center justify-center text-xs shadow-md hover:scale-110 transition-transform"
-                                  title="LinkedIn Profile"
-                                >
-                                  <FaLinkedin />
-                                </a>
-                              )}
-                            </div>
-                          )}
                         </div>
-                      </div>
+                      )}
                     </div>
 
-                    <p className="text-slate-600 text-xs sm:text-sm font-semibold leading-relaxed">
-                      {doc.bio}
-                    </p>
+                    {/* Content Section below image */}
+                    <div className="px-1 pt-1 space-y-3">
+                      <div>
+                        <h3 className="text-2xl sm:text-3xl font-extrabold text-[#083b4c] tracking-tight group-hover:text-primary transition-colors">
+                          {doc.name}
+                        </h3>
+                        
+                        <p className="text-slate-700 text-sm sm:text-base leading-relaxed mt-2.5 font-normal">
+                          <span className="font-bold text-slate-900 block mb-1">
+                            {doc.role}, Radiant Children's Hospital.
+                          </span>
+                          {doc.bio}
+                        </p>
+                      </div>
 
-                    <div className="pt-3 border-t border-slate-100 space-y-2">
-                      <span className="text-[11px] font-black uppercase tracking-wider text-slate-400 block">Focus Areas & Services:</span>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {doc.specialties.map((spec, sIdx) => (
-                          <div key={sIdx} className="flex items-center gap-2 p-2 rounded-xl bg-slate-50 border border-slate-200/80 text-[11px] font-bold text-slate-800">
-                            <FaCheckCircle className="text-emerald-500 text-xs shrink-0" />
-                            <span>{spec}</span>
-                          </div>
-                        ))}
+                      {/* Focus Areas & Services */}
+                      <div className="pt-3 border-t border-slate-100 space-y-2">
+                        <span className="text-[11px] font-black uppercase tracking-wider text-slate-400 block">Focus Areas & Leadership:</span>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          {doc.specialties.map((spec, sIdx) => (
+                            <div key={sIdx} className="flex items-center gap-2 p-2 rounded-xl bg-slate-50 border border-slate-200/80 text-[11px] font-bold text-slate-800">
+                              <FaCheckCircle className="text-emerald-500 text-xs shrink-0" />
+                              <span>{spec}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="px-8 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-xs font-bold text-slate-600 flex items-center gap-1.5">
-                      <FaStar className="text-amber-500" /> {doc.experience}
-                    </span>
+                  {/* Card Bottom Bar: Social Links & Consult Button */}
+                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between gap-3 px-1">
+                    {doc.socialLinks ? (
+                      <div className="flex items-center gap-2">
+                        {doc.socialLinks.instagram && (
+                          <a
+                            href={doc.socialLinks.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${doc.name}'s Instagram`}
+                            className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-sm shadow-md hover:scale-110 transition-transform"
+                            title="Instagram Profile"
+                          >
+                            <FaInstagram />
+                          </a>
+                        )}
+                        {doc.socialLinks.facebook && (
+                          <a
+                            href={doc.socialLinks.facebook}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${doc.name}'s Facebook`}
+                            className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm shadow-md hover:scale-110 transition-transform"
+                            title="Facebook Profile"
+                          >
+                            <FaFacebookF />
+                          </a>
+                        )}
+                        {doc.socialLinks.linkedin && (
+                          <a
+                            href={doc.socialLinks.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${doc.name}'s LinkedIn`}
+                            className="w-9 h-9 rounded-xl bg-sky-700 text-white flex items-center justify-center text-sm shadow-md hover:scale-110 transition-transform"
+                            title="LinkedIn Profile"
+                          >
+                            <FaLinkedin />
+                          </a>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="text-xs font-bold text-slate-600 flex items-center gap-1.5">
+                        <FaStar className="text-amber-500" /> {doc.experience}
+                      </span>
+                    )}
+
                     <button
                       onClick={onOpenBooking}
-                      className="px-4 py-2 rounded-xl gradient-btn text-white font-extrabold text-xs shadow-md flex items-center gap-1.5"
+                      className="px-4 py-2.5 rounded-xl gradient-btn text-white font-extrabold text-xs shadow-md flex items-center gap-1.5 hover:scale-105 transition-transform"
                     >
                       <FaCalendarCheck /> Book Consult
                     </button>

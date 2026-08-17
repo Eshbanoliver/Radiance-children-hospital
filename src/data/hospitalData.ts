@@ -664,7 +664,7 @@ export const DOCTORS: DoctorItem[] = [
       'Patient Welfare & Service Quality',
       'Public Relations & Brand Leadership'
     ],
-    bio: 'Managing Director at Radiant Children’s Hospital, leading hospital strategy, administrative operations, patient experience, and organizational development to deliver world-class pediatric care.',
+    bio: 'Rashmi Vaishnav, Managing Director of Radiant Children’s Hospital and executive leader, is a trailblazer in healthcare administration and patient care leadership. Her steadfast commitment has revolutionized hospital operations, patient welfare, and institutional excellence.',
     image: '/src/assets/rashmi-vaishnav.png',
     socialLinks: {
       instagram: 'https://www.instagram.com/rashmi.writer26?igsh=dW0zOGVvems3djBv',

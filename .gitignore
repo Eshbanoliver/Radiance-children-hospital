@@ -25,6 +25,11 @@ dist-ssr
 
 # Deployment and scratch scripts
 deploy.py
+deploy.js
+deploy.cjs
+deploy.config.js
+.env
+.env.*
 scratch/
 *.py
 
