@@ -225,13 +225,13 @@ export const OurTeamPage: React.FC<OurTeamPageProps> = ({ onOpenBooking }) => {
                   <div className="space-y-4">
                     {/* Top Portrait Image Frame (Rendered only if memberImg exists) */}
                     {memberImg && (
-                      <div className="w-full h-72 sm:h-84 rounded-xl overflow-hidden bg-slate-100 border border-slate-100 shadow-sm relative group/img shrink-0">
+                      <div className="w-full aspect-[4/5] max-h-[480px] rounded-xl overflow-hidden bg-slate-100 border border-slate-100 shadow-sm relative group/img shrink-0">
                         <img
                           src={memberImg}
                           alt={doc.name}
                           loading="lazy"
                           decoding="async"
-                          className="w-full h-full object-cover object-[center_10%] group-hover/img:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500"
                         />
                       </div>
                     )}
