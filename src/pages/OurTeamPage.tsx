@@ -224,37 +224,28 @@ export const OurTeamPage: React.FC<OurTeamPageProps> = ({ onOpenBooking }) => {
                 >
                   <div className="space-y-4">
                     {/* Top Portrait Image Frame (Rendered only if memberImg exists) */}
-                    {memberImg ? (
+                    {memberImg && (
                       <div className="w-full h-72 sm:h-84 rounded-xl overflow-hidden bg-slate-100 border border-slate-100 shadow-sm relative group/img shrink-0">
                         <img
                           src={memberImg}
                           alt={doc.name}
                           loading="lazy"
                           decoding="async"
-                          className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-cover object-[center_10%] group-hover/img:scale-105 transition-transform duration-500"
                         />
-                        
-                        {/* Qualifications Badge Overlay */}
-                        {doc.qualifications && (
-                          <div className="absolute top-3 left-3">
-                            <span className="px-3 py-1 rounded-full bg-slate-900/85 backdrop-blur-md text-white font-extrabold text-[10px] uppercase tracking-wider shadow-md border border-white/20">
-                              {doc.qualifications}
-                            </span>
-                          </div>
-                        )}
                       </div>
-                    ) : (
-                      doc.qualifications && (
-                        <div>
-                          <span className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-900 font-extrabold text-[10px] uppercase tracking-wider shadow-sm border border-cyan-200 inline-block">
-                            {doc.qualifications}
-                          </span>
-                        </div>
-                      )
                     )}
 
                     {/* Content Section */}
                     <div className="px-1 pt-1 space-y-3">
+                      {doc.qualifications && (
+                        <div>
+                          <span className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-900 font-extrabold text-[10px] sm:text-xs uppercase tracking-wider shadow-sm border border-cyan-200 inline-block max-w-full leading-normal">
+                            {doc.qualifications}
+                          </span>
+                        </div>
+                      )}
+
                       <div>
                         <h3 className="text-2xl sm:text-3xl font-extrabold text-[#083b4c] tracking-tight group-hover:text-primary transition-colors">
                           {doc.name}
